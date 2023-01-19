@@ -11,3 +11,118 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.logo {
+  width: auto;
+  height: 768px;
+}
+
+.navigation-container {
+  background-color: #0d3046;
+  width: 100%;
+}
+
+.navigation-links-container {
+  margin-top: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation-links {
+  color: white;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.line {
+  border-bottom: 1px solid white;
+  width: 75%;
+  transition: width .35s ease-in-out;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.about-container {
+  background-color: #697681;
+}
+
+.about-title {
+  background-color: #697681;
+}
+
+/* Mobile Responsive */
+@media only screen and (max-width: 600px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    height: auto;
+    width: 250px;
+  }
+
+  .logo-container {
+    text-align: center;
+  }
+
+  .navigation-links-container {
+    margin-top: 100px;
+  }
+
+  .navigation-container {
+    padding-bottom: 100%;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-container {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+  .home-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
