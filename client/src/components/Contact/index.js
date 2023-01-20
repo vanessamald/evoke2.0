@@ -9,6 +9,36 @@ function Contact() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [ status, setStatus ] = useState('Submit');
+
+    // set state for contact form 
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const submitForm = async (e) => {
+        e.preventDefault();
+        setStatus('Sending email');
+
+    let emailMessage = {
+        name: name,
+        email: email,
+        message: message
+    } 
+    console.log(emailMessage);
+    
+    let response = await fetch("http://localhost:3000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(emailMessage),
+      });
+      setStatus("Submit");
+      let result = await response.json();
+      alert(result.status);
+    };
+
     return (
         
         <div id={'contact'} className='contact-container'>
@@ -21,35 +51,45 @@ function Contact() {
                     <Modal.Title>Contact Form</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form onSubmit={submitForm}>
+                    <Form.Group className="mb-3" controlId="name">
                             <Form.Label>Name</Form.Label>
                             <Form.Control
-                                type="name"
+                                //value={state.name}
+                                onChange={(e) => setName(e.target.value)} 
+                                type="text"
                                 placeholder="Name"
                                 autoFocus
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                        <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
-                                type="email"
+                                //value={state.email}
+                                onChange={(e) => setEmail(e.target.value)} 
+                                type="text"
                                 placeholder="email@example.com"
                                 autoFocus
                             />
                         </Form.Group>
                         <Form.Group
                             className="mb-3"
-                            controlId="exampleForm.ControlTextarea1"
+                            controlId="message"
                         >
                             <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
+                            <Form.Control 
+                                //value={state.message} 
+                                onChange={(e) => setMessage(e.target.value)}  
+                                as="textarea" 
+                                rows={3} 
+                            />
                         </Form.Group>
+                        <Button type="submit" variant="primary" >{status}</Button>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    <Button variant="primary" onClick={handleClose}>Send</Button>
+                    
                 </Modal.Footer>
             </Modal>
         </div>

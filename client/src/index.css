@@ -119,6 +119,11 @@ a:active {
 
 .services-container {
   padding: 100px;
+  background-color: #0d3046;
+}
+
+.services-text-container {
+  color: white;
 }
 
 @media only screen and (device-width: 768px) {
