@@ -10,10 +10,11 @@ function Home() {
     return (
         <div>
         <div className='home-container'>
+        <Navigation/>  
             <div className='logo-container'>
                 <img className='logo' src={logo} alt='evoke neurodiagnostics logo'></img>
             </div>
-            <Navigation/>  
+            
             </div>
             <About/>
            <Services/>
