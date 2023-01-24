@@ -31,8 +31,6 @@ function Contact() {
     } 
     console.log(emailMessage);
     
-    
-    
     let response = await fetch("http://localhost:3000/contact", {
         method: "POST",
         headers: {
@@ -44,9 +42,9 @@ function Contact() {
         success: false,
         message: 'something went wrong, please try again.'
       });
-      //setStatus("Submit");
-      //let result = await response.json();
-      //alert(result.status);
+      setStatus("Submit");
+      let result = await response.json();
+      alert(result.status);
     };
     
     return (
