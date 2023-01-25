@@ -4,12 +4,16 @@ import Navigation from '../Navigation';
 import About from '../About';
 import Services from '../Services';
 import Contact from '../Contact';
-import Team from '../Team';
+import Vision from '../Vision';
+import logo1 from '../../assets/images/logo1.png';
 
 function Home() {
     return (
-        <div>
-        <div className='home-container'>
+        <div >
+        <div className='home-container'
+        style ={{ 
+        }}
+        >
         <Navigation/>  
             <div className='logo-container'>
                 <img className='logo' src={logo} alt='evoke neurodiagnostics logo'></img>
@@ -18,7 +22,7 @@ function Home() {
             </div>
             <About/>
            <Services/>
-           <Team/>
+           <Vision/>
            <Contact/>
         </div>
     )

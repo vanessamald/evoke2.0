@@ -42,7 +42,7 @@ function Navigation() {
                 <div className='line'></div>
                 <a className='navigation-links' href='/#services'>Services</a>
                 <div className='line'></div>
-                <a className='navigation-links' href='/#theteam'>The Team</a>
+                <a className='navigation-links' href='/#ourvision'>Our Vision</a>
                 <div className='line'></div>
                 <a className='navigation-links' href='/#contact'>Contact Us</a>
                 <div className='line'></div>

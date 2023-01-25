@@ -13,14 +13,21 @@ code {
 }
 
 .home-container {
+  /*
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
+  */
+  
+}
+
+.logo-container {
   
 }
 
 .logo {
   width: auto;
   height: 768px;
+  margin-left: 250px;
 }
 
 .menu-btn {
@@ -73,7 +80,7 @@ code {
 .navigation-container {
   height: 100%;
   width: 100%;
-  
+  padding: 200px;
   position: absolute;
   
   top: 0;
@@ -183,6 +190,15 @@ a:active {
   
 }
 
+.about-text-title {
+  
+}
+
+.scd-text {
+  color:#0D3046;
+  font-weight: bold;
+}
+
 .contact-container {
   padding: 100px;
   background-color: #0D3046;
@@ -204,12 +220,14 @@ a:active {
 
   .logo {
     height: auto;
-    width: 250px;
+    width: 300px;
+    margin-left: 0;
+    margin-top: 200px;
+    margin-bottom: 100%;
   }
 
   .logo-container {
     text-align: center;
-    width: 50%;
   }
 
   .navigation-links-container {
@@ -219,10 +237,11 @@ a:active {
   .navigation-container {
     padding-bottom: 100%;
     overflow: hidden;
+    padding: 50px;
   }
 
   .menu-btn {
-    margin-left: 70vw; 
+    margin-left: 75vw; 
   }
   .lines-container {
     margin: 5px;
@@ -230,6 +249,13 @@ a:active {
   }
   .change {
     padding: 10px;
+  }
+
+  .people-icon, .percentage-icon, .percentage-icon2, .lessthanhalf-icon, .thirtyfive-icon {
+    width: 200px;
+  }
+  .about-text-title {
+    font-size: 20px;
   }
 }
 
@@ -242,13 +268,18 @@ a:active {
   color: white;
 }
 
-.team-container {
+.vision-container {
   padding: 100px;
   
   
 }
 
-.team-title {
+.vision-title {
+
+}
+
+.vision-list {
+  list-style: none;
 
 }
 
