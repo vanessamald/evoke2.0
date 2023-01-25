@@ -189,6 +189,12 @@ a:active {
   color: white;
 }
 
+/* About Styling */ 
+.people-icon {
+  
+}
+/* About Styling Ends */ 
+
 /* Mobile Responsive */
 @media only screen and (max-width: 600px) {
   .home-container {
@@ -216,11 +222,14 @@ a:active {
   }
 
   .menu-btn {
-    margin-left: 70vw;
-    
+    margin-left: 70vw; 
   }
   .lines-container {
-    margin: 10px;
+    margin: 5px;
+    padding: 10px;
+  }
+  .change {
+    padding: 10px;
   }
 }
 
