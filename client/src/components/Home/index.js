@@ -6,6 +6,8 @@ import Services from '../Services';
 import Contact from '../Contact';
 import Vision from '../Vision';
 import logo1 from '../../assets/images/logo1.png';
+import logoTransparent from '../../assets/images/EVOKE Official Logo Transparent.png'
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 function Home() {
     return (
@@ -16,7 +18,7 @@ function Home() {
         >
         <Navigation/>  
             <div className='logo-container'>
-                <img className='logo' src={logo} alt='evoke neurodiagnostics logo'></img>
+                <img className='logo' src={logoTransparent} alt='evoke neurodiagnostics logo'></img>
             </div>
             
             </div>
@@ -24,6 +26,11 @@ function Home() {
            <Services/>
            <Vision/>
            <Contact/>
+           <div>
+            <a href="/#">
+                <BsFillArrowUpCircleFill className="arrowup-icon"/>
+            </a>
+           </div>
         </div>
     )
 }
