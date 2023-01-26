@@ -53,10 +53,22 @@ function Contact() {
             <h2>Contact</h2>
             <p>hello@reallygreat.com</p>
         
-            <Button variant="primary" onClick={handleShow}>Send a Message</Button>
+            <Button 
+                style={{
+                    backgroundColor: 'black',
+                    color: 'white',
+                    borderColor: 'white'
+                }}
+                variant="primary" 
+                onClick={handleShow}>Send a Message
+            </Button>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Contact Form</Modal.Title>
+                    <button className='contact-close-btn' variant="secondary" onClick={handleClose}>
+                        <div className='contact-line1'></div>
+                        <div className='contact-line2'></div>
+                    </button>
                 </Modal.Header>
                 <Modal.Body>
                     <div>
@@ -107,13 +119,17 @@ function Contact() {
                                 rows={3} 
                             />
                         </Form.Group>
-                        <Button type="submit" variant="primary" >{status}</Button>
+                        <Button 
+                            style={{
+                                backgroundColor: 'black',
+                                borderColor: 'white'
+
+                            }}
+                            type="submit" 
+                            variant="primary" >{status}
+                        </Button>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    
-                </Modal.Footer>
             </Modal>
         </div>
     )
