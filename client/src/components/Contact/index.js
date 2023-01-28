@@ -55,15 +55,15 @@ function Contact() {
         
             <Button 
                 style={{
-                    backgroundColor: 'black',
-                    color: 'white',
+                    backgroundColor: 'var(--font-color)',
+                    color: 'var(--body-bg-color)',
                     borderColor: 'white'
                 }}
                 variant="primary" 
                 onClick={handleShow}>Send a Message
             </Button>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                     <Modal.Title>Contact Form</Modal.Title>
                     <button className='contact-close-btn' variant="secondary" onClick={handleClose}>
                         <div className='contact-line1'></div>
@@ -121,9 +121,9 @@ function Contact() {
                         </Form.Group>
                         <Button 
                             style={{
-                                backgroundColor: 'black',
-                                borderColor: 'white'
-
+                                backgroundColor: 'var(--body-bg-color)',
+                                color: 'var(--font-color)',
+                                borderColor: 'var(--font-color)'
                             }}
                             type="submit" 
                             variant="primary" >{status}
