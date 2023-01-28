@@ -1,11 +1,28 @@
 import React from 'react';
 import { FiCheckSquare } from "react-icons/fi";
+import earlyDetection from '../../assets/images/earlydetection.PNG';
+import { motion, useTransform, whileInView, useScroll } from 'framer-motion';
 
 function Vision(){
+
+    const { scrollYProgress } = useScroll()
+    const scale = useTransform(scrollYProgress, [0, 2], [0.2, 2]);
+
     return (
+        <motion.div 
+            initial= 'hidden'
+            whileInView='visible'
+            style={{ scale }}
+        >
         <div id={'ourvision'} className='vision-container'>
             <h2 className='vision-title'>Our Vision</h2>
-            <h3>Early Detection</h3>
+
+            <motion.div style={{ scaleY: scrollYProgress}}>
+            <div className='early-detection-container'>
+                <img className='early-detection-image' src={earlyDetection}></img>
+            </div>
+            
+            
             <p>The Brainview can help identify:</p>
                  <ul className='vision-list'>
                     <li>
@@ -30,7 +47,10 @@ function Vision(){
                         <FiCheckSquare/> Sleep apnea and more!
                     </li>
                 </ul>
-        </div>
+                </motion.div>
+            </div>
+            
+        </motion.div>
     )
 }
 
