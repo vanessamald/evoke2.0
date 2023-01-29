@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../../assets/images/EVOKE_Official_Logo.png';
 import Navigation from '../Navigation';
@@ -9,9 +9,10 @@ import Vision from '../Vision';
 import logo1 from '../../assets/images/logo1.png';
 import logoTransparent from '../../assets/images/EVOKE Official Logo Transparent.png'
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import Footer from '../Footer';
 
 function Home() {
-    
+    // theme and toggler
     const [ isOn, setIsOn ] = useState(false);
     const [ theme, setTheme ] = useState('dark');
 
@@ -28,13 +29,18 @@ function Home() {
             console.log('theme is DARK')
         } 
     }
+    // set scrolling 
+    const [scroll, setScroll] = useState(0);
+    const [ arrow, setArrowStyle] = useState('arrowup-icon-hide');
     
+    const scrollingArrow = (event) => {
+        setScroll(event.currentTarget.scroll);
+        
+        setArrowStyle('arrowup-icon');
+    }
 
     return (
-        <div className={theme}>
-            
-       
-
+        <div className={theme} >
         <div 
         style ={{ 
         }}
@@ -47,7 +53,7 @@ function Home() {
                 onClick={themeToggler}
                 style={{ 
                     justifyContent: isOn ? 'flex-end' : 'flex-start',
-                    backgroundImage: isOn ? 'radial-gradient(circle farthest-corner at 10% 20%, rgba(253,203,50,1) 0%, rgba(244,56,98,1) 100.2%)' : 'linear-gradient(109.8deg, rgba(62,5,116,1) -5.2%, rgba(41,14,151,1) -5.2%, rgba(216,68,148,1) 103.3%)',
+                    backgroundImage: isOn ? 'radial-gradient(circle farthest-corner at 10% 20%, rgba(33, 129, 193, 1) 0%, rgba(108, 229, 232, 1) 100.2%)' : 'linear-gradient(109.8deg, rgba(62,5,116,1) -5.2%, rgba(41,14,151,1) -5.2%, rgba(216,68,148,1) 103.3%)',
                     
                 }}  
             >
@@ -68,7 +74,7 @@ function Home() {
 
 
 
-            <div className='logo-container'>
+            <div className='logo-container' onScroll={scrollingArrow}>
                 <img className='logo' src={logoTransparent} alt='evoke neurodiagnostics logo'></img>
             </div>
             
@@ -77,11 +83,13 @@ function Home() {
            <Services/>
            <Vision/>
            <Contact/>
+           
            <div>
             <a href="/#">
-                <BsFillArrowUpCircleFill className="arrowup-icon"/>
+                <BsFillArrowUpCircleFill className={arrow}/>
             </a>
            </div>
+           <Footer/>
         </div>
     )
 }
