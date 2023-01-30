@@ -510,6 +510,17 @@ a:active {
 
 /* Footer Ends */
 
+/* Privacy Styling */
+.privacy-policy-container {
+  padding: 100px;
+  background-color: var(--body-bg-color);
+}
+
+.privacy-policy-content {
+
+}
+/* Privacy Policy Styling */
+
 /* Mobile Responsiveness */
 
 @media only screen and (max-width: 600px) {
