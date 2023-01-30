@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import About from './components/About';
 import Home from './components/Home';
+import Privacy from './components/Privacy';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -15,7 +17,14 @@ function App() {
   return (
     <div>
       <main>
-        <Home></Home>
+        
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
+          <Route path='/privacypolicy' element ={<Privacy/>}></Route>
+        </Routes> 
+        </BrowserRouter>
       </main>
     </div>
   );

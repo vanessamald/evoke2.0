@@ -4,7 +4,7 @@ function Footer () {
     return (
         <div className='footer-container'>
             <div className='footer-content'>
-                <p className='footer-links'>Privacy Policy</p>
+                <a className='footer-links' href='/privacypolicy'>Privacy Policy</a>
                 <p className='footer-links'>Revivir Studio   X   Sweet Song Marketing    X    Evoke LLC &copy;2023</p>
             </div>
         </div>

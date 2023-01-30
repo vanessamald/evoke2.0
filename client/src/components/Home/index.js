@@ -31,16 +31,16 @@ function Home() {
     }
     // set scrolling 
     const [scroll, setScroll] = useState(0);
-    const [ arrow, setArrowStyle] = useState('arrowup-icon-hide');
+    const [ arrow, setArrow] = useState('arrowup-icon-hide');
     
     const scrollingArrow = (event) => {
         setScroll(event.currentTarget.scroll);
         
-        setArrowStyle('arrowup-icon');
+        setArrow('arrowup-icon');
     }
 
     return (
-        <div className={theme} >
+        <div className={theme} onScroll={scrollingArrow}>
         <div 
         style ={{ 
         }}
@@ -74,22 +74,23 @@ function Home() {
 
 
 
-            <div className='logo-container' onScroll={scrollingArrow}>
+            <div className='logo-container' >
                 <img className='logo' src={logoTransparent} alt='evoke neurodiagnostics logo'></img>
             </div>
             
             </div>
             <About/>
-           <Services/>
+            <Services/>
+           
            <Vision/>
+           
            <Contact/>
            
-           <div>
-            <a href="/#">
-                <BsFillArrowUpCircleFill className={arrow}/>
-            </a>
-           </div>
-           <Footer/>
+                <a href="/#">
+                    <BsFillArrowUpCircleFill className='arrowup-icon'/>
+                </a>
+            
+            <Footer/> 
         </div>
     )
 }

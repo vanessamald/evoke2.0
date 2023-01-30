@@ -191,7 +191,8 @@ code {
   height: 60px;
   margin-left: 90vw;
   margin-bottom: 20px;
-  color: white;
+  background-color: transparent;
+  
   position: fixed;
   bottom: 0;
   animation: fadeIn 8s linear;
@@ -256,12 +257,24 @@ code {
 
   }
 }
+
+@keyframes slideOut {
+  0% {
+    margin-left: 100px;
+  }
+  50% {
+    margin-left: 400px;
+  }
+  100% {
+    margin-left:800px;
+  }
+}
 /* Animations End */
 
 /* About Styling */ 
 
 .people-icon {
-  
+  width: 100%;
 }
 .about-title {
   
@@ -281,10 +294,108 @@ code {
   padding: 100px;
 }
 
+
+
 .about-image-container {
   display: flex;
   justify-content: center;
 }
+
+/*
+.about-content {
+  visibility: hidden;
+  height: 0px;
+}
+*/
+
+.about-links-container {
+  width: 100%;
+  display: block;
+  border-style: solid;
+  border-color: var(--font-color);
+  border-radius: 100px;
+  padding: 30px;
+  margin-bottom: 10px;
+  color: var(--font-color);
+  background-color: var(--body-bg-color);
+  font-size: 24px;
+  
+ 
+}
+
+.about-links-icon {
+  background-color: transparent;
+  margin-right: 600px;
+}
+
+.about-icon-reverse {
+  background-color: transparent;
+  margin-right: 600px;
+  transform: rotate(-90deg);
+  transition-delay: 3s;
+}
+
+.about-content1-hidden {
+  visibility: hidden;
+}
+
+.about-content1 {
+  position: absolute;
+
+  visibility: visible;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: var(--font-color);
+  padding: 50px;
+}
+
+
+.about-links-container:hover {
+  background-color: var(--font-color);
+  color: var(--body-bg-color);
+}
+
+.about-button-hide {
+  
+  animation: slideOut 3s linear;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  border-style: solid;
+  border-color: var(--font-color);
+  border-radius: 100px;
+  padding: 40px;
+  margin-bottom: 10px;
+  color: var(--font-color);
+  background-color: var(--body-bg-color);
+  font-size: 24px;
+  
+}
+
+
+/*
+.about-content1, .about-content2, .about-content3, .about-content4, .about-content5 {
+
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: var(--font-color);
+  padding: 50px;
+}
+*/
+
+/*
+.about-content1:hover {
+  border-style: solid;
+  border-width: 10px;
+}
+*/
 /* About Styling Ends */ 
 
 /* Link Styling */
@@ -387,13 +498,14 @@ a:active {
   display: flex;
   flex-direction: row;
   background-color: var(--font-color);
+  padding-right: 100px;
 }
 
 .footer-links {
   background-color: var(--font-color);
   color: var(--body-bg-color);
   padding: 20px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* Footer Ends */
@@ -456,6 +568,9 @@ a:active {
   .early-detection-image {
     width: 225px;
     height: auto;
+  }
+  .about-container, .contact-container, .services-container, .vision-container {
+    padding: 50px;
   }
 }
 

@@ -38,7 +38,7 @@ function Navigation() {
         {toggle ?
         <div className='navigation-container' >
             <div className='navigation-links-container'>
-                <a className='navigation-links' href='/#about'>About</a>
+                <a className='navigation-links' href='/about'>About</a>
                 <div className='line'></div>
                 <a className='navigation-links' href='/#services'>Services</a>
                 <div className='line'></div>
