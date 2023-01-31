@@ -7,9 +7,6 @@ function Vision() {
             <h2>Our Vision</h2>
             <h3>Early Detection</h3>
                 <p>
-                    provides a "lab test for the brain that can be performed in a doctor's office to assess for potential cognitive disorders. 
-                </p>
-                <p>
                 Our mission is to provide comprehensive and compassionate cognitive impairment testing for older adults, 
                 helping to diagnose age-related cognitive decline and related conditions. We are dedicated to delivering high-quality, 
                 evidence-based testing services, using state-of-the-art technology by empowering older adults and their families with 

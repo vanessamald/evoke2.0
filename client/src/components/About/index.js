@@ -5,11 +5,16 @@ import percentage2 from '../../assets/images/percentage2.png';
 import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsArrowUpRight } from 'react-icons/bs';
-import { InView,  inView, ref } from 'react-intersection-observer';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import { motion } from 'framer-motion';
 
-
 function About(){
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     //const [ info, setInfo ] = useState('about-content1-hidden');
     const [ button, setButton ] = useState('about-links-container')
     const [ icon, setIcon ] = useState('about-links-icon')
@@ -23,78 +28,138 @@ function About(){
         setButton('about-button-hide')
         setIcon('about-icon-reverse')
     }
+    const [isOpen, setIsOpen] = useState(false)
+
+    const variants = {
+        open: { 
+            opacity: 1, 
+            y: 0, 
+            position:'absolute', 
+            width: '100%',
+            height: '100%',
+            zIndex: '1',
+            //backgroundColor:'white',
+            //color: 'black',
+            transition: {
+                y: { 
+                    stiffness: 1000, 
+                    velocity: -100 ,
+                }
+          } },
+        closed: { 
+            opacity: 0, 
+            y: "-100%" 
+        },
+    }
  
     return (
+        
         <div style={{position:'relative',}}>
-        <div id={'about'} className='about-container' style={{marginBottom:'500px'}}>
+        <div id={'about'} className='about-container' style={{}}>
             <h2 className='about-container-title'>About</h2>
             <p>
-            Our company offers cognitive impairment testing services designed to assess the biomarkers of cognitive decline. With a focus on preventative care and early detection, our testing services aim to provide individuals with the information and support they need to maintain their cognitive health and independence. Our testing process is non-invasive, confidential, and tailored to the unique needs of each individual.
+            Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of cognitive decline. With a focus on preventative care and early detection, our testing services aim to provide individuals with the information and support they need to maintain their cognitive health and independence. Our testing process is non-invasive, confidential, and tailored to the unique needs of each individual.
             We believe that everyone deserves access to the information that can help maintain their cognitive health throughout the lifespan.
             </p>
 
-            <h3>Reasons to test for cognitive impairment in older adults:</h3>
-            <p>
-            1.	Changes in memory or thinking ability
-            2.	Difficulty performing daily tasks
-            3.	Confusion or disorientation
-            4.	Mood swings or depression
-            5.	Withdrawal from social activities
-            6.	Loss of initiative or motivation
-            7.	Speech problems
-            8.	Decreased ability to handle finances or make decisions
-            9.	Suspected neurological disorders (e.g. Alzheimer's, dementia)
-            10.	To determine appropriate medical or support interventions.
-            </p>
+            <div style={{marginTop: '50px'}}>
+            <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
+                        <div style={{backgroundColor: 'transparent', width: '40px'}}>
+                            <BsArrowUpRight className={icon}/>
+                        </div>
+                    Why test early?
+            </button>
+            <motion.div style={{ height: '0px'}}
+            animate={isOpen ? 'open' : 'closed'}
+            variants = {variants}
+            //fill="transparent"
+            //strokeWidth="3"
+            //stroke="hsl(0, 0%, 18%)"
+           // strokeLinecap="round"
+            >
+                
+           <h3>Reasons for cognitive impairment testing in adults:</h3>
+                <ol>
+                    <li>Changes in memory or thinking ability</li>
+                    <li>Difficulty performing daily tasks</li>
+                    <li>Confusion or disorientation</li>
+                    <li>Mood swings or depression</li>
+                    <li>Withdrawal from social activities</li>
+                    <li>Loss of initiative or motivation</li>
+                    <li>Speech problems</li>
+                    <li>Decreased ability to handle finances or make decisions</li>
+                    <li>Suspected neurological disorders (e.g. Alzheimer's, dementia)</li>
+                    <li>To determine appropriate medical or support interventions.</li>
+                </ol>
+                
+            </motion.div>
 
-            <h3>Reasons for medical professionals to use our services:</h3>
-            <p>1.	To identify early signs of cognitive decline
-            2.	To facilitate early diagnosis and treatment of potential causes
-            3.	To track changes over time
-            4.	To provide personalized interventions to maintain or improve cognitive function
-            5.	To provide reassurance and support to patients and their families
-            6.	To inform advance care planning and decision-making
-            7.	To promote healthy lifestyle choices and habits that support brain health.
-            </p>
-            <div style={{position:'relative'}}>
-                <div style={{position: 'relative', borderRadius: '100px', marginLeft: '50px'}}>
-                    <h3 style={{position: 'relative', paddingTop: '30px', zIndex: '0', fontSize: '2vw'}}>1 in 10 Adults 45 and Older Are affected by Subjective Cognitive Decline (SCD)</h3>
-                    <img src={people} className='' style={{height: '100px', width: 'auto'}}></img>
-                </div>        
-                <button disabled={false} className={button} onClick={handleClick} style={{position: 'absolute', width: '100%', marginTop: '-150px', backgrondColor: 'transparent'}}>
+            
+            <button disabled={false} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                         <div style={{backgroundColor: 'transparent', width: '40px'}}>
                             <BsArrowUpRight className={icon}/>
                         </div>
-                    Subjective Cognitive Decline
-                </button>
-                <button disabled={false} className={button} onClick={handleClick} style={{position: 'absolute', width: '100%', marginTop: '0px', backgrondColor: 'transparent'}}>
+                    Warning Signs
+            </button>
+            <button disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                         <div style={{backgroundColor: 'transparent', width: '40px'}}>
                             <BsArrowUpRight className={icon}/>
                         </div>
-                    Daily Activities
-                </button>
-                <button disabled={false} className={button} onClick={handleClick} style={{position: 'absolute', width: '100%', marginTop: '150px', backgrondColor: 'transparent'}}>
-                        <div style={{backgroundColor: 'transparent', width: '40px'}}>
-                            <BsArrowUpRight className={icon}/>
-                        </div>
-                    Medical Care
-                </button>
-                <button disabled={false} className={button} onClick={handleClick} style={{position: 'absolute', width: '100%', marginTop: '300px', backgrondColor: 'transparent'}}>
-                        <div style={{backgroundColor: 'transparent', width: '40px'}}>
-                            <BsArrowUpRight className={icon}/>
-                        </div>
-                    Diagnosis
-                </button>
-                <button disabled={false} className={button} onClick={handleClick} style={{position: 'absolute', width: '100%', marginTop: '450px', backgrondColor: 'transparent'}}>
-                        <div style={{backgroundColor: 'transparent', width: '40px'}}>
-                            <BsArrowUpRight className={icon}/>
-                        </div>
-                    Awareness
-                </button>
+                    By the Numbers
+            </button>
 
+
+                
             </div>
+
+            <div>
+                <h3>Reasons for medical professionals to use our services:</h3>
+                <ol>
+                    <li>To identify early signs of cognitive decline</li>
+                    <li>To facilitate early diagnosis and treatment of potential causes</li>
+                    <li>To track changes over time</li>
+                    <li>To provide personalized interventions to maintain or improve cognitive function</li>
+                    <li>To provide reassurance and support to patients and their families</li>
+                    <li>To inform advance care planning and decision-making</li>
+                    <li>To promote healthy lifestyle choices and habits that support brain health.</li>
+                </ol>
+            </div>
+            <h3>Learn More About Cognitive Impairment in the United States</h3>
+            </div>
+
+{/*
+            <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'} 
+                style={{
+                    
+                }}
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+              <h3>Reasons for cognitive impairment testing in adults:</h3>
+                <ol>
+                    <li>Changes in memory or thinking ability</li>
+                    <li>Difficulty performing daily tasks</li>
+                    <li>Confusion or disorientation</li>
+                    <li>Mood swings or depression</li>
+                    <li>Withdrawal from social activities</li>
+                    <li>Loss of initiative or motivation</li>
+                    <li>Speech problems</li>
+                    <li>Decreased ability to handle finances or make decisions</li>
+                    <li>Suspected neurological disorders (e.g. Alzheimer's, dementia)</li>
+                    <li>To determine appropriate medical or support interventions.</li>
+                </ol>
+              </Offcanvas.Body>
+            </Offcanvas>
+
+*/}
+           
+
+        
+               
         </div>
-        </div>
+ 
 
 
                 /* 

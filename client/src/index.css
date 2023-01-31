@@ -5,6 +5,7 @@
   */
   background-color: var(--body-bg-color);
   color: var(--font-color);
+  
 }
 
 body {
@@ -34,13 +35,17 @@ code {
 .logo-container {
   display: flex;
   justify-content: center;
+  
+  align-items: center;
+
 }
 
 .logo {
-  width: auto;
-  height: 768px;
+  width: 75%;
+  height: auto;
   opacity: 1;
   animation: fade 4s linear;
+  margin-bottom: 100px;
 }
 /* Home Styling Ends */
 
@@ -340,10 +345,10 @@ code {
 }
 
 .about-content1 {
-  position: absolute;
+  position: relative;
 
   visibility: visible;
-  margin-top: 100px;
+  
   display: flex;
   flex-direction: column;
   border-radius: 2px;
@@ -427,7 +432,6 @@ a:active {
 .contact-close-btn {
   padding: 10px;
   border-radius: 50%;
-  margin-left: 325px; 
 }
 
 .contact-close-btn:hover {
@@ -519,6 +523,16 @@ a:active {
 .privacy-policy-content {
 
 }
+
+.back-arrow-icon {
+  width: 60px;
+  height: 60px;
+  color: black;
+}
+
+.back-arrow-icon:hover {
+  
+}
 /* Privacy Policy Styling */
 
 /* Mobile Responsiveness */
@@ -533,7 +547,7 @@ a:active {
     height: auto;
     width: 100%;
     margin-left: 0;
-    margin-top: 200px;
+    margin-top: 100px;
     margin-bottom: 100%;
     
   }
@@ -582,6 +596,7 @@ a:active {
   }
   .about-container, .contact-container, .services-container, .vision-container {
     padding: 50px;
+    overflow: hidden;
   }
 }
 

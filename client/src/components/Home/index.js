@@ -80,7 +80,7 @@ function Home() {
             
             </div>
             <About/>
-            <Services/>
+            
            
            <Vision/>
            
