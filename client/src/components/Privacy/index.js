@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
+
 function Privacy() {
     return (
         <div className='privacy-policy-container'>
