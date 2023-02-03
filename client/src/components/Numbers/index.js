@@ -5,7 +5,6 @@ import percentage2 from '../../assets/images/percentage2.png';
 import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import ReactCurvedText from "react-curved-text";
 
 function Numbers() {
 
