@@ -280,6 +280,15 @@ code {
   0% {
     transform: rotate(360deg);
   }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes moveText {
+  0% { bottom: -0.2em; opacity: 1; }
+  50% { bottom: 0.2em; }
+  100% { bottom: 0; opacity: 1; }
 }
 /* Animations End */
 
@@ -862,4 +871,63 @@ a:active {
   font-size: 16px;
   line-height: 1.4;
   letter-spacing: -0.02em;
+}
+
+/*
+.scroll-text span span {
+  position: relative;
+  opacity: 0;
+  animation: moveText 0.75s forwards;
+}
+
+.scroll-text span {
+  min-width: 0.5em;
+  text-align: center;
+  padding: 30px;
+  margin: 0px;
+  
+}
+
+
+textPath {
+  fill: white;
+  animation: rotateText 3s linear infinite;
+  
+}
+*/
+
+
+.scroll-text {
+  top: 0;
+  position: absolute;
+}
+
+
+.scroll-text span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 60px;
+  
+}
+
+.scroll-text span span {
+  
+}
+
+.scroll-down-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateText 5s linear infinite;
+  
+}
+
+.scrolling-letters {
+  
+  
+  
 }

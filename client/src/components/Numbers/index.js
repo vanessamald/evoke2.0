@@ -5,19 +5,34 @@ import percentage2 from '../../assets/images/percentage2.png';
 import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
+import ReactCurvedText from "react-curved-text";
 
 function Numbers() {
 
-    const text = 'Scroll Down';
+    const text = 'scrolldown';
     const SplitText = () => {
         return (
         <span >
         {text.split("").map(function(char, index){
-            return <span key={index} style={{transform:`'rotate(${index * 5}deg)`, position: 'absolute', fontSize:'1.2em', left: '50%', transformOrigin: '0 100px'}}>{char}</span>;
+
+            const style = {"animation-delay": (0.5 + index / 10) + "s"};
+            console.log(style);
+            //const rotateText = {"transform": "rotate(5deg)"}
+            const rotateText = {
+                transform: 'rotate' +  `(${index * 35}deg)`,
+               // animation: 'rotateText 10s linear infinite',
+                
+            };
+            
+
+            return <span key={index} id={index} className='scrolling-letters' style={rotateText}>{char}</span>
+            ;
         })}
         </span>
         );
     }
+
+    
  
     return (
 
@@ -27,13 +42,32 @@ function Numbers() {
             <div class="section-radius"></div>
             <h1 class="heading-xl text-center" style={{fontSize: '7rem'}}>Cognitive Decline in the U.S.</h1>
 
-
-            <BsFillArrowDownCircleFill style={{display: 'flex', justifyContent: 'center', width: '60px', height: '60px', position: 'relative', alignItems: 'center'}}/>
-            <div style={{marginBottom: '100px'}}>
-                <div style={{position: 'absolute', animation: 'rotateText 10s linear infinite'}}>
-                    <SplitText style={{}}/>
-                </div>
+            <BsFillArrowDownCircleFill style={{ top:'40px', display: 'flex', justifyContent: 'center', width: '60px', height: '60px', position: 'relative', alignItems: 'center', justifyContent: 'center'}}/>
+            <div className='scroll-down-container' style={{marginTop: '-50px'}}>
+            <div className='scroll-text'>
+                <SplitText/> 
             </div>
+            
+    
+            </div>
+            
+              
+            {/* 
+            <ReactCurvedText className='scroll-text'
+                        width={370}
+                        height={40}
+                        cx={190}
+                        cy={120}
+                        rx={100}
+                        ry={100}
+                        startOffset={100}
+                        reversed={true}
+                        text={text}
+                        textProps={{ style: {animation: 'moveText 10s linear infinite', position:'absolute'} }}
+                    />
+                    */}
+            
+            
             
            
             

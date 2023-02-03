@@ -101,12 +101,12 @@ function About(){
             </div>
             
             </div>
-            <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'} 
+            <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'} closeButton
                 style={{
                     height: '100%'
                 }}
             >
-              <Offcanvas.Body closeButton style={{padding: '0px'}}>
+              <Offcanvas.Body  style={{padding: '0px'}}>
                     <Numbers/>
               </Offcanvas.Body>
             </Offcanvas>      
