@@ -32,7 +32,7 @@ function Privacy() {
                 <li>Access to Personal Information: You have the right to access, update, and delete your personal information at any time. Please contact us if you need to exercise these rights.</li>
             </ul>
             <p>Changes to Privacy Policy: We may update this Privacy Policy from time to time to reflect changes in our practices or services. We will notify you of any material changes by posting the updated policy on our website.</p>
-            <p>Contact Us: If you have any questions or concerns about our privacy policy, please contact us at [Insert Email].</p>
+            <p>Contact Us: If you have any questions or concerns about our privacy policy, please contact us at hello@evokediagnostics.com</p>
             </div>
             <a href='/'>
                 <BsFillArrowLeftCircleFill className='back-arrow-icon'/>

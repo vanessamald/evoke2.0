@@ -148,7 +148,6 @@ code {
 }
 
 .navigation-container {
-  height: 100%;
   width: 100%;
   padding: 150px;
   position: absolute;
@@ -563,7 +562,6 @@ a:active {
 
 .footer-container {
   padding-top: 100px;
-  padding-left: 100px;
   padding-bottom: 0px;
   background-color: var(--font-color);
 }
@@ -591,13 +589,13 @@ a:active {
 }
 
 .privacy-policy-content {
-
+  color: var(--font-color);
 }
 
 .back-arrow-icon {
   width: 60px;
   height: 60px;
-  color: black;
+  color: var(--font-color);
 }
 
 .back-arrow-icon:hover {
