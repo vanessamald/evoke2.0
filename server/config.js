@@ -4,7 +4,7 @@ dotenv.config();
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
-    port: 465,
+    port: process.env.MAIL_PORT,
     secure: true,
     logger: true,
     debug:true,
@@ -15,6 +15,7 @@ var transporter = nodemailer.createTransport({
     },
     tls:{
         rejectUnAuthorized: true
+        //ciphers: 'SSLv3'
     }
 });
 

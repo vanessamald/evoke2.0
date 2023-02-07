@@ -276,6 +276,7 @@ code {
   }
 }
 
+
 @keyframes rotateText {
   0% {
     transform: rotate(360deg);
@@ -283,6 +284,23 @@ code {
   100% {
     transform: rotate(0deg);
   }
+}
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+    }
+    50% {
+      transform: translateY(50%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    
+    }
 }
 
 @keyframes moveText {
@@ -454,12 +472,12 @@ a:active {
 
 .contact-line1 {
   transform: translate(0, 6px) rotate(-45deg);
-  background-color: var(--font-color);
+  background-color: var(--body-bg-color);
 }
 
 .contact-line2 {
   transform: translate(0, -6px) rotate(45deg);
-  background-color: var(--font-color);
+  background-color: var(--body-bg-color);
 }
 /* Contact Styling Ends */
 
@@ -649,6 +667,9 @@ a:active {
   .about-container, .contact-container, .services-container, .vision-container {
     padding: 50px;
     overflow: hidden;
+  }
+  .close-offcanvas {
+    margin-left: 75vw;
   }
 }
 
@@ -857,6 +878,7 @@ a:active {
   transform-style: preserve-3d;
 }
 
+/*
 .section-head-bg-extension {
   position: absolute;
   left: 0%;
@@ -866,6 +888,7 @@ a:active {
   width: 100%;
   height: 5rem;
 }
+*/
 
 .c-body {
   font-size: 16px;
@@ -915,6 +938,7 @@ textPath {
 }
 
 .scroll-down-container {
+  margin-bottom: 100%;
   position: relative;
   width: 120px;
   height: 120px;
@@ -922,8 +946,8 @@ textPath {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: rotateText 5s linear infinite;
-  
+  animation: rotateText 7s linear infinite;
+  margin-top: -50px;
 }
 
 .scrolling-letters {
@@ -931,3 +955,40 @@ textPath {
   
   
 }
+
+.close-offcanvas {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  padding-top: 0px;
+  z-index: 1;
+  border-radius: 50%;
+  border-color: var(--font-color);
+  transition: transform .7s ease-in-out;
+  margin-left: 90vw;
+  color: white;
+  opacity: 1;
+}
+
+.close-line1, .close-line2{
+  width: 35px;
+  height: 2px;
+  background-color: white;
+  
+  transition: 0.4s;
+  transform: translate(0, 2px) rotate(45deg);
+}
+
+.close-line1 {
+  transform: translate(0, 5px) rotate(-45deg);
+}
+
+.numbers-title {
+  animation: slideUp 1s linear;
+}
+
+/* About motion div styling */
+.motion-div {
+ 
+}
+  

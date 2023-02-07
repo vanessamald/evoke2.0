@@ -5,8 +5,51 @@ import percentage2 from '../../assets/images/percentage2.png';
 import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 function Numbers() {
+    const [ offset, setOffset ] = useState(0);
+    const [ visible, setVisible ] = useState(true);
+    const [height, setHeight] = useState(0)
+
+    const [ animation, setAnimation ] = useState();
+    
+
+    useEffect(() => {
+        setOffset(window.pageYOffset);
+        
+        
+        window.addEventListener('scroll', scrollTrigger, {passive: true});
+        return () => window.removeEventListener('scroll', scrollTrigger);
+    },
+    
+    []);
+
+    const scrollTrigger = () => {
+
+        window.addEventListener('scroll', () => {
+            document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+          }, false);
+
+
+        let scrollHeight = 200;
+        const winScroll = document.body.scrollTop || 
+        document.documentElement.scrollTop;
+    setHeight(winScroll);
+
+    if (winScroll > scrollHeight) {  
+         visible && setVisible(false);
+        
+         //const scrollingText = {animation: 'rotateText' + ' ' + `${offset/100 *2}` +'s' + ' ' + 'linear infinite'};
+            //console.log(scrollingText);
+            //setAnimation(scrollingText);
+
+    } else {
+         setVisible(true);
+
+    }
+    }
+    console.log(offset);
 
     const text = 'scrolldown';
     const SplitText = () => {
@@ -15,7 +58,7 @@ function Numbers() {
         {text.split("").map(function(char, index){
 
             const style = {"animation-delay": (0.5 + index / 10) + "s"};
-            console.log(style);
+            
             //const rotateText = {"transform": "rotate(5deg)"}
             const rotateText = {
                 transform: 'rotate' +  `(${index * 35}deg)`,
@@ -23,7 +66,6 @@ function Numbers() {
                 
             };
             
-
             return <span key={index} id={index} className='scrolling-letters' style={rotateText}>{char}</span>
             ;
         })}
@@ -35,19 +77,17 @@ function Numbers() {
  
     return (
 
-        <div class="page">
-        <div id="content" class="main">
-          <section class="section s-hero s-hero-versions">
-            <div class="section-radius"></div>
-            <h1 class="heading-xl text-center" style={{fontSize: '7rem'}}>Cognitive Decline in the U.S.</h1>
+        <div className="page">
+        <div id="content" className="main">
+          <section className="section s-hero s-hero-versions">
+            <div className="section-radius"></div>
+            <h1 className="heading-xl text-center numbers-title">Cognitive Decline in the U.S.</h1>
 
             <BsFillArrowDownCircleFill style={{ top:'40px', display: 'flex', justifyContent: 'center', width: '60px', height: '60px', position: 'relative', alignItems: 'center', justifyContent: 'center'}}/>
-            <div className='scroll-down-container' style={{marginTop: '-50px'}}>
-            <div className='scroll-text'>
-                <SplitText/> 
-            </div>
-            
-    
+            <div className='scroll-down-container'>
+                <div className='scroll-text'>
+                    <SplitText/> 
+                </div>
             </div>
             
               
@@ -73,13 +113,15 @@ function Numbers() {
             
             
             
-
-            <div class="container-max">
+            {
+        visible 
+         && 
+            <div className="container-max">
                     <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
                         <img src={people} className='people-icon'></img>
                     </div>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                        <h2 class="heading-xl text-center">1 in 10 Adults 45 and Older </h2>
+                        <h2 className="heading-xl text-center">1 in 10 Adults 45 and Older </h2>
                         <h3>Are affected by Subjective Cognitive Decline (SCD)</h3>
                         <p><span className='scd-text'><em>Subjective Cognitive Decline</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
                     </div>
@@ -88,15 +130,18 @@ function Numbers() {
                     
                 <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid white', borderBottom: '5px solid white'}}>
                         <h3 className='' style={{marginRight: '', fontSize: '48px'}}>41% </h3>
-                        <h3 style={{fontSize: '24px'}}>of Adults with <abr>SCD</abr> Have Given Up Daily Activities</h3>
+                        <h3 style={{fontSize: '24px'}}>of Adults with SCD Have Given Up Daily Activities</h3>
                 </div>
                 <div className='about-image-container'>
                         <img src={percentage} className='percentage-icon'></img>
                     </div>
                 </div>
+            
             </div>
+}
           </section>
-          <div class="section s-heading-first background-blurple z-9"> 
+            
+          <div className="section s-heading-first background-blurple z-9"> 
           <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                 <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid black', borderBottom: '3px solid black'}}>
                         <h3 className='' style={{marginRight: '', fontSize: '48px'}}>Only 42% </h3>
@@ -107,9 +152,9 @@ function Numbers() {
                     </div>
                 </div>
           </div>
-          <section class="section s-radius sr-large background-blurple z-9">
-            <div class="container-max">
-              <div class="card-content2">
+          <section className="section s-radius sr-large background-blurple z-9">
+            <div className="container-max">
+              <div className="card-content2">
                 
                
                 
@@ -117,25 +162,38 @@ function Numbers() {
                 <div className='about-image-container'>
                     <img src={lessThanHalf} className='lessthanhalf-icon'></img>
                 </div>
-                <h2 class="heading-xl text-center">Less Than Half of Adults</h2>
-                <h2 class="text-center">With Dementia Have Been Diagnosed</h2>
+                <h2 className="heading-xl text-center">Less Than Half of Adults</h2>
+                <h2 className="text-center">With Dementia Have Been Diagnosed</h2>
               </div>
             </div>
           </section>
 
       
     
-          <div class="section s-heading background-white z-7">
-            <div class="section-head-bg-extension background-white"></div>
-            <div class="container-max">
+          <div className="section s-heading background-white z-7">
+            <div className="section-head-bg-extension background-white"></div>
+            <div className="container-max">
               
             <div className='about-image-container'>
                     <img src={thirtyfive} className='thirtyfive-icon'></img>
                 </div>
-            <h2 class="heading-xl text-center">Yet Only 35% Know They Have the Disease</h2>
+            <h2 className="heading-xl text-center">Yet Only 35% Know They Have the Disease</h2>
             <h3 className=''></h3>
             </div>
           </div>
+
+          <section className="section s-radius sr-large background-white z-9">
+            <div className="container-max">
+              <div className="card-content2">
+                
+               
+                
+
+                <div className='about-image-container'>
+                   </div>
+              </div>
+            </div>
+          </section>
     
           <br />
           <br />
@@ -154,63 +212,25 @@ function Numbers() {
           <br />
           <br />
           <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
+      
       </div>
 
-        /*
-        <div>
-            <div className='numbers-stack'>
-                <div>
 
-                <div className='numbers-card' id='numbers1'>
-                    <div className='about-image-container'>
-                        <img src={people} className='people-icon'></img>
-                    </div>
-                    <h3 className='about-text-title'>1 in 10 Adults 45 and Older Are affected by Subjective Cognitive Decline (SCD)</h3>
-                    <p><span className='scd-text'><em>Subjective Cognitive Decline</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
-                    </div>
-                </div>
-            
-          
-
-            <div className='numbers-card' id='numbers2'>
-                <div className='about-image-container'>
-                    <img src={percentage} className='percentage-icon'></img>
-                </div>
-                <h3 className=''>41% of Adults with <abr>SCD</abr> Have Given Up Daily Activities</h3>
-            </div>
-      
-            {
-        isVisible 
-         && 
-            <div className='numbers-card' id='numbers3'>
-                <div className='about-image-container'>
-                    <img src={percentage2} className='percentage-icon2'></img>
-                </div>
-                <h3 className=''>42% of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
-            </div>
-}
-            <div className='numbers-card' id='numbers3'>
-                <div className='about-image-container'>
-                    <img src={lessThanHalf} className='lessthanhalf-icon'></img>
-                </div>
-                <h3 className=''>Less Than Half of Adults with Dementia Have Been Diagnosed</h3>
-            </div>
-
-            {
-        isVisible 
-         && 
-            <div className='numbers-card' id='numbers4'>
-                <div className='about-image-container'>
-                    <img src={thirtyfive} className='thirtyfive-icon'></img>
-                </div>
-            <h3 className=''>Yet Only 35% Know They Have the Disease</h3>
-            </div>
-}
-</div>
-        </div>
-        
-      */ 
     )
 }
 

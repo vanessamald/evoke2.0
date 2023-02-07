@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
 import { BsArrowUpRight } from 'react-icons/bs';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { motion } from 'framer-motion';
 import Numbers from '../Numbers/index';
@@ -17,15 +17,18 @@ function About(){
     const [ icon, setIcon ] = useState('about-links-icon')
 
     // motion div
-    const [isOpen, setIsOpen] = useState(false)
+    const [ isOpen, setIsOpen ] = useState(false)
+    const [ isOpen1, setIsOpen1 ] = useState(false);
+
     const variants = {
         open: { 
             opacity: 1, 
             y: 0, 
             position:'absolute', 
             zIndex: '1',
-            backgroundColor:'white',
-            //color: 'black',
+            textAlign: 'center',
+            height: '100%',
+            padding: '50px',
             transition: {
                 y: { 
                     stiffness: 1000, 
@@ -56,13 +59,13 @@ function About(){
             <motion.div style={{ height: '0px', width: '80%'}}
                 animate={isOpen ? 'open' : 'closed'}
                 variants = {variants}
-                //fill="transparent"
-                //strokeWidth="3"
-                //stroke="hsl(0, 0%, 18%)"
-                //strokeLinecap="round"
+                fill="transparent"
+                strokeWidth="3"
+                stroke="hsl(0, 0%, 18%)"
+                strokeLinecap="round"
             >
-                
-           <motion.h3>Reasons for cognitive impairment testing in adults:</motion.h3>
+                <div className='motion-div' variants={variants}> 
+                    <h3>Reasons for cognitive impairment testing in adults:</h3>
                 
                 <ol>
                     <li>To identify early signs of cognitive decline</li>
@@ -73,22 +76,25 @@ function About(){
                     <li>To inform advance care planning and decision-making</li>
                     <li>To promote healthy lifestyle choices and habits that support brain health.</li>
                 </ol>
+                </div> 
             </motion.div>
 
-            <button disabled={false} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
+            <button disabled={false} onClick={() => setIsOpen1(isOpen1 => !isOpen1)} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     Warning Signs
             </button>
-            <button onClick={handleShow} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
-                    <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
-                    By the Numbers
-            </button>   
-            </div>
-
-            <div>
-                <h3>Warning Signs:</h3>
-          
-                <li>Changes in memory or thinking ability</li>
+            <motion.div style={{ height: '0px', width: '80%'}}
+                animate={isOpen1 ? 'open' : 'closed'}
+                variants = {variants}
+                //fill="transparent"
+                //strokeWidth="3"
+                //stroke="hsl(0, 0%, 18%)"
+                //strokeLinecap="round"
+            >
+            <div variants={variants}>
+           <h3>Warning Signs</h3>
+                <ol>
+                    <li>Changes in memory or thinking ability</li>
                     <li>Difficulty performing daily tasks</li>
                     <li>Confusion or disorientation</li>
                     <li>Mood swings or depression</li>
@@ -98,16 +104,30 @@ function About(){
                     <li>Decreased ability to handle finances or make decisions</li>
                     <li>Suspected neurological disorders (e.g. Alzheimer's, dementia)</li>
                     <li>To determine appropriate medical or support interventions.</li>
+                </ol>
+                </div>
+            </motion.div>
+            
+            <button onClick={handleShow} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
+                    <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
+                    By the Numbers
+            </button>   
             </div>
             
             </div>
-            <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'} closeButton
+            <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
                 style={{
                     height: '100%'
                 }}
             >
-              <Offcanvas.Body  style={{padding: '0px'}}>
-                    <Numbers/>
+              <Offcanvas.Body  style={{padding: '0px', backgroundColor: 'black'}}>
+                <button onClick={handleClose} style={{}} className='close-offcanvas'>
+                    <div style={{padding: '5px', marginBottom: '5px'}}>
+                        <div className='close-line1'></div>
+                        <div className='close-line2'></div>
+                    </div>
+                </button>
+                <Numbers/>
               </Offcanvas.Body>
             </Offcanvas>      
         </div>

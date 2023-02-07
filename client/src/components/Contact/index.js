@@ -51,7 +51,8 @@ function Contact() {
         
         <div id={'contact'} className='contact-container'>
             <h2>Contact</h2>
-            <p>hello@reallygreat.com</p>
+            <p>844-463-GOEVOKE</p>
+            <p>hello@evokediagnostics.com</p>
         
             <Button 
                 style={{
