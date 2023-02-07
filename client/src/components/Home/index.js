@@ -10,13 +10,16 @@ import logo1 from '../../assets/images/logo1.png';
 import logoTransparent from '../../assets/images/EVOKE Official Logo Transparent.png'
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import Footer from '../Footer';
+import useThemeStorage from '../themeStorage';
 
 function Home() {
     // theme and toggler
-    const [ isOn, setIsOn ] = useState(false);
-    const [ theme, setTheme ] = useState('dark');
-    const [ componentMounted, setComponentMounted ] = useState(false);
+    //const [ isOn, setIsOn ] = useState(false);
+    const [ theme, themeToggler, componentMounted, isOn] = useThemeStorage();
     
+    //const [ theme, setTheme ] = useState('dark');
+   //const [ componentMounted, setComponentMounted ] = useState(false);
+    /*
     const themeToggler = () => {
         console.log('THEME TOGGLER');
         setIsOn(!isOn);
@@ -30,7 +33,9 @@ function Home() {
             console.log('theme is DARK')
         } 
     }
+    */
 
+/*
     // set local storage for theme
     useEffect(() => {
         const localTheme = window.localStorage.getItem('theme');
@@ -43,7 +48,8 @@ function Home() {
         } 
         setComponentMounted(true);
     })
-    
+    */
+
     // set scrolling 
     const [scroll, setScroll] = useState(0);
     const [ arrow, setArrow] = useState('arrowup-icon-hide');
@@ -95,16 +101,11 @@ function Home() {
             
             </div>
             <About/>
-            
-           
            <Vision/>
-           
            <Contact/>
-           
                 <a href="/#">
                     <BsFillArrowUpCircleFill className='arrowup-icon'/>
                 </a>
-            
             <Footer/> 
         </div>
     )

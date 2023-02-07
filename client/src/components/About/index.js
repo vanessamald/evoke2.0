@@ -120,7 +120,7 @@ function About(){
                     height: '100%'
                 }}
             >
-              <Offcanvas.Body  style={{padding: '0px', backgroundColor: 'black'}}>
+              <Offcanvas.Body  style={{padding: '0px', backgroundColor: 'var(--body-bg-color)'}}>
                 <button onClick={handleClose} style={{}} className='close-offcanvas'>
                     <div style={{padding: '5px', marginBottom: '5px'}}>
                         <div className='close-line1'></div>

@@ -556,6 +556,18 @@ a:active {
   background-color: black;
 }
 
+.numbers-icon2 {
+  background-color: #A4B4C5;
+}
+
+.percentage-icon2 {
+  background-color: #A4B4C5;
+}
+
+.numbers-section3 {
+  background-color: #A4B4C5;
+}
+
 /* Numbers End */
 
 /* Footer Styling */
@@ -729,10 +741,10 @@ a:active {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #000;
+  background-color: var(--body-bg-color);
   -webkit-transform: translate3d(0px, 0px, 10px);
   transform: translate3d(0px, 0px, 10px);
-  color: #fff;
+  color: var(--font-color);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
@@ -832,7 +844,7 @@ a:active {
   margin-top: -1px;
   border-bottom-left-radius: 5rem;
   border-bottom-right-radius: 5rem;
-  background-color: #000;
+  background-color: var(--body-bg-color);
 }
 
 .main {
@@ -923,12 +935,11 @@ textPath {
   position: absolute;
 }
 
-
 .scroll-text span {
   position: absolute;
   left: 50%;
   transform-origin: 0 60px;
-  
+  background: transparent;
 }
 
 .scroll-text span span {
@@ -938,7 +949,9 @@ textPath {
 .scroll-down-container {
   margin-bottom: 100%;
   position: relative;
+  /*
   width: 120px;
+  */
   height: 120px;
   border-radius: 50%;
   display: flex;
@@ -964,15 +977,14 @@ textPath {
   border-color: var(--font-color);
   transition: transform .7s ease-in-out;
   margin-left: 90vw;
-  color: white;
+  color: var(--body-bg-color);
   opacity: 1;
 }
 
 .close-line1, .close-line2{
   width: 35px;
   height: 2px;
-  background-color: white;
-  
+  background-color: var(--font-color);
   transition: 0.4s;
   transform: translate(0, 2px) rotate(45deg);
 }

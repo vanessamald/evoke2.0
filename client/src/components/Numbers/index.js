@@ -6,8 +6,11 @@ import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import useThemeStorage from '../themeStorage';
 
 function Numbers() {
+    const [theme, toggleTheme, componentMounted] = useThemeStorage();
+
     const [ offset, setOffset ] = useState(0);
     const [ visible, setVisible ] = useState(true);
     const [height, setHeight] = useState(0)
@@ -77,13 +80,13 @@ function Numbers() {
  
     return (
 
-        <div className="page">
+        <div className={theme}>
         <div id="content" className="main">
           <section className="section s-hero s-hero-versions">
             <div className="section-radius"></div>
             <h1 className="heading-xl text-center numbers-title">Cognitive Decline in the U.S.</h1>
 
-            <BsFillArrowDownCircleFill style={{ top:'40px', display: 'flex', justifyContent: 'center', width: '60px', height: '60px', position: 'relative', alignItems: 'center', justifyContent: 'center'}}/>
+            <BsFillArrowDownCircleFill style={{ color:'var(--font-color)', top:'40px', display: 'flex', justifyContent: 'center', width: '60px', height: '60px', position: 'relative', alignItems: 'center', justifyContent: 'center'}}/>
             <div className='scroll-down-container'>
                 <div className='scroll-text'>
                     <SplitText/> 
@@ -142,28 +145,28 @@ function Numbers() {
           </section>
             
           <div className="section s-heading-first background-blurple z-9"> 
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid black', borderBottom: '3px solid black'}}>
-                        <h3 className='' style={{marginRight: '', fontSize: '48px'}}>Only 42% </h3>
-                        <h3 style={{fontSize: '24px'}}>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
-                    </div>
-                    <div className='about-image-container'>
-                        <img src={percentage2} className='percentage-icon2'></img>
-                    </div>
+            <div className='numbers-section3' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <div className='numbers-section3' style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid black', borderBottom: '3px solid black'}}>
+                        <h3 className='numbers-section3' style={{marginRight: '', fontSize: '48px'}}>Only 42% </h3>
+                        <h3 className='numbers-section3' style={{fontSize: '24px'}}>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
                 </div>
+                <div className='numbers-section3'>
+                    <img src={percentage2} className='percentage-icon2'></img>
+                </div>
+            </div>
           </div>
           <section className="section s-radius sr-large background-blurple z-9">
             <div className="container-max">
-              <div className="card-content2">
+              <div className="card-content2 numbers-section3">
                 
                
                 
 
-                <div className='about-image-container'>
-                    <img src={lessThanHalf} className='lessthanhalf-icon'></img>
+                <div className='about-image-container numbers-section3'>
+                    <img src={lessThanHalf} className='lessthanhalf-icon numbers-section3'></img>
                 </div>
-                <h2 className="heading-xl text-center">Less Than Half of Adults</h2>
-                <h2 className="text-center">With Dementia Have Been Diagnosed</h2>
+                <h2 className="heading-xl text-center numbers-section3">Less Than Half of Adults</h2>
+                <h2 className="text-center numbers-section3">With Dementia Have Been Diagnosed</h2>
               </div>
             </div>
           </section>
@@ -182,7 +185,7 @@ function Numbers() {
             </div>
           </div>
 
-          <section className="section s-radius sr-large background-white z-9">
+          <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
             <div className="container-max">
               <div className="card-content2">
                 
