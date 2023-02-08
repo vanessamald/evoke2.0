@@ -181,6 +181,7 @@ code {
 
 .navigation-container {
   width: 100%;
+  height: 100%;
   padding: 150px;
   position: absolute;
   top: 0;
@@ -486,29 +487,49 @@ a:active {
 /* Link Styling Ends */
 
 /* Contact Styling */
+.hidden-contact {
+    visibility: hidden;
+    height: 0px;
+}
+
+.contact-show {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  position: absolute;
+  z-index: 999999999;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 3s;
+  margin-bottom: 100%;
+ 
+}
 
 .contact-container {
   padding: 100px;
   color: var(--body-bg-color);
+
 }
 
 .contact-close-btn {
   padding: 10px;
   border-radius: 50%;
+  margin-left: 90vw;
+  margin-bottom: 50px;
 }
 
 .contact-close-btn:hover {
-  background-color: white;
+  
 }
 
 .contact-line1 {
   transform: translate(0, 6px) rotate(-45deg);
-  background-color: var(--body-bg-color);
+  background-color: var(--font-color);
 }
 
 .contact-line2 {
   transform: translate(0, -6px) rotate(45deg);
-  background-color: var(--body-bg-color);
+  /*background-color: var(--font-color);*/
 }
 /* Contact Styling Ends */
 
@@ -712,6 +733,9 @@ a:active {
     overflow: hidden;
   }
   .close-offcanvas {
+    margin-left: 75vw;
+  }
+  .contact-close-btn {
     margin-left: 75vw;
   }
 }
@@ -1001,6 +1025,10 @@ textPath {
   
 }
 
+.hidden-offcanvas {
+  visibility: hidden;
+}
+
 .close-offcanvas {
   width: 60px;
   height: 60px;
@@ -1016,6 +1044,18 @@ textPath {
 }
 
 .offcanvas {
+  background-color: var(--body-bg-color);
+}
+
+.offcanvas-backdrop.show {
+  opacity: 1;
+}
+
+.offcanvas-backdrop.fade {
+  opacity: 1;
+}
+
+.offcanvas-backdrop {
   background-color: var(--body-bg-color);
 }
 

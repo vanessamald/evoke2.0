@@ -117,22 +117,34 @@ function About(){
             </div>
             
             </div>
-            <Offcanvas className={theme} show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
+            
+            <Offcanvas  show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
                 style={{
                     height: '100%', 
+                    backgroundColor: 'var(--body-bg-color)',
+                    opacity: '1'
                 }}
                 
             >
-                <Offcanvas.Body style={{backgrondColor: 'var(--body-bg-color)'}}>
+                
+                <Offcanvas.Body style={{backgroundColor: '', padding: '0px'}}>
+                    {/* 
                 <button onClick={handleClose} style={{}} className='close-offcanvas'>
                     <div style={{padding: '5px', marginBottom: '5px'}}>
                         <div className='close-line1'></div>
                         <div className='close-line2'></div>
                     </div>
                 </button>
+                */}
+                <Offcanvas.Header  style={{opacity: '1'}} closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+             
                 <Numbers/>
+              
                 </Offcanvas.Body>
-            </Offcanvas>      
+            </Offcanvas> 
+              
         </div>
    ) }
 

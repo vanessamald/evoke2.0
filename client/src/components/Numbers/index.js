@@ -9,7 +9,10 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
 
 function Numbers() {
+    const [show, setShow] = useState();
 
+    const handleClose = () => setShow('hidden-offcanvas');
+    const handleShow = () => setShow(true);
 
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
 
@@ -80,6 +83,7 @@ function Numbers() {
     return (
 
         <div className={theme}>
+              
              
         <div id="content" className="main">
           <section className="section s-hero s-hero-versions">

@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import useThemeStorage from '../themeStorage';
 
 function Contact() {
-    const [show, setShow] = useState(false);
+    const [theme, toggleTheme, componentMounted] = useThemeStorage();
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // set state for contact form styling 
+    const [ show, setShow] = useState('hidden-contact');
+
+    const handleClick = () => {
+        setShow('contact-show')
+    }
+    const handleClose = () => {
+        setShow('hidden-contact');
+    }
 
     const [ status, setStatus ] = useState('Submit');
 
@@ -48,30 +56,17 @@ function Contact() {
     };
     
     return (
-        
-        <div id={'contact'} className='contact-container'>
-            <h2>Contact</h2>
-            <p>844-463-GOEVOKE</p>
-            <p>hello@evokediagnostics.com</p>
-        
-            <Button 
-                style={{
-                    backgroundColor: 'var(--font-color)',
-                    color: 'var(--body-bg-color)',
-                    borderColor: 'white'
-                }}
-                variant="primary" 
-                onClick={handleShow}>Send a Message
-            </Button>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header>
-                    <Modal.Title>Contact Form</Modal.Title>
-                    <button className='contact-close-btn' variant="secondary" onClick={handleClose}>
+
+<div>
+<div className={show}>
+                <div>
+                    <div>Contact Form</div>
+                    <button className='contact-close-btn' onClick={handleClose}>
                         <div className='contact-line1'></div>
                         <div className='contact-line2'></div>
                     </button>
-                </Modal.Header>
-                <Modal.Body>
+                </div>
+                <div>
                     <div>
                     {result && (
                     <p className={`${result.success ? 'success' : 'error'}`}>
@@ -130,8 +125,27 @@ function Contact() {
                             variant="primary" >{status}
                         </Button>
                     </Form>
-                </Modal.Body>
-            </Modal>
+                </div>
+            </div>  
+        
+        <div  className='contact-container' style={{position: 'relative'}}>
+            <h2>Contact</h2>
+            <p>844-463-GOEVOKE</p>
+            <p>hello@evokediagnostics.com</p>
+        
+            <Button id={'contact'}
+                style={{
+                    backgroundColor: 'var(--font-color)',
+                    color: 'var(--body-bg-color)',
+                    borderColor: 'white'
+                }}
+               
+                onClick={handleClick}>Send a Message
+            </Button>
+            </div> 
+
+ 
+            
         </div>
     )
 }
