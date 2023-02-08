@@ -1,35 +1,41 @@
 import React, { useEffect, useState } from "react";
 
 function useThemeStorage () {
-    const [ isOn, setIsOn ] = useState(false);
+    const [ isOn, setIsOn ] = useState('purple');
 
     const [ theme, setTheme ] = useState('dark');
     const [ componentMounted, setComponentMounted ] = useState(false);
 
-    
+// set localstorage for theme and setTheme class    
 const themeToggler = () => {
     console.log('THEME TOGGLER');
-    setIsOn(!isOn);
+    
     if (theme === 'dark') {
         window.localStorage.setItem('theme', 'light');
+        window.localStorage.setItem('toggler', 'blue');
         setTheme('light');
+        setIsOn('blue');
         console.log('theme is LIGHT')
     } else { 
         window.localStorage.setItem('theme', 'dark');
+        window.localStorage.setItem('toggler', 'purple');
         setTheme('dark');
+        setIsOn('purple');
         console.log('theme is DARK')
     } 
 }
 
-
-// set local storage for theme
+// get local storage for theme
 useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
+    const localToggler = window.localStorage.getItem('toggler');
     if (localTheme) {
         setTheme(localTheme);
-
+        setIsOn(localToggler);
+        console.log(localToggler);
     } else {
         setTheme('light')
+        setIsOn('blue');
         window.localStorage.setItem('theme', 'light')
     } 
     setComponentMounted(true);

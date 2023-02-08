@@ -15,7 +15,7 @@ import useThemeStorage from '../themeStorage';
 function Home() {
     // theme and toggler
     //const [ isOn, setIsOn ] = useState(false);
-    const [ theme, themeToggler, componentMounted, isOn] = useThemeStorage();
+    const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
     
     //const [ theme, setTheme ] = useState('dark');
    //const [ componentMounted, setComponentMounted ] = useState(false);
@@ -69,14 +69,14 @@ function Home() {
         <Navigation className={theme}/> 
         <div className="theme-togg-container">
         <div 
-                className='toggle-container'
+                //className='toggle-container'
                 data-darkmode={isOn}
                 onClick={themeToggler}
-                style={{ 
-                    justifyContent: isOn ? 'flex-end' : 'flex-start',
-                    backgroundImage: isOn ? 'radial-gradient(circle farthest-corner at 10% 20%, rgba(33, 129, 193, 1) 0%, rgba(108, 229, 232, 1) 100.2%)' : 'linear-gradient(109.8deg, rgba(62,5,116,1) -5.2%, rgba(41,14,151,1) -5.2%, rgba(216,68,148,1) 103.3%)',
-                    
-                }}  
+                className={isOn}
+                //style={
+                    //justifyContent: isOn ? 'flex-end' : 'flex-start',
+                    //backgroundImage: isOn ? 'radial-gradient(circle farthest-corner at 10% 20%, rgba(33, 129, 193, 1) 0%, rgba(108, 229, 232, 1) 100.2%)' : 'linear-gradient(109.8deg, rgba(62,5,116,1) -5.2%, rgba(41,14,151,1) -5.2%, rgba(216,68,148,1) 103.3%)', 
+    //}
             >
                 <motion.div layout className='handle'>
                     <AnimatePresence exitBeforeEnter initial={false}>

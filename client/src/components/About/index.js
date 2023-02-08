@@ -117,10 +117,10 @@ function About(){
             </div>
             <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
                 style={{
-                    height: '100%'
+                    height: '100%', 
                 }}
             >
-              <Offcanvas.Body  style={{padding: '0px', backgroundColor: 'var(--body-bg-color)'}}>
+              <Offcanvas.Body style={{padding: '0px'}}>
                 <button onClick={handleClose} style={{}} className='close-offcanvas'>
                     <div style={{padding: '5px', marginBottom: '5px'}}>
                         <div className='close-line1'></div>
@@ -128,7 +128,7 @@ function About(){
                     </div>
                 </button>
                 <Numbers/>
-              </Offcanvas.Body>
+                </Offcanvas.Body>
             </Offcanvas>      
         </div>
    ) }

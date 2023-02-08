@@ -131,7 +131,7 @@ function Numbers() {
                   
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     
-                <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid white', borderBottom: '5px solid white'}}>
+                <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid white', borderBottom: '3px solid white'}}>
                         <h3 className='' style={{marginRight: '', fontSize: '48px'}}>41% </h3>
                         <h3 style={{fontSize: '24px'}}>of Adults with SCD Have Given Up Daily Activities</h3>
                 </div>
@@ -146,7 +146,7 @@ function Numbers() {
             
           <div className="section s-heading-first background-blurple z-9"> 
             <div className='numbers-section3' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                <div className='numbers-section3' style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid black', borderBottom: '3px solid black'}}>
+                <div className='numbers-section3' style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid var(--body-bg-color)', borderBottom: '3px solid var(--body-bg-color)'}}>
                         <h3 className='numbers-section3' style={{marginRight: '', fontSize: '48px'}}>Only 42% </h3>
                         <h3 className='numbers-section3' style={{fontSize: '24px'}}>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
                 </div>
@@ -175,12 +175,12 @@ function Numbers() {
     
           <div className="section s-heading background-white z-7">
             <div className="section-head-bg-extension background-white"></div>
-            <div className="container-max">
+            <div className="container-max background-white">
               
-            <div className='about-image-container'>
-                    <img src={thirtyfive} className='thirtyfive-icon'></img>
+            <div className='about-image-container background-white'>
+                    <img src={thirtyfive} className='thirtyfive-icon background-white'></img>
                 </div>
-            <h2 className="heading-xl text-center">Yet Only 35% Know They Have the Disease</h2>
+            <h2 className="heading-xl text-center background-white">Yet Only 35% Know They Have the Disease</h2>
             <h3 className=''></h3>
             </div>
           </div>
@@ -197,7 +197,7 @@ function Numbers() {
               </div>
             </div>
           </section>
-    
+            
           <br />
           <br />
           <br />
@@ -207,6 +207,7 @@ function Numbers() {
           <br />
           <br />
           <br />
+          <h3>HELLO</h3>
           <br />
           <br />
           <br />
