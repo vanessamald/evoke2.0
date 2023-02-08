@@ -9,6 +9,8 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
 
 function Numbers() {
+
+
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
 
     const [ offset, setOffset ] = useState(0);
@@ -54,6 +56,7 @@ function Numbers() {
     }
     console.log(offset);
 
+    // scrolling text span
     const text = 'scrolldown';
     const SplitText = () => {
         return (
@@ -66,9 +69,7 @@ function Numbers() {
             const rotateText = {
                 transform: 'rotate' +  `(${index * 35}deg)`,
                // animation: 'rotateText 10s linear infinite',
-                
             };
-            
             return <span key={index} id={index} className='scrolling-letters' style={rotateText}>{char}</span>
             ;
         })}
@@ -76,11 +77,10 @@ function Numbers() {
         );
     }
 
-    
- 
     return (
 
         <div className={theme}>
+             
         <div id="content" className="main">
           <section className="section s-hero s-hero-versions">
             <div className="section-radius"></div>

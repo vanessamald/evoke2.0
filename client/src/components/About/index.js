@@ -4,8 +4,10 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { motion } from 'framer-motion';
 import Numbers from '../Numbers/index';
+import useThemeStorage from '../themeStorage';
 
 function About(){
+    const [theme, toggleTheme, componentMounted] = useThemeStorage();
     // offcanvas 
     const [show, setShow] = useState(false);
 
@@ -115,12 +117,13 @@ function About(){
             </div>
             
             </div>
-            <Offcanvas show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
+            <Offcanvas className={theme} show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
                 style={{
                     height: '100%', 
                 }}
+                
             >
-              <Offcanvas.Body style={{padding: '0px'}}>
+                <Offcanvas.Body style={{backgrondColor: 'var(--body-bg-color)'}}>
                 <button onClick={handleClose} style={{}} className='close-offcanvas'>
                     <div style={{padding: '5px', marginBottom: '5px'}}>
                         <div className='close-line1'></div>

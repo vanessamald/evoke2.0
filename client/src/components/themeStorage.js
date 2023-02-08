@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 
 function useThemeStorage () {
     const [ isOn, setIsOn ] = useState('purple');
-
     const [ theme, setTheme ] = useState('dark');
     const [ componentMounted, setComponentMounted ] = useState(false);
 
-// set localstorage for theme and setTheme class    
+// set localstorage for theme and setTheme/toggler class    
 const themeToggler = () => {
     console.log('THEME TOGGLER');
     
@@ -41,7 +40,6 @@ useEffect(() => {
     setComponentMounted(true);
 },
 [])
-
 return [ theme, themeToggler, componentMounted, isOn ]
 };
 
