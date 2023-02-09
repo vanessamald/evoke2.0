@@ -495,7 +495,7 @@ a:active {
 .contact-show {
   width: 100%;
   height: 100%;
-  padding: 50px;
+  padding: 100px;
   position: absolute;
   z-index: 999999999;
   overflow-x: hidden;
@@ -514,7 +514,7 @@ a:active {
 .contact-close-btn {
   padding: 10px;
   border-radius: 50%;
-  margin-left: 90vw;
+  margin-left: 80vw;
   margin-bottom: 50px;
 }
 
@@ -681,7 +681,7 @@ a:active {
     height: auto;
     width: 100%;
     margin-left: 0;
-    margin-top: 100px;
+    margin-top: 10%;
     margin-bottom: 100%;
     
   }
@@ -705,8 +705,7 @@ a:active {
     margin-top: 20px;
   }
   .lines-container {
-    margin: 5px;
-   
+    padding: 2px;
   }
 
   .arrowup-icon {
@@ -736,7 +735,10 @@ a:active {
     margin-left: 75vw;
   }
   .contact-close-btn {
-    margin-left: 75vw;
+    margin-left: 60vw;
+  }
+  .contact-show {
+    padding: 50px;
   }
 }
 
@@ -749,6 +751,15 @@ a:active {
 
   .logo-container {
     text-align: center;
+    margin-bottom: 100%;
+  }
+
+  .contact-close-btn {
+    margin-left: 75vw;
+  }
+
+  .contact-show {
+    padding: 100px
   }
 }
 
@@ -758,6 +769,20 @@ a:active {
     display: flex;
     flex-direction: column;
   }
+  .logo-container {
+    margin-bottom: 100%;
+    margin-top: 25%;
+  }
+  .navigation-container {
+    padding-top: 25%;
+  }
+  .contact-close-btn {
+    margin-left: 75vw;
+  }
+  .contact-show {
+    padding: 100px;
+  }
+
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
@@ -765,6 +790,9 @@ a:active {
   .home-container {
     display: flex;
     flex-direction: row;
+  }
+  .contact-close-btn {
+    margin-left: 80vw;
   }
 }
 
