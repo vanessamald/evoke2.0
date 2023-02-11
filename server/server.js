@@ -19,11 +19,11 @@ app.get("/api", (req, res) => {
     res.json({ message: 'Testing Express' });
   });
 
-
+/*
 app.post('/contact', (req, res) => {
   console.log(req.body);
 
-  try {
+  
     const mailOptions = {
       from: req.body.email,
       to: process.env.email,
@@ -39,6 +39,15 @@ app.post('/contact', (req, res) => {
     };
 
     transporter.sendMail(mailOptions, (error, info) =>  {
+      if (error) {
+        res.json({ status: "ERROR"});
+      } else {
+        res.json({ status: "Message Sent"});
+      }
+    });
+  });
+  */
+      /*
       if (error) {
         res.status(500).send({
           success: false,
@@ -58,6 +67,7 @@ app.post('/contact', (req, res) => {
     })
   }
 })
+*/
 
 
 /*
@@ -76,6 +86,7 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
+*/
 
 app.post("/contact", (req, res) => {
   const name = req.body.name;
@@ -89,7 +100,7 @@ app.post("/contact", (req, res) => {
            <p>Email: ${email}</p>
            <p>Message: ${message}</p>`,
   };
-  contactEmail.sendMail(mail, (error) => {
+  transporter.sendMail(mail, (error) => {
     if (error) {
       res.json({ status: "ERROR" });
     } else {
@@ -97,7 +108,7 @@ app.post("/contact", (req, res) => {
     }
   });
 });
-*/
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

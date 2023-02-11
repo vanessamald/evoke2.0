@@ -40,6 +40,8 @@ function Navigation() {
             <div className='navigation-links-container'>
                 <a className='navigation-links' href='/#about'>About</a>
                 <div className='line'></div>
+                <a className='navigation-links' href='/#learnmore'>Learn More</a>
+                <div className='line'></div>
                 <a className='navigation-links' href='/#ourvision'>Our Vision</a>
                 <div className='line'></div>
                 <a className='navigation-links' href='/#contact'>Contact Us</a>

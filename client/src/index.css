@@ -291,8 +291,13 @@ code {
 }
 
 @keyframes slideIn {
-  0% {
-
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
   }
 }
 
@@ -340,6 +345,7 @@ code {
   50% { bottom: 0.2em; }
   100% { bottom: 0; opacity: 1; }
 }
+
 /* Animations End */
 
 /* About Styling */ 
@@ -394,6 +400,12 @@ code {
   text-align: center; 
 }
 
+/*
+.about-links-container:hover > .about-links-icon {
+  transform: rotate(90deg);
+}
+*/
+
 .about-links-icon {
   background-color: transparent;
   float: left;
@@ -422,7 +434,6 @@ code {
   border-color: var(--font-color);
   padding: 50px;
 }
-
 
 .about-links-container:hover {
   background-color: var(--font-color);
@@ -620,6 +631,23 @@ a:active {
 .numbers-section3 {
   background-color: #A4B4C5;
   color: var(--body-bg-color);
+}
+
+.numbers-section3-container {
+  border-bottom: 3px solid var(--body-bg-color);
+  border-top: 3px solid var(--body-bg-color);
+ 
+ 
+}
+
+
+.numbers-p {
+  width: 50%;
+  font-size: 24px;
+}
+
+.numbers-section3-div {
+  padding-top: 100px;
 }
 
 /* Numbers End */
@@ -916,7 +944,13 @@ a:active {
 
 .text-center {
   text-align: center;
+  /*
+  animation-duration: 3s;
+  animation-name: slideIn;
+  */
 }
+
+
 
 .section-radius {
   position: absolute;
@@ -1066,9 +1100,10 @@ textPath {
   border-radius: 50%;
   border-color: var(--font-color);
   transition: transform .7s ease-in-out;
-  margin-left: 90vw;
+  margin-left: 75%;
   color: var(--body-bg-color);
   opacity: 1;
+  margin-bottom: 50px;
 }
 
 .offcanvas {

@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import useThemeStorage from '../themeStorage';
+import { BsFillTelephoneFill,BsFillEnvelopeFill } from "react-icons/bs";
+
 
 function Contact() {
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
@@ -30,6 +32,8 @@ function Contact() {
     const submitForm = async (e) => {
         e.preventDefault();
         setStatus('Sending email');
+        e.target.reset();
+    
 
     let emailMessage = {
         name: name,
@@ -37,6 +41,13 @@ function Contact() {
         subject: subject,
         message: message
     } 
+
+    if ( emailMessage === '') {
+        setResult({
+            message: 'Please fill out all fields'
+        })
+    } else {
+    
     console.log(emailMessage);
     
     let response = await fetch("http://localhost:3000/contact", {
@@ -46,15 +57,27 @@ function Contact() {
         },
         body: JSON.stringify(emailMessage),
       });
+      if (response) {
+        setResult({
+            success: true, 
+            message: 'Message was sent, we will get back to you shortly.'
+        })
+      } else {
+        setResult({
+            success: false, 
+            message: 'Something went wrong, please try again later.'
+        })
+      }}
+      /*
       setResult({
-        success: false,
-        message: 'something went wrong, please try again.'
+        success: true,
+        message: 'Message was sent, we will get back to you shortly.'
       });
-      setStatus("Submit");
-      let result = await response.json();
-      alert(result.status);
-    };
-    
+      */
+      //setStatus("Submit");
+      //let result = await response.json();
+      //alert(result.status);
+    }; 
     return (
 
 <div>
@@ -83,6 +106,7 @@ function Contact() {
                                 type="text"
                                 placeholder="Name"
                                 autoFocus
+                                required
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="email">
@@ -92,7 +116,7 @@ function Contact() {
                                 onChange={(e) => setEmail(e.target.value)} 
                                 type="text"
                                 placeholder="email@example.com"
-                                autoFocus
+                                required
                             />
                         </Form.Group>
                         <Form.Label>Subject</Form.Label>
@@ -101,7 +125,7 @@ function Contact() {
                                 onChange={(e) => setSubject(e.target.value)} 
                                 type="text"
                                 placeholder="Subject"
-                                autoFocus
+                                required
                             />
                         <Form.Group
                             className="mb-3"
@@ -113,6 +137,7 @@ function Contact() {
                                 onChange={(e) => setMessage(e.target.value)}  
                                 as="textarea" 
                                 rows={3} 
+                                required
                             />
                         </Form.Group>
                         <Button 
@@ -130,8 +155,9 @@ function Contact() {
         
         <div  className='contact-container' style={{position: 'relative'}}>
             <h2>Contact</h2>
-            <p>844-463-GOEVOKE</p>
-            <p>hello@evokediagnostics.com</p>
+            <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
+            
+            <p><BsFillEnvelopeFill/>hello@evokediagnostics.com</p>
         
             <Button id={'contact'}
                 style={{

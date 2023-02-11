@@ -22,24 +22,37 @@ function About(){
     const [ isOpen, setIsOpen ] = useState(false)
     const [ isOpen1, setIsOpen1 ] = useState(false);
 
+    const closeMotion = () => {
+        setIsOpen(false);
+    }
+
+    const closeMotion1 = () => {
+        setIsOpen1(false);
+    }
+
     const variants = {
         open: { 
             opacity: 1, 
-            y: 0, 
+            x: 0,
+            y: 'auto', 
             position:'absolute', 
             zIndex: '1',
             textAlign: 'center',
-            height: '100%',
+            width: '80%',
+            //height: '100%',
             padding: '50px',
             transition: {
                 y: { 
                     stiffness: 1000, 
-                    velocity: -100 ,
+                    velocity: -10000 ,
+                },
+                x: {
+                    velocity: -10000
                 }
           } },
         closed: { 
             opacity: 0, 
-            y: "-100%" 
+            x: "-100%" 
         },
     }
  
@@ -52,7 +65,7 @@ function About(){
             Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of cognitive decline. With a focus on preventative care and early detection, our testing services aim to provide individuals with the information and support they need to maintain their cognitive health and independence. Our testing process is non-invasive, confidential, and tailored to the unique needs of each individual.
             We believe that everyone deserves access to the information that can help maintain their cognitive health throughout the lifespan.
             </p>
-
+            <h2 id={'learnmore'}>Learn More</h2>
             <div style={{marginTop: '50px'}}>
             <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
@@ -61,23 +74,27 @@ function About(){
             <motion.div style={{ height: '0px', width: '80%'}}
                 animate={isOpen ? 'open' : 'closed'}
                 variants = {variants}
-                fill="transparent"
-                strokeWidth="3"
-                stroke="hsl(0, 0%, 18%)"
-                strokeLinecap="round"
+                //fill="transparent"
+                //strokeWidth="3"
+                //stroke="hsl(0, 0%, 18%)"
+                //strokeLinecap="round"
             >
                 <div className='motion-div' variants={variants}> 
-                    <h3>Reasons for cognitive impairment testing in adults:</h3>
+                    <button onClick={closeMotion} style={{}} className='close-offcanvas'>
+                            <div style={{padding: '5px', marginBottom: '5px'}}>
+                                <div className='close-line1'></div>
+                                <div className='close-line2'></div>
+                            </div>
+                    </button>
                 
-                <ol>
-                    <li>To identify early signs of cognitive decline</li>
-                    <li>To facilitate early diagnosis and treatment of potential causes</li>
-                    <li>To track changes over time</li>
-                    <li>To provide personalized interventions to maintain or improve cognitive function</li>
-                    <li>To provide reassurance and support to patients and their families</li>
-                    <li>To inform advance care planning and decision-making</li>
-                    <li>To promote healthy lifestyle choices and habits that support brain health.</li>
-                </ol>
+                    <p>To identify early signs of cognitive decline</p>
+                    <p>To facilitate early diagnosis and treatment of potential causes</p>
+                    <p>To track changes over time</p>
+                    <p>To provide personalized interventions to maintain or improve cognitive function</p>
+                    <p>To provide reassurance and support to patients and their families</p>
+                    <p>To inform advanced care planning and decision-making</p>
+                    <p>To promote healthy lifestyle choices and habits that support brain health.</p>
+                
                 </div> 
             </motion.div>
 
@@ -91,22 +108,25 @@ function About(){
                 //fill="transparent"
                 //strokeWidth="3"
                 //stroke="hsl(0, 0%, 18%)"
-                //strokeLinecap="round"
+                //strokepnecap="round"
             >
+                <button onClick={closeMotion1} style={{}} className='close-offcanvas'>
+                            <div style={{padding: '5px', marginBottom: '5px'}}>
+                                <div className='close-line1'></div>
+                                <div className='close-line2'></div>
+                            </div>
+                    </button>
             <div variants={variants}>
-           <h3>Warning Signs</h3>
-                <ol>
-                    <li>Changes in memory or thinking ability</li>
-                    <li>Difficulty performing daily tasks</li>
-                    <li>Confusion or disorientation</li>
-                    <li>Mood swings or depression</li>
-                    <li>Withdrawal from social activities</li>
-                    <li>Loss of initiative or motivation</li>
-                    <li>Speech problems</li>
-                    <li>Decreased ability to handle finances or make decisions</li>
-                    <li>Suspected neurological disorders (e.g. Alzheimer's, dementia)</li>
-                    <li>To determine appropriate medical or support interventions.</li>
-                </ol>
+                    <p>Changes in memory or thinking acuity</p>
+                    <p>Difficulty performing daily tasks</p>
+                    <p>Confusion or disorientation</p>
+                    <p>Mood swings or depression</p>
+                    <p>Withdrawal from social activities</p>
+                    <p>Loss of initiative or motivation</p>
+                    <p>Speech problems</p>
+                    <p>Decreased ability to handle finances or make decisions</p>
+                    <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
+                    <p>To determine appropriate medical or support interventions.</p>
                 </div>
             </motion.div>
             
@@ -128,23 +148,19 @@ function About(){
             >
                 
                 <Offcanvas.Body style={{backgroundColor: '', padding: '0px'}}>
-                    {/* 
-                <button onClick={handleClose} style={{}} className='close-offcanvas'>
-                    <div style={{padding: '5px', marginBottom: '5px'}}>
-                        <div className='close-line1'></div>
-                        <div className='close-line2'></div>
-                    </div>
-                </button>
-                */}
-                <Offcanvas.Header  style={{opacity: '1'}} closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-             
+                    <Offcanvas.Header  style={{opacity: '1', backgroundColor: 'white', padding: ''}} closeButton>
+                        {/* 
+                        <button onClick={handleClose} style={{}} className='close-offcanvas'>
+                            <div style={{padding: '5px', marginBottom: '5px'}}>
+                                <div className='close-line1'></div>
+                                <div className='close-line2'></div>
+                            </div>
+                        </button>
+                        */}
+                    </Offcanvas.Header>
                 <Numbers/>
-              
                 </Offcanvas.Body>
-            </Offcanvas> 
-              
+            </Offcanvas>  
         </div>
    ) }
 
