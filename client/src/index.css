@@ -163,7 +163,6 @@ code {
 
 .change .menu-line1 {
   transform: translate(0, 13px) rotate(-45deg);
-  
 }
 
 .change .menu-line2 {
@@ -186,7 +185,7 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 3s;
 }
 
@@ -710,8 +709,7 @@ a:active {
     width: 100%;
     margin-left: 0;
     margin-top: 10%;
-    margin-bottom: 100%;
-    
+    margin-bottom: 100%; 
   }
 
   .logo-container {
@@ -729,26 +727,31 @@ a:active {
   }
 
   .menu-btn {
-    margin-left: 75vw;
-    margin-top: 20px;
+    margin-left: 80vw;
+    margin-top: 15px;
   }
+
   .lines-container {
+    /*
     padding: 2px;
+    */
   }
 
   .arrowup-icon {
     opacity: 1;
-    margin-left: 75vw;
+    margin-left: 80vw;
     margin-bottom: 40px;
   }
   .people-icon, .percentage-icon, .percentage-icon2, .lessthanhalf-icon, .thirtyfive-icon {
-    width: 150px;
+    width: 100px;
   }
   .about-text-title {
     font-size: 20px;
   }
   .change {
+    /*
     padding: 10px;
+    */
     background-color: transparent; 
   }
   .early-detection-image {
@@ -767,6 +770,9 @@ a:active {
   }
   .contact-show {
     padding: 50px;
+  }
+  .section.s-heading-first {
+    padding-top: 600px;
   }
 }
 

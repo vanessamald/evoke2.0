@@ -110,13 +110,14 @@ function About(){
                 //stroke="hsl(0, 0%, 18%)"
                 //strokepnecap="round"
             >
-                <button onClick={closeMotion1} style={{}} className='close-offcanvas'>
+                  
+                <div className='motion-div' variants={variants}>
+                    <button onClick={closeMotion1} style={{}} className='close-offcanvas'>
                             <div style={{padding: '5px', marginBottom: '5px'}}>
                                 <div className='close-line1'></div>
                                 <div className='close-line2'></div>
                             </div>
                     </button>
-            <div variants={variants}>
                     <p>Changes in memory or thinking acuity</p>
                     <p>Difficulty performing daily tasks</p>
                     <p>Confusion or disorientation</p>
@@ -143,10 +144,8 @@ function About(){
                     height: '100%', 
                     backgroundColor: 'var(--body-bg-color)',
                     opacity: '1'
-                }}
-                
-            >
-                
+                }} 
+            > 
                 <Offcanvas.Body style={{backgroundColor: '', padding: '0px'}}>
                     <Offcanvas.Header  style={{opacity: '1', backgroundColor: 'white', padding: ''}} closeButton>
                         {/* 

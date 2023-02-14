@@ -121,7 +121,7 @@ function Numbers() {
                         <p>SCD is a form of cognitive impairment and an early sign of dementia*</p>
                     </div>
                   
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <div className='numbers-flex' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     
                 <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid var(--font-color)', borderBottom: '3px solid var(--font-color)'}}>
                         <h3 className='' style={{marginRight: '', fontSize: '48px'}}>41% </h3>
@@ -137,7 +137,7 @@ function Numbers() {
             
           <div className="section s-heading-first background-blurple z-9"> 
             <div className='numbers-section3' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                <div className='numbers-section3' style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid var(--body-bg-color)', borderBottom: '3px solid var(--body-bg-color)'}}>
+                <div className='numbers-section3 numbers-flex' style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid var(--body-bg-color)', borderBottom: '3px solid var(--body-bg-color)'}}>
                         <h3 className='numbers-section3' style={{marginRight: '', fontSize: '48px'}}>Only 42% </h3>
                         <h3 className='numbers-section3' style={{fontSize: '24px'}}>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
                 </div>
@@ -184,18 +184,12 @@ function Numbers() {
             </div>
                 <h2 className="heading-xl text-center background-white">Less Than Half of Adults</h2>
                 <h2 className="text-center background-white">With Dementia Have Been Diagnosed</h2>
-
-
             </div>
           </div>
 
           <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
             <div className="container-max">
               <div className="card-content2">
-                
-               
-                
-
                 <div className='about-image-container'>
                    </div>
               </div>
@@ -211,9 +205,6 @@ function Numbers() {
           <br />
           <br />
           <br />
-           
-
-
                 <div className='about-image-container'>
                     <img src={thirtyfive} className='thirtyfive-icon'></img>
                 </div>

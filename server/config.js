@@ -3,19 +3,20 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtpout.secureserver.net',
     port: process.env.MAIL_PORT,
-    secure: true,
+    secure: false,
     logger: true,
     debug:true,
+    requireTLS: true,
     secureConnection: false,
     auth: {
         user: process.env.email,
         pass: process.env.password
     },
     tls:{
-        rejectUnAuthorized: true
-        //ciphers: 'SSLv3'
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
     }
 });
 

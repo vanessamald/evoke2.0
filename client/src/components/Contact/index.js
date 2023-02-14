@@ -5,7 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import useThemeStorage from '../themeStorage';
 import { BsFillTelephoneFill,BsFillEnvelopeFill } from "react-icons/bs";
 
-
 function Contact() {
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
 
@@ -34,7 +33,6 @@ function Contact() {
         setStatus('Sending email');
         e.target.reset();
     
-
     let emailMessage = {
         name: name,
         email: email,
@@ -152,26 +150,19 @@ function Contact() {
                     </Form>
                 </div>
             </div>  
-        
         <div  className='contact-container' style={{position: 'relative'}}>
             <h2>Contact</h2>
             <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
-            
-            <p><BsFillEnvelopeFill/>hello@evokediagnostics.com</p>
-        
+            <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
             <Button id={'contact'}
                 style={{
                     backgroundColor: 'var(--font-color)',
                     color: 'var(--body-bg-color)',
                     borderColor: 'white'
                 }}
-               
                 onClick={handleClick}>Send a Message
             </Button>
-            </div> 
-
- 
-            
+            </div>    
         </div>
     )
 }

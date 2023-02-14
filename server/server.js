@@ -93,7 +93,7 @@ app.post("/contact", (req, res) => {
   const email = req.body.email;
   const message = req.body.message; 
   const mail = {
-    from: name,
+    from: process.env.email,
     to: process.env.email,
     subject: "Contact Form Submission",
     html: `<p>Name: ${name}</p>
