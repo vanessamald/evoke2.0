@@ -509,7 +509,6 @@ a:active {
   position: absolute;
   z-index: 999999999;
   overflow-x: hidden;
-  overflow-y: hidden;
   transition: 3s;
   margin-bottom: 100%;
  
@@ -727,7 +726,7 @@ a:active {
   }
 
   .menu-btn {
-    margin-left: 80vw;
+    margin-left: 75vw;
     margin-top: 15px;
   }
 
@@ -739,7 +738,7 @@ a:active {
 
   .arrowup-icon {
     opacity: 1;
-    margin-left: 80vw;
+    margin-left: 75vw;
     margin-bottom: 40px;
   }
   .people-icon, .percentage-icon, .percentage-icon2, .lessthanhalf-icon, .thirtyfive-icon {
