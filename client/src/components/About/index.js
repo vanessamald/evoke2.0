@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import Numbers from '../Numbers/index';
 import useThemeStorage from '../themeStorage';
 
@@ -38,9 +38,9 @@ function About(){
             position:'absolute', 
             zIndex: '1',
             textAlign: 'center',
-            width: '80%',
+            width: '100%',
             //height: '100%',
-            padding: '50px',
+            //padding: '50px',
             transition: {
                 y: { 
                     stiffness: 1000, 
@@ -54,6 +54,18 @@ function About(){
             opacity: 0, 
             x: "-100%" 
         },
+        offscreen: {
+            y: 300
+          },
+          onscreen: {
+            y: 50,
+            rotate: -10,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8
+            }
+        }
     }
  
     return (
@@ -87,7 +99,11 @@ function About(){
                             </div>
                     </button>
                 
-                    <p>To identify early signs of cognitive decline</p>
+                    <motion.p 
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.8 }}
+                    >To identify early signs of cognitive decline</motion.p>
                     <p>To facilitate early diagnosis and treatment of potential causes</p>
                     <p>To track changes over time</p>
                     <p>To provide personalized interventions to maintain or improve cognitive function</p>

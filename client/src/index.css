@@ -325,8 +325,8 @@ code {
 
 @keyframes slideUp {
   0% {
-    opacity: 0;
-    transform: translateY(100%);
+      opacity: 0;
+      transform: translateY(100%);
     }
     50% {
       transform: translateY(50%);
@@ -343,6 +343,18 @@ code {
   0% { bottom: -0.2em; opacity: 1; }
   50% { bottom: 0.2em; }
   100% { bottom: 0; opacity: 1; }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateY(100%)
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 /* Animations End */
@@ -1145,6 +1157,10 @@ textPath {
 
 /* About motion div styling */
 .motion-div {
- 
+  padding: 100px;
+}
+
+.motion-div > p {
+  animation: slideFromRight 3s linear;
 }
   
