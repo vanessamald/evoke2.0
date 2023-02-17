@@ -7,6 +7,7 @@ import Numbers from '../Numbers/index';
 import useThemeStorage from '../themeStorage';
 
 function About(){
+    // theme style
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
     // offcanvas 
     const [show, setShow] = useState(false);
@@ -14,15 +15,13 @@ function About(){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    //const [ info, setInfo ] = useState('about-content1-hidden');
+    // set button and icon styling
     const [ button, setButton ] = useState('about-links-container')
     const [ icon, setIcon ] = useState('about-links-icon')
 
-    // motion div
+    // motion div open/close
     const [ isOpen, setIsOpen ] = useState(false)
     const [ isOpen1, setIsOpen1 ] = useState(false);
-
-    const [ animation, setAnimation ] = useState();
 
     const closeMotion = () => {
         setIsOpen(false);
@@ -31,34 +30,17 @@ function About(){
     const closeMotion1 = () => {
         setIsOpen1(false);
     }
-
+    // motion div styling
     const variants = {
         open: {
             opacity: 1, 
             y: 0,
-            //y: 'auto', 
-            
             position:'absolute', 
             zIndex: '1',
             textAlign: 'center',
-            //width: '600px',
             transition: {
                 y: { stiffness: 100, velocity: -100 }
             }
-            
-            //height: '100%',
-            //padding: '50px',
-            /*
-            transition: {
-                x: { 
-                    stiffness: 1000, 
-                    velocity: -10000 ,
-                },
-                y: {
-                    velocity: -10000
-                }   
-          }
-          */
          },
         closed: { 
             opacity: 0, 
@@ -66,23 +48,10 @@ function About(){
             
             transition: {
                 y: { stiffness: 1000 }
-            } 
-            
-        },
-        offscreen: {
-            y: 300
-          },
-          onscreen: {
-            y: 50,
-            rotate: -10,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 0.8
-            }
-        }
+            }  
+        } 
     }
-
+    // motion div p styling
     const item = {
         transition: {
             staggerChildren: 1
@@ -109,11 +78,6 @@ function About(){
             <motion.div style={{ height: '0px'}}
                 animate={isOpen ? 'open' : 'closed'}
                 variants = {variants}
-                
-                //fill="transparent"
-                //strokeWidth="3"
-                //stroke="hsl(0, 0%, 18%)"
-                //strokeLinecap="round"
             >
                 <div className='motion-div' variants={variants} style={{}}> 
                     <button onClick={closeMotion} style={{}} className='close-offcanvas'>
@@ -291,9 +255,7 @@ function About(){
                     By the Numbers
             </button>   
             </div>
-            
             </div>
-            
             <Offcanvas  show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
                 style={{
                     height: '100%', 
