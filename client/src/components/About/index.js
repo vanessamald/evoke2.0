@@ -41,7 +41,7 @@ function About(){
             position:'absolute', 
             zIndex: '1',
             textAlign: 'center',
-            width: '80%',
+            //width: '600px',
             transition: {
                 y: { stiffness: 100, velocity: -100 }
             }
@@ -188,7 +188,7 @@ function About(){
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     Warning Signs
             </button>
-            <motion.div style={{ height: '0px', width: '80%'}}
+            <motion.div style={{ height: '0px'}}
                 animate={isOpen1 ? 'open' : 'closed'}
                 variants = {variants}
             >

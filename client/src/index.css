@@ -1044,6 +1044,8 @@ textPath {
 .motion-div {
   border-radius: 60px;
   background-color: var(--font-color); 
+  width: 85vw;
+  padding-bottom: 25px;
 }
 
 .motion-div-p > p {
@@ -1070,6 +1072,7 @@ textPath {
   margin-bottom: 0;
   background-color: transparent;
   font-size: 10px;
+  color: var(--body-bg-color);
 }
 
 .motion-div-title {
@@ -1146,7 +1149,7 @@ textPath {
     overflow: hidden;
   }
   .close-offcanvas {
-    margin-left: 75vw;
+    /*margin-left: 75vw;*/
   }
   .contact-close-btn {
     margin-left: 60vw;
@@ -1158,7 +1161,8 @@ textPath {
     padding-top: 600px;
   }
   .motion-div {
-    padding: 25px;
+    padding: 10px;
+    width: 75vw;
   }
   .motion-div-p {
     height: 100px;

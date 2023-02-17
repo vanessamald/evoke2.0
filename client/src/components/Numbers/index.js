@@ -150,7 +150,7 @@ function Numbers() {
             <div className='numbers-section3-container numbers-section3'>
                 
                 <h3 className='numbers-section3' style={{fontSize: '48px'}}>One third</h3>
-                <p className='numbers-section3 numbers-p'>of Audults with SCD say it has interfered with social activities</p>
+                <p className='numbers-section3 numbers-p'>of Adults with SCD say it has interfered with social activities</p>
                 
             </div>
         </div>
