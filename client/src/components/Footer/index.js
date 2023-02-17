@@ -5,7 +5,11 @@ function Footer () {
         <div className='footer-container'>
             <div className='footer-content'>
                 <a className='footer-links' href='/privacypolicy'>Privacy Policy</a>
-                <p className='footer-links'>Revivir Studio   X   Sweet Song Marketing    X    Evoke LLC &copy;2023</p>
+                <a className='footer-links'>Revivir Studio</a>  
+                <p className='footer-x'>X</p>
+                <a className='footer-links' href='https://www.sweetsongmarketing.com/' target='_blank'> Sweet Song Marketing</a> 
+                <p className='footer-x'>X</p> 
+                <a className='footer-links'>Evoke LLC &copy;2023</a>
             </div>
         </div>
     )

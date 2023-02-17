@@ -8,7 +8,6 @@ function Navigation() {
     
     const changeStyle = () => {
         if (!toggle) {
-        console.log("you just clicked");
         setStyle("navigation-container");
         setButton("change");
         }
@@ -18,7 +17,6 @@ function Navigation() {
     };
 
     const handleClick = () => {
-        console.log('toggle')
         setToggle(!toggle);
         changeStyle();
     }

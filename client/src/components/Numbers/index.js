@@ -55,8 +55,8 @@ function Numbers() {
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                         <h2 className='text-center heading-xl' style={animation}>1 in 9 Adults 45 and Older </h2>
                         <h3>Are affected by Subjective Cognitive Decline (SCD)</h3>
-                        <p><span className='scd-text'><em>Subjective Cognitive Decline (SCD)</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
                         <p>SCD is a form of cognitive impairment and an early sign of dementia*</p>
+                        <p><span className='scd-text'><em>Subjective Cognitive Decline (SCD)</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
                     </div>
                 <div className='numbers-flex' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     
@@ -111,43 +111,13 @@ function Numbers() {
               </div>
             </div>
           </section>
-            
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-                <div className='about-image-container'>
-                    <img src={thirtyfive} className='thirtyfive-icon'></img>
+          <div className='numbers-last-div'>
+            <div className='about-image-container'>
+                <img src={thirtyfive} className='thirtyfive-icon'></img>
                 </div>
                 <h2 className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
                 <h3 className=''></h3>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+            </div>
         </div>
       </div>
     )

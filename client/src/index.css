@@ -677,6 +677,11 @@ a:active {
   padding-top: 100px;
 }
 
+.numbers-last-div {
+  padding-bottom: 800px;
+  padding-top: 200px;
+}
+
 /* Numbers End */
 
 /* Footer Styling */
@@ -691,14 +696,27 @@ a:active {
   display: flex;
   flex-direction: row;
   background-color: var(--font-color);
-  padding-right: 100px;
 }
 
 .footer-links {
   background-color: var(--font-color);
   color: var(--body-bg-color);
-  padding: 20px;
   font-size: 12px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.footer-links:hover {
+  font-weight: 800;
+}
+
+.footer-links:visited {
+  text-decoration: none;
+}
+
+.footer-x {
+  background-color: transparent;
+  color: var(--body-bg-color);
 }
 
 /* Footer Ends */

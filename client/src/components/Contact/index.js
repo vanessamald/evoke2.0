@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 import useThemeStorage from '../themeStorage';
 import { BsFillTelephoneFill,BsFillEnvelopeFill } from "react-icons/bs";
 
@@ -48,7 +47,7 @@ function Contact() {
         })
     } else {
     
-    console.log(emailMessage);
+    //console.log(emailMessage);
     
     let response = await fetch("http://localhost:3000/contact", {
         method: "POST",
