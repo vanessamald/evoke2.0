@@ -87,18 +87,19 @@ code {
 .dark {
   --body-bg-color: black;
   --font-color: white;
+  --alt-bg-color: purple;
 }
 
 .light {
   --font-color: #0D3046;
   --body-bg-color: white;
+  --alt-bg-color: rgba(33, 129, 193, 1);
   font-weight: bolder; 
 }
 
 .blue {
   justify-content: flex-end;
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(33, 129, 193, 1) 0%, rgba(108, 229, 232, 1) 100.2%);
-
   height: 40px;
   width: 80px;
   border-radius: 25px;
@@ -355,6 +356,22 @@ code {
   100% {
     transform: translateY(0%);
   }
+}
+
+@keyframes slideDown {
+  0% 
+    {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+  70% 
+    {
+      transform: translateY(50px)
+    }
+  100% 
+    {
+      transform: translateY(auto);
+    } 
 }
 
 /* Animations End */
@@ -707,139 +724,7 @@ a:active {
 }
 /* Privacy Policy Styling */
 
-/* Mobile Responsiveness */
 
-@media only screen and (max-width: 600px) {
-  .home-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .logo {
-    height: auto;
-    width: 100%;
-    margin-left: 0;
-    margin-top: 10%;
-    margin-bottom: 100%; 
-  }
-
-  .logo-container {
-    text-align: center;
-  }
-
-  .navigation-links-container {
-    margin-top: 100px;
-  }
-
-  .navigation-container {
-    padding-bottom: 100%;
-    overflow: hidden;
-    padding: 50px;
-  }
-
-  .menu-btn {
-    margin-left: 75vw;
-    margin-top: 15px;
-  }
-
-  .lines-container {
-    /*
-    padding: 2px;
-    */
-  }
-
-  .arrowup-icon {
-    opacity: 1;
-    margin-left: 75vw;
-    margin-bottom: 40px;
-  }
-  .people-icon, .percentage-icon, .percentage-icon2, .lessthanhalf-icon, .thirtyfive-icon {
-    width: 100px;
-  }
-  .about-text-title {
-    font-size: 20px;
-  }
-  .change {
-    /*
-    padding: 10px;
-    */
-    background-color: transparent; 
-  }
-  .early-detection-image {
-    width: 225px;
-    height: auto;
-  }
-  .about-container, .contact-container, .services-container, .vision-container {
-    padding: 50px;
-    overflow: hidden;
-  }
-  .close-offcanvas {
-    margin-left: 75vw;
-  }
-  .contact-close-btn {
-    margin-left: 60vw;
-  }
-  .contact-show {
-    padding: 50px;
-  }
-  .section.s-heading-first {
-    padding-top: 600px;
-  }
-}
-
-@media only screen and (device-width: 768px) {
-  /* For general iPad layouts */
-  .home-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .logo-container {
-    text-align: center;
-    margin-bottom: 100%;
-  }
-
-  .contact-close-btn {
-    margin-left: 75vw;
-  }
-
-  .contact-show {
-    padding: 100px
-  }
-}
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-  /* For portrait layouts only */
-  .home-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .logo-container {
-    margin-bottom: 100%;
-    margin-top: 25%;
-  }
-  .navigation-container {
-    padding-top: 25%;
-  }
-  .contact-close-btn {
-    margin-left: 75vw;
-  }
-  .contact-show {
-    padding: 100px;
-  }
-
-}
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-  /* For landscape layouts only */
-  .home-container {
-    display: flex;
-    flex-direction: row;
-  }
-  .contact-close-btn {
-    margin-left: 80vw;
-  }
-}
 
 /* TESTING */
 .section {
@@ -1157,10 +1042,177 @@ textPath {
 
 /* About motion div styling */
 .motion-div {
-  padding: 100px;
+  padding: 50px;
+  border-radius: 60px;
+  background-color: var(--alt-bg-color); 
 }
 
-.motion-div > p {
-  animation: slideFromRight 3s linear;
+.motion-div-p > p {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  align-items: center;
+  padding: 25px;
 }
-  
+
+.motion-div-p {
+  margin-top: 25px;
+  background-color: var(--body-bg-color);
+  border-radius: 400px;
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.motion-div-source {
+  margin-top: 50px;
+  margin-bottom: 0;
+  background-color: transparent;
+  font-size: 10px;
+}
+
+/* Mobile Responsiveness */
+
+@media only screen and (max-width: 600px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10%;
+    margin-bottom: 100%; 
+  }
+
+  .logo-container {
+    text-align: center;
+  }
+
+  .navigation-links-container {
+    margin-top: 100px;
+  }
+
+  .navigation-container {
+    padding-bottom: 100%;
+    overflow: hidden;
+    padding: 50px;
+  }
+
+  .menu-btn {
+    margin-left: 75vw;
+    margin-top: 15px;
+  }
+
+  .lines-container {
+    /*
+    padding: 2px;
+    */
+  }
+
+  .arrowup-icon {
+    opacity: 1;
+    margin-left: 75vw;
+    margin-bottom: 40px;
+  }
+  .people-icon, .percentage-icon, .percentage-icon2, .lessthanhalf-icon, .thirtyfive-icon {
+    width: 100px;
+  }
+  .about-text-title {
+    font-size: 20px;
+  }
+  .change {
+    /*
+    padding: 10px;
+    */
+    background-color: transparent; 
+  }
+  .early-detection-image {
+    width: 225px;
+    height: auto;
+  }
+  .about-container, .contact-container, .services-container, .vision-container {
+    padding: 50px;
+    overflow: hidden;
+  }
+  .close-offcanvas {
+    margin-left: 75vw;
+  }
+  .contact-close-btn {
+    margin-left: 60vw;
+  }
+  .contact-show {
+    padding: 50px;
+  }
+  .section.s-heading-first {
+    padding-top: 600px;
+  }
+  .motion-div-p {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+  }
+  .motion-div-p > p {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 100%;
+  }
+
+  .contact-close-btn {
+    margin-left: 75vw;
+  }
+
+  .contact-show {
+    padding: 100px
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-container {
+    margin-bottom: 100%;
+    margin-top: 25%;
+  }
+  .navigation-container {
+    padding-top: 25%;
+  }
+  .contact-close-btn {
+    margin-left: 75vw;
+  }
+  .contact-show {
+    padding: 100px;
+  }
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+  .home-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .contact-close-btn {
+    margin-left: 80vw;
+  }
+}

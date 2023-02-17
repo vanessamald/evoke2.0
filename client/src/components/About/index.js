@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { motion, useScroll } from 'framer-motion';
+import { animate, motion, useScroll } from 'framer-motion';
 import Numbers from '../Numbers/index';
 import useThemeStorage from '../themeStorage';
 
@@ -22,6 +22,8 @@ function About(){
     const [ isOpen, setIsOpen ] = useState(false)
     const [ isOpen1, setIsOpen1 ] = useState(false);
 
+    const [ animation, setAnimation ] = useState();
+
     const closeMotion = () => {
         setIsOpen(false);
     }
@@ -31,28 +33,41 @@ function About(){
     }
 
     const variants = {
-        open: { 
+        open: {
             opacity: 1, 
-            x: 0,
-            y: 'auto', 
+            y: 0,
+            //y: 'auto', 
+            
             position:'absolute', 
             zIndex: '1',
             textAlign: 'center',
-            width: '100%',
+            width: '80%',
+            transition: {
+                y: { stiffness: 100, velocity: -100 }
+            }
+            
             //height: '100%',
             //padding: '50px',
+            /*
             transition: {
-                y: { 
+                x: { 
                     stiffness: 1000, 
                     velocity: -10000 ,
                 },
-                x: {
+                y: {
                     velocity: -10000
-                }
-          } },
+                }   
+          }
+          */
+         },
         closed: { 
             opacity: 0, 
-            x: "-100%" 
+            y: "-100",
+            
+            transition: {
+                y: { stiffness: 1000 }
+            } 
+            
         },
         offscreen: {
             y: 300
@@ -66,6 +81,13 @@ function About(){
               duration: 0.8
             }
         }
+    }
+
+    const item = {
+        transition: {
+            staggerChildren: 1
+        },
+        animation: 'slideDown 3s linear'
     }
  
     return (
@@ -83,34 +105,76 @@ function About(){
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     Why test early?
             </button>
-            <motion.div style={{ height: '0px', width: '80%'}}
+            
+            <motion.div style={{ height: '0px'}}
                 animate={isOpen ? 'open' : 'closed'}
                 variants = {variants}
+                
                 //fill="transparent"
                 //strokeWidth="3"
                 //stroke="hsl(0, 0%, 18%)"
                 //strokeLinecap="round"
             >
-                <div className='motion-div' variants={variants}> 
+                <div className='motion-div' variants={variants} style={{padding: '50px'}}> 
                     <button onClick={closeMotion} style={{}} className='close-offcanvas'>
                             <div style={{padding: '5px', marginBottom: '5px'}}>
                                 <div className='close-line1'></div>
                                 <div className='close-line2'></div>
                             </div>
                     </button>
-                
-                    <motion.p 
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.8 }}
-                    >To identify early signs of cognitive decline</motion.p>
-                    <p>To facilitate early diagnosis and treatment of potential causes</p>
-                    <p>To track changes over time</p>
-                    <p>To provide personalized interventions to maintain or improve cognitive function</p>
-                    <p>To provide reassurance and support to patients and their families</p>
-                    <p>To inform advanced care planning and decision-making</p>
-                    <p>To promote healthy lifestyle choices and habits that support brain health.</p>
-                
+                    <h3>Reasons to test early</h3>
+                   
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>To identify early signs of cognitive decline</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p'
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                    >
+                        <p>To facilitate early diagnosis and treatment of potential causes</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p'
+                        initial='hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                    >
+                        <p>To track changes over time</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p'
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                    >
+                        <p>To provide personalized interventions to maintain or improve cognitive function</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p'
+                        initial='hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                    >
+                        <p>To provide reassurance and support to patients and their families</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p'
+                        initial='hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                    >
+                        <p>To inform advanced care planning and decision-making</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p'
+                        initial='hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                    >
+                        <p>To promote healthy lifestyle choices and habits that support brain health.</p>
+                    </motion.div>
+                    
                 </div> 
             </motion.div>
 
@@ -121,10 +185,6 @@ function About(){
             <motion.div style={{ height: '0px', width: '80%'}}
                 animate={isOpen1 ? 'open' : 'closed'}
                 variants = {variants}
-                //fill="transparent"
-                //strokeWidth="3"
-                //stroke="hsl(0, 0%, 18%)"
-                //strokepnecap="round"
             >
                   
                 <div className='motion-div' variants={variants}>
@@ -134,17 +194,89 @@ function About(){
                                 <div className='close-line2'></div>
                             </div>
                     </button>
-                    <p>Changes in memory or thinking acuity</p>
-                    <p>Difficulty performing daily tasks</p>
-                    <p>Confusion or disorientation</p>
-                    <p>Mood swings or depression</p>
-                    <p>Withdrawal from social activities</p>
-                    <p>Loss of initiative or motivation</p>
-                    <p>Speech problems</p>
-                    <p>Decreased ability to handle finances or make decisions</p>
-                    <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
-                    <p>To determine appropriate medical or support interventions.</p>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Changes in memory or thinking acuity</p>    
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Difficulty performing daily tasks</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Confusion or disorientation</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Speech problems</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Mood swings or depression</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Withdrawal from social activities</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Loss of initiative or motivation</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Decreased ability to handle finances or make decisions</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
+                    </motion.div>
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        //viewport={{ once: true }}
+                        >
+                        <p>To determine appropriate medical or support interventions.</p>
+                    </motion.div>
+                    <p className='motion-div-source'>Source: CDC</p>
                 </div>
+                
             </motion.div>
             
             <button onClick={handleShow} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
