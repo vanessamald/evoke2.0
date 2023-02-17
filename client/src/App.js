@@ -1,18 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-import About from './components/About';
 import Home from './components/Home';
 import Privacy from './components/Privacy';
 import Numbers from './components/Numbers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useThemeStorage from './components/themeStorage';
-import Contact from './components/Contact';
 
 function App() {
   const [data, setData] = React.useState(null);
   const [theme, toggleTheme, componentMounted] = useThemeStorage();
-
-  console.log(theme);
 
   React.useEffect(() => {
     fetch("/api")
@@ -20,12 +16,9 @@ function App() {
       .then((data) => setData(data.message));
   }, []);
 
-  
   if (!componentMounted) {
     return <div/>
   }
-  
-  
   
   return (
     <div className={theme}>
