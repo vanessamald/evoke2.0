@@ -1042,9 +1042,8 @@ textPath {
 
 /* About motion div styling */
 .motion-div {
-  padding: 50px;
   border-radius: 60px;
-  background-color: var(--alt-bg-color); 
+  background-color: var(--font-color); 
 }
 
 .motion-div-p > p {
@@ -1071,6 +1070,13 @@ textPath {
   margin-bottom: 0;
   background-color: transparent;
   font-size: 10px;
+}
+
+.motion-div-title {
+  background-color: transparent;
+  color: var(--body-bg-color);
+  font-size: 36px;
+  margin-bottom: 50px;
 }
 
 /* Mobile Responsiveness */
@@ -1151,15 +1157,19 @@ textPath {
   .section.s-heading-first {
     padding-top: 600px;
   }
+  .motion-div {
+    padding: 25px;
+  }
   .motion-div-p {
     height: 100px;
     width: 100px;
-    display: flex;
-    flex-direction: row;
+    
   }
   .motion-div-p > p {
     width: 100px;
     height: 100px;
+    font-size: 8px;
+    padding: 10px;
   }
 }
 

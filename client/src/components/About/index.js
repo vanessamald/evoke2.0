@@ -115,20 +115,20 @@ function About(){
                 //stroke="hsl(0, 0%, 18%)"
                 //strokeLinecap="round"
             >
-                <div className='motion-div' variants={variants} style={{padding: '50px'}}> 
+                <div className='motion-div' variants={variants} style={{}}> 
                     <button onClick={closeMotion} style={{}} className='close-offcanvas'>
                             <div style={{padding: '5px', marginBottom: '5px'}}>
                                 <div className='close-line1'></div>
                                 <div className='close-line2'></div>
                             </div>
                     </button>
-                    <h3>Reasons to test early</h3>
+                    <h3 className='motion-div-title'>Reasons To Test Early</h3>
                    
                     <motion.div className='motion-div-p' 
                         initial= 'hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        //viewport={{ once: true }}
+                        viewport={{ once: true }}
                         >
                         <p>To identify early signs of cognitive decline</p>
                     </motion.div>
@@ -136,6 +136,7 @@ function About(){
                         initial= 'hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
                     >
                         <p>To facilitate early diagnosis and treatment of potential causes</p>
                     </motion.div>
@@ -143,6 +144,7 @@ function About(){
                         initial='hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
                     >
                         <p>To track changes over time</p>
                     </motion.div>
@@ -150,6 +152,7 @@ function About(){
                         initial= 'hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
                     >
                         <p>To provide personalized interventions to maintain or improve cognitive function</p>
                     </motion.div>
@@ -157,6 +160,7 @@ function About(){
                         initial='hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
                     >
                         <p>To provide reassurance and support to patients and their families</p>
                     </motion.div>
@@ -164,6 +168,7 @@ function About(){
                         initial='hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
                     >
                         <p>To inform advanced care planning and decision-making</p>
                     </motion.div>
@@ -171,6 +176,7 @@ function About(){
                         initial='hidden'
                         whileInView={item}
                         whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
                     >
                         <p>To promote healthy lifestyle choices and habits that support brain health.</p>
                     </motion.div>
@@ -194,6 +200,7 @@ function About(){
                                 <div className='close-line2'></div>
                             </div>
                     </button>
+                    <h3 className='motion-div-title'>Cognitive Decline Warning Signs</h3>
                     <motion.div className='motion-div-p' 
                         initial= 'hidden'
                         whileInView={item}
