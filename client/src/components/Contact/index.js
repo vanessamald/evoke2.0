@@ -6,18 +6,18 @@ import useThemeStorage from '../themeStorage';
 import { BsFillTelephoneFill,BsFillEnvelopeFill } from "react-icons/bs";
 
 function Contact() {
+    // set theme
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
 
-    // set state for contact form styling 
+    // set state for contact form open/close 
     const [ show, setShow] = useState('hidden-contact');
-
     const handleClick = () => {
         setShow('contact-show')
     }
     const handleClose = () => {
         setShow('hidden-contact');
     }
-
+    
     const [ status, setStatus ] = useState('Submit');
 
     // set state for contact form 
@@ -26,8 +26,10 @@ function Contact() {
     const [message, setMessage] = useState('');
     const [subject, setSubject] = useState('');
 
+    // set state for response 
     const [result, setResult] = useState(null);
 
+    // handle sumbit form 
     const submitForm = async (e) => {
         e.preventDefault();
         setStatus('Sending email');
@@ -66,20 +68,11 @@ function Contact() {
             message: 'Something went wrong, please try again later.'
         })
       }}
-      /*
-      setResult({
-        success: true,
-        message: 'Message was sent, we will get back to you shortly.'
-      });
-      */
-      //setStatus("Submit");
-      //let result = await response.json();
-      //alert(result.status);
     }; 
-    return (
 
-<div>
-<div className={show}>
+    return (
+        <div>
+            <div className={show}>
                 <div>
                     <div>Contact Form</div>
                     <button className='contact-close-btn' onClick={handleClose}>
@@ -90,13 +83,13 @@ function Contact() {
                 <div>
                     <div>
                     {result && (
-                    <p className={`${result.success ? 'success' : 'error'}`}>
-                    {result.message}
-                    </p>
+                        <p className={`${result.success ? 'success' : 'error'}`}>
+                        {result.message}
+                        </p>
                     )}
                     </div>
                     <Form onSubmit={submitForm}>
-                    <Form.Group className="mb-3" controlId="name">
+                        <Form.Group className="mb-3" controlId="name">
                             <Form.Label>Name</Form.Label>
                             <Form.Control
                                 //value={state.name}
@@ -117,7 +110,7 @@ function Contact() {
                                 required
                             />
                         </Form.Group>
-                        <Form.Label>Subject</Form.Label>
+                            <Form.Label>Subject</Form.Label>
                             <Form.Control
                                 //value={state.name}
                                 onChange={(e) => setSubject(e.target.value)} 
@@ -150,7 +143,7 @@ function Contact() {
                     </Form>
                 </div>
             </div>  
-        <div  className='contact-container' style={{position: 'relative'}}>
+        <div className='contact-container' style={{position: 'relative'}}>
             <h2>Contact</h2>
             <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
             <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>

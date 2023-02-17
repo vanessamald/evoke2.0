@@ -53,7 +53,6 @@ function Services(){
                 </ul>
                 </motion.div>
             </div>
-            
         </motion.div>
     )
 }

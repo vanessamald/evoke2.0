@@ -1,7 +1,7 @@
-import e from 'cors';
 import React, { useState } from 'react';
 
 function Navigation() {
+    // set state styling for button and toggle and hidden navbar
     const [style, setStyle] = useState("hidden-nav");
     const [ button, setButton] = useState("lines-container")
     const [ toggle, setToggle ] = useState(false);
@@ -24,9 +24,7 @@ function Navigation() {
     }
 
     return (
-    <div style={{
-          
-    }}>   
+    <div>   
         <button className='menu-btn' onClick={handleClick}>
         <div className={button}>
             <div className='menu-line1'></div>
@@ -34,7 +32,6 @@ function Navigation() {
             <div className='menu-line3'></div>
         </div>
         </button>
-    
         {toggle ?
         <div className='navigation-container' >
             <div className='navigation-links-container'>

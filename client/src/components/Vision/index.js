@@ -14,8 +14,6 @@ function Vision() {
                 and continuous improvement, we aim to advance the field of cognitive impairment testing in older adults and to improve the 
                 lives of seniors everywhere
                 </p>
-
-             
             </div>
         </div>
     )
