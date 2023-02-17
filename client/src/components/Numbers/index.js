@@ -11,49 +11,8 @@ import useThemeStorage from '../themeStorage';
 
 function Numbers() {
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
-
-    const [ offset, setOffset ] = useState(0);
-    const [ visible, setVisible ] = useState(true);
-    const [height, setHeight] = useState(0)
-
     const [ animation, setAnimation ] = useState();
     
-    useEffect(() => {
-        setOffset(window.pageYOffset);
-        window.addEventListener('scroll', scrollTrigger, {passive: true});
-        return () => window.removeEventListener('scroll', scrollTrigger);
-    },
-    
-    []);
-
-    const scrollTrigger = () => {
-
-        window.addEventListener('scroll', () => {
-            document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-          }, false);
-
-
-        let scrollHeight = 1000;
-        const winScroll = document.body.scrollTop || 
-        document.documentElement.scrollTop;
-    setHeight(winScroll);
-
-    if (winScroll > scrollHeight) {  
-         visible && setVisible(false);
-        
-         //const scrollingText = {animation: 'rotateText' + ' ' + `${offset/100 *2}` +'s' + ' ' + 'linear infinite'};
-        
-            //console.log(scrollingText);
-            //setAnimation(scrollingText);
-    } else {
-        setVisible(true);
-        const slideInText = { animation: 'slideIn' + ' ' + '3s' };
-        console.log(slideInText);
-        setAnimation(slideInText);
-    }
-    }
-    console.log(offset);
-
     // scrolling text span
     const text = 'scrolldown';
     const SplitText = () => {
@@ -77,9 +36,7 @@ function Numbers() {
 
     return (
 
-        <div className={theme}>
-                
-             
+        <div className={theme}>    
         <div id="content" className="main">
           <section className="section s-hero s-hero-versions">
             <div className="section-radius"></div>
@@ -91,25 +48,6 @@ function Numbers() {
                     <SplitText/> 
                 </div>
             </div>
-            
-              
-            {/* 
-            <ReactCurvedText className='scroll-text'
-                        width={370}
-                        height={40}
-                        cx={190}
-                        cy={120}
-                        rx={100}
-                        ry={100}
-                        startOffset={100}
-                        reversed={true}
-                        text={text}
-                        textProps={{ style: {animation: 'moveText 10s linear infinite', position:'absolute'} }}
-                    />
-                    */}
-            {
-        visible 
-         && 
             <div className="container-max">
                     <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
                         <img src={people} className='people-icon'></img>
@@ -120,7 +58,6 @@ function Numbers() {
                         <p><span className='scd-text'><em>Subjective Cognitive Decline (SCD)</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
                         <p>SCD is a form of cognitive impairment and an early sign of dementia*</p>
                     </div>
-                  
                 <div className='numbers-flex' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     
                 <div style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid var(--font-color)', borderBottom: '3px solid var(--font-color)'}}>
@@ -132,9 +69,7 @@ function Numbers() {
                     </div>
                 </div>
             </div>
-}
           </section>
-            
           <div className="section s-heading-first background-blurple z-9"> 
             <div className='numbers-section3' style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                 <div className='numbers-section3 numbers-flex' style={{display: 'flex', flexDirection: 'column', padding: '30px', borderTop:'3px solid var(--body-bg-color)', borderBottom: '3px solid var(--body-bg-color)'}}>
@@ -145,40 +80,22 @@ function Numbers() {
                     <img src={percentage2} className='percentage-icon2'></img>
                 </div>
             </div>
-
         <div className='numbers-section3-div numbers-section3'>            
             <div className='numbers-section3-container numbers-section3'>
-                
                 <h3 className='numbers-section3' style={{fontSize: '48px'}}>One third</h3>
                 <p className='numbers-section3 numbers-p'>of Adults with SCD say it has interfered with social activities</p>
-                
             </div>
         </div>
-            
-
           </div>
           <section className="section s-radius sr-large background-blurple z-9">
             <div className="container-max">
               <div className="card-content2 numbers-section3 r">
-
-                
-                  
-                
-               
-                
-                
-
-               
               </div>
             </div>
           </section>
-
-      
-    
           <div className="section s-heading background-white z-7">
             <div className="section-head-bg-extension background-white"></div>
             <div className="container-max background-white">
-              
             <div className='about-image-container background-white'>
                 <img src={lessThanHalf} className='lessthanhalf-icon background-white'></img>
             </div>
@@ -186,7 +103,6 @@ function Numbers() {
                 <h2 className="text-center background-white">With Dementia Have Been Diagnosed</h2>
             </div>
           </div>
-
           <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
             <div className="container-max">
               <div className="card-content2">
@@ -233,12 +149,8 @@ function Numbers() {
           <br />
           <br />
         </div>
-
       </div>
-
-
     )
 }
-
 
 export default Numbers;
