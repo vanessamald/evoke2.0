@@ -12,7 +12,7 @@ function Vision() {
                 evidence-based testing services, using state-of-the-art technology by empowering older adults and their families with 
                 the knowledge and resources they need to maintain their cognitive health and well-being. Through our commitment to excellence 
                 and continuous improvement, we aim to advance the field of cognitive impairment testing in older adults and to improve the 
-                lives of seniors everywhere
+                lives of seniors everywhere.
                 </p>
             </div>
         </div>

@@ -35,7 +35,7 @@ function Navigation() {
             <div className='navigation-links-container'>
                 <a className='navigation-links' href='/#about'>About</a>
                 <div className='line'></div>
-                <a className='navigation-links' href='/#learnmore'>Learn More</a>
+                <a className='navigation-links' href='/#services'>Services</a>
                 <div className='line'></div>
                 <a className='navigation-links' href='/#ourvision'>Our Vision</a>
                 <div className='line'></div>

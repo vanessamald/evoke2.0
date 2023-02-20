@@ -2,15 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
-// onclick navigate back to homepage
+
 function Privacy() {
+    // onclick navigate back to homepage
     const navigate = useNavigate();
     const navigateBack = () => {
         navigate(-1);
     }
 
     return (
-        <div className='privacy-policy-container'>
+        <div className='privacy-policy-container'> 
+            <BsFillArrowLeftCircleFill className='back-arrow-icon'style={{ marginBottom: '25px'}} onClick={navigateBack}/>
             <h3 className='privacy-policy-title'> Privacy Policy for Evoke Neurodiagnostics</h3>
             <div className='privacy-policy-content'>
             <p>Effective Date: 2/1/2023</p>
@@ -37,7 +39,6 @@ function Privacy() {
             <p>Changes to Privacy Policy: We may update this Privacy Policy from time to time to reflect changes in our practices or services. We will notify you of any material changes by posting the updated policy on our website.</p>
             <p>Contact Us: If you have any questions or concerns about our privacy policy, please contact us at hello@evokediagnostics.com</p>
             </div>
-                <BsFillArrowLeftCircleFill className='back-arrow-icon' onClick={navigateBack}/> 
         </div>
     )
 }

@@ -8,7 +8,10 @@ import useThemeStorage from '../themeStorage';
 
 function About(){
     // theme style
-    const [theme, toggleTheme, componentMounted] = useThemeStorage();
+    const [ theme, toggleTheme, componentMounted] = useThemeStorage();
+    //const [ theme, setTheme ] = useState('dark');
+    console.log(theme);
+
     // offcanvas 
     const [show, setShow] = useState(false);
 
@@ -44,7 +47,7 @@ function About(){
          },
         closed: { 
             opacity: 0, 
-            y: "-100",
+            y: "0",
             
             transition: {
                 y: { stiffness: 1000 }
@@ -68,7 +71,7 @@ function About(){
             Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of cognitive decline. With a focus on preventative care and early detection, our testing services aim to provide individuals with the information and support they need to maintain their cognitive health and independence. Our testing process is non-invasive, confidential, and tailored to the unique needs of each individual.
             We believe that everyone deserves access to the information that can help maintain their cognitive health throughout the lifespan.
             </p>
-            <h2 id={'learnmore'}>Learn More</h2>
+            <h2>Learn More About Cognitive Decline Below</h2>
             <div style={{marginTop: '50px'}}>
             <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
@@ -81,10 +84,10 @@ function About(){
             >
                 <div className='motion-div' variants={variants} style={{}}> 
                     <button onClick={closeMotion} style={{}} className='close-offcanvas'>
-                            <div style={{padding: '5px', marginBottom: '5px'}}>
+                            
                                 <div className='close-line1'></div>
                                 <div className='close-line2'></div>
-                            </div>
+                            
                     </button>
                     <h3 className='motion-div-title'>Reasons To Test Early</h3>
                    
@@ -159,10 +162,10 @@ function About(){
                   
                 <div className='motion-div' variants={variants}>
                     <button onClick={closeMotion1} style={{}} className='close-offcanvas'>
-                            <div style={{padding: '5px', marginBottom: '5px'}}>
+                            
                                 <div className='close-line1'></div>
                                 <div className='close-line2'></div>
-                            </div>
+                            
                     </button>
                     <h3 className='motion-div-title'>Cognitive Decline Warning Signs</h3>
                     <motion.div className='motion-div-p' 
@@ -256,24 +259,31 @@ function About(){
             </button>   
             </div>
             </div>
-            <Offcanvas  show={show} onHide={handleClose} backdrop="static" placement={'bottom'}
+            <Offcanvas  show={show} onHide={handleClose}  placement={'bottom'}
                 style={{
                     height: '100%', 
-                    backgroundColor: 'var(--body-bg-color)',
+                    //backgroundColor: 'var(--body-bg-color)',
                     opacity: '1'
                 }} 
             > 
                 <Offcanvas.Body style={{backgroundColor: '', padding: '0px'}}>
-                    <Offcanvas.Header  style={{opacity: '1', backgroundColor: 'white', padding: ''}} closeButton>
-                        {/* 
-                        <button onClick={handleClose} style={{}} className='close-offcanvas'>
-                            <div style={{padding: '5px', marginBottom: '5px'}}>
-                                <div className='close-line1'></div>
-                                <div className='close-line2'></div>
-                            </div>
-                        </button>
-                        */}
+                   
+
+                    
+                <BsFillArrowLeftCircleFill onClick={handleClose} style={{ marginRight: '80vw', width: '40px', height: '40px', color: 'var(--font-color)'}}/>
+                
+                        {/*
+                        <Offcanvas.Header  style={{opacity: '1', backgroundColor: 'var(--body-bg-color)', padding: ''}} closeButton>
                     </Offcanvas.Header>
+                        */}
+                    {/* 
+                    <button onClick={handleClose} style={{}} className='close-offcanvas'>
+                        <div style={{padding: '5px', marginBottom: '5px'}}>
+                            <div className='close-line1'></div>
+                            <div className='close-line2'></div>
+                        </div>
+                    </button>
+                    */}
                 <Numbers/>
                 </Offcanvas.Body>
             </Offcanvas>  

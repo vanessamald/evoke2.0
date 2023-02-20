@@ -7,12 +7,14 @@ import Vision from '../Vision';
 import logoTransparent from '../../assets/images/EVOKE Official Logo Transparent.png'
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import Footer from '../Footer';
+import Services from '../Services';
 import useThemeStorage from '../themeStorage';
 
 function Home() {
     // set theme
     const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
     
+    console.log(theme);
     // set scrolling 
     const [scroll, setScroll] = useState(0);
     const [ arrow, setArrow] = useState('arrowup-icon-hide');
@@ -51,8 +53,9 @@ function Home() {
             </div>
             </div>
             <About/>
-           <Vision/>
-           <Contact/>
+            <Services/>
+            <Vision/>
+            <Contact/>
                 <a href="/#">
                     <BsFillArrowUpCircleFill className='arrowup-icon'/>
                 </a>

@@ -14,7 +14,9 @@ const themeToggler = () => {
         window.localStorage.setItem('toggler', 'blue');
         setTheme('light');
         setIsOn('blue');
-    } else { 
+        console.log('THEME IS LIGHT');
+    } 
+    else { 
         window.localStorage.setItem('theme', 'dark');
         window.localStorage.setItem('toggler', 'purple');
         setTheme('dark');
@@ -30,9 +32,9 @@ useEffect(() => {
         setTheme(localTheme);
         setIsOn(localToggler);
     } else {
-        setTheme('dark')
-        setIsOn('purple');
-        window.localStorage.setItem('theme', 'dark')
+        //setTheme('dark')
+        //setIsOn('purple');
+        //window.localStorage.setItem('theme', 'dark')
     } 
     setComponentMounted(true);
 },
