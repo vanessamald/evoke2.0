@@ -248,7 +248,7 @@ function About(){
                         >
                         <p>To determine appropriate medical or support interventions.</p>
                     </motion.div>
-                    <p className='motion-div-source'>Source: CDC</p>
+                    <p className='motion-div-source'>Source: Alzheimer's Disease and Healthy Aging. https://www.cdc.gov/aging/dementia/index.html. 2023  </p>
                 </div>
                 
             </motion.div>
@@ -267,11 +267,9 @@ function About(){
                 }} 
             > 
                 <Offcanvas.Body style={{backgroundColor: '', padding: '0px'}}>
-                   
-
-                    
-                <BsFillArrowLeftCircleFill onClick={handleClose} style={{ marginRight: '80vw', width: '40px', height: '40px', color: 'var(--font-color)'}}/>
-                
+                    <Offcanvas.Header>   
+                        <BsFillArrowLeftCircleFill onClick={handleClose} style={{ marginRight: '80vw', width: '40px', height: '40px', color: 'var(--font-color)'}}/>
+                    </Offcanvas.Header> 
                         {/*
                         <Offcanvas.Header  style={{opacity: '1', backgroundColor: 'var(--body-bg-color)', padding: ''}} closeButton>
                     </Offcanvas.Header>

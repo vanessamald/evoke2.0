@@ -9,7 +9,7 @@
 }
 
 body {
-  
+  overflow-x: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,6 +24,18 @@ code {
 }
 
 /* Home Styling */
+.home-nav {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 90%;
+  justify-content: space-between;
+  
+}
+
+.home-nav-btn {
+  padding-top: 20px;
+}
+
 .home-container {
   /*
   display: flex;
@@ -50,7 +62,6 @@ code {
 /* Home Styling Ends */
 
 /* Toggle & Theme Styling */
-
 .theme-togg-container {
   padding-top: 20px;
   padding-left: 25px;
@@ -132,13 +143,13 @@ code {
 /* Nav Styling */
 .menu-btn {
   position: absolute;
-  margin-top: 10px;
+  
   padding-top: 0px;
   z-index: 1;
   border-radius: 10px;
   border-color: var(--font-color);
   transition: transform .7s ease-in-out;
-  margin-left: 90vw;
+  /*margin-left: 90vw;*/
   color: var(--font-color);
   opacity: 1;
   animation: fadeIn 8s linear;
@@ -227,7 +238,7 @@ code {
 .arrowup-icon {
   width: 60px;
   height: 60px;
-  margin-left: 90vw;
+  margin-right: 25px;
   margin-bottom: 20px;
   background-color: transparent;
   /*
@@ -235,6 +246,11 @@ code {
   */
   bottom: 0;
   animation: fadeIn 8s linear;
+}
+
+.arrowup-icon-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .arrowup-icon:hover {
@@ -670,6 +686,10 @@ a:active {
 /* Services Styling Ends */
 
 /* Numbers Styling */
+.numbers-source {
+  font-size: 8px;
+  padding: 10px;
+}
 .numbers-line {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -702,8 +722,10 @@ a:active {
 
 .numbers-div1 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 50px;
   /*
   border-top: 3px solid var(--font-color);
   border-bottom: 3px solid var(--font-color);
@@ -723,7 +745,6 @@ a:active {
   border-radius: 50%;
   border: 1px solid var(--font-color); 
   background-color: var(--font-color);
-  margin-top: 50px;
   margin-bottom: 50px;
   
 }
@@ -768,14 +789,13 @@ a:active {
   justify-content: center;
 }
 
-.numbers-div2 {
-  display: flex; 
-  flex-direction: row-reverse; 
-  padding-bottom: 50px;
-}
+
 
 .numbers-div2-content {
   padding: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .numbers-div2-text {
@@ -784,6 +804,7 @@ a:active {
   justify-content: center;
   align-items: center;
   color: var(--body-bg-color);
+  margin-left: 25px;
 }
 
 .numbers-card {
@@ -827,20 +848,26 @@ a:active {
 .numbers-section3 {
   background-color: #A4B4C5;
   color: var(--body-bg-color);
+  
 }
 
 .numbers-p {
-  width: 50%;
   font-size: 24px;
+  margin-left: 25px;
 }
 
 .numbers-section3-div {
-  padding-top: 50px;
+  /*padding-top: 50px;*/
 }
 
 .numbers-last-div {
-  padding-bottom: 800px;
+  padding-bottom: 400px;
   padding-top: 200px;
+}
+
+.numbers-last-heading {
+  margin-top: 400px;
+  padding: 50px;
 }
 
 /* Numbers End */
@@ -962,10 +989,11 @@ a:active {
   border-bottom-left-radius: 5rem;
   border-bottom-right-radius: 5rem;
 }
-
+/*
 .section.s-radius.sr-large {
   padding-top: 4rem;
 }
+*/
 
 .section.s-heading {
   position: -webkit-sticky;
@@ -1235,7 +1263,7 @@ textPath {
   border-radius: 60px;
   background-color: var(--font-color); 
   width: 85vw;
-  
+  padding-bottom: 25px;
 }
 
 .motion-div-p > p {
@@ -1261,8 +1289,19 @@ textPath {
   margin-top: 50px;
   margin-bottom: 0;
   background-color: transparent;
-  font-size: 10px;
+  font-size: 8px;
   color: var(--body-bg-color);
+  padding: 10px;
+}
+
+.motion-div-source-link {
+  text-decoration: none;
+  color: var(--body-bg-color);
+  background-color: var(--font-color);
+}
+
+.motion-div-source-link::after {
+  text-decoration: none;
 }
 
 .motion-div-title {
@@ -1279,6 +1318,14 @@ textPath {
   .home-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .home-nav {
+    width: 85%;
+  }
+
+  .home-nav-btn {
+    margin-right: 25px;
   }
 
   .logo {
@@ -1304,8 +1351,7 @@ textPath {
   }
 
   .menu-btn {
-    margin-left: 75vw;
-    margin-top: 15px;
+    
   }
 
   .lines-container {
@@ -1326,6 +1372,7 @@ textPath {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px;
   }
   .numbers-circle1 {
     text-align: center;
@@ -1341,14 +1388,25 @@ textPath {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+  }
+  .numbers-div2-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .numbers-div2-text {
     text-align: center;
     padding-top: 25px;
+    margin-left: 0px;
   }
   .numbers-p {
     text-align: center;
     padding-bottom: 25px;
+    margin-left: 0px;
+  }
+  .section {
+    padding: 25px;
   }
   .section.s-hero {
     padding: 25px;

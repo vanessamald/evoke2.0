@@ -22,7 +22,8 @@ function Navigation() {
     }
 
     return (
-    <div>   
+    <div> 
+        <div className='home-nav-btn'>    
         <button className='menu-btn' onClick={handleClick}>
         <div className={button}>
             <div className='menu-line1'></div>
@@ -30,6 +31,7 @@ function Navigation() {
             <div className='menu-line3'></div>
         </div>
         </button>
+        </div> 
         {toggle ?
         <div className='navigation-container' >
             <div className='navigation-links-container'>

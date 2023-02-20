@@ -7,6 +7,7 @@ import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
 import { useInView } from "framer-motion"
 
@@ -65,7 +66,7 @@ function Numbers() {
 
     const drawlineBottom = {
         opacity: isInView ? 1 : 0,
-        animation: isInView ? 'draw-line3 5s' : 'none',
+        animation: isInView ? 'draw-line-bottom 5s' : 'none',
         animationFillMode: isInView ? 'forwards' : 'backwards', 
         //animationDelay: isInView ? '3s' : '0s',
         //borderBottom: '1px solid white', 
@@ -76,7 +77,7 @@ function Numbers() {
     
     return (
 
-        <div className={theme} ref={ref}>    
+        <div className={theme} ref={ref} id='numbers'>    
             <div id="content" className="main">
             
           <section className="section s-hero s-hero-versions">
@@ -99,7 +100,7 @@ function Numbers() {
                         opacity: isInView ? 1 : 0,
                         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                     }} className='numbers-section1'>
-                        <h2 className='text-center heading-xl' style={animation}>1 in 9 Adults 45 and Older </h2>
+                        <h2 className='text-center heading-xl' style={animation}>1 in 10 Adults 45 and Older </h2>
                         <h3 className='numbers-subheading1'>Are affected by Subjective Cognitive Decline (SCD)</h3>
                         <div className='numbers-content1'>
                             
@@ -109,8 +110,8 @@ function Numbers() {
                     </div>
                 <div>
                     
-                <div className='numbers-div1' ref={ref}>
-                    <div style={drawline}>
+                <div ref={ref} className='numbers-div1'>
+                    <div style={drawline} className='numbers-div1'>
                         <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{marginRight: '', fontSize: '48px'}}>41% </h3></div>
                         <h3 className='numbers-text' style={{fontSize: '24px'}}>of Adults with SCD Have Given Up <p className='numbers-em'>Daily Activities</p></h3>
                     </div>
@@ -125,25 +126,31 @@ function Numbers() {
           </section>
           <div className="section s-heading-first background-blurple z-9"> 
             <div className='numbers-section3'>
-                <div className='numbers-section3 numbers-div2' ref={ref}>
-                    <div style={drawline3} className='numbers-div2-content'>
-                        <div className='numbers-circle2'><h3 className='numbers-circle2-text' style={{fontSize: '48px'}}>Only 42% </h3></div>
+
+            <div className='numbers-section3-container numbers-section3' ref={ref}>
+                <div style={drawline3} className='numbers-div2-content'>
+                    <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{fontSize: '48px'}}>1 out of 3</h3></div>
+                    <h4 className='numbers-section3 numbers-p'>Adults with SCD say it has interfered with<p className='numbers-em1'>social activities</p></h4>
+                </div>  
+            </div>
+                
+
+            <div className='numbers-section3-div numbers-section3'>   
+
+                
+            <div className='numbers-section3' ref={ref}>
+                    <div style={drawlineBottom} className='numbers-div2-content'>
+                        <div className='numbers-circle2'><h3 className='numbers-circle2-text text-center' style={{fontSize: '48px'}}>Only 42% </h3></div>
                             <h3 className='numbers-div2-text' style={{fontSize: '24px'}}>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
                         </div>
                     </div>
                 </div>
-            <div className='numbers-section3-div numbers-section3'>   
-
-                
 
 
+            
 
-            <div className='numbers-section3-container numbers-section3' ref={ref}>
-                <div style={drawlineBottom}>
-                    <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{fontSize: '48px'}}>1/3</h3></div>
-                    <p className='numbers-section3 numbers-p'>of Adults with SCD say it has interfered with<p className='numbers-em1'>social activities</p></p>
-                </div>  
-            </div>
+
+
         </div>
           </div>
           <section className="section s-radius sr-large background-blurple z-9">
@@ -175,9 +182,15 @@ function Numbers() {
                 <img src={thirtyfive} className='thirtyfive-icon'></img>
                 </div>
                 <h2 className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
-                <h3 className=''></h3>
+                <h3 className='numbers-last-heading'>Healthy aging starts with cognitive health. Contact us today and learn more about our testing services.</h3>
+            </div>
+            <div className='arrowup-icon-container'>
+                <a href="/#numbers">
+                    <BsFillArrowUpCircleFill className='arrowup-icon'/>
+                </a>
             </div>
         </div>
+        <p className='numbers-source'>Source: Division of Population Health, National Center for Chronic Disease Prevention and Health Promotion. https://www.cdc.gov/aging/index.html. 2023</p>
       </div>
     )
 }
