@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import people from '../../assets/images/people.png';
-import percentage from '../../assets/images/percentage1.png';
-import percentage2 from '../../assets/images/percentage2.png';
 import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
-import { useInView } from "framer-motion"
+import { useInView } from "framer-motion";
+import Contact from '../Contact';
 
 function Numbers() {
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
@@ -79,13 +77,13 @@ function Numbers() {
      const transitions = {
          animationName: isInView ? 'slideUp' : 'none',
          animationDuration: '2s',
-         animationTimingFunction: 'ease-in',
+         animationTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)',
          display: 'block'
      }
     
     return (
 
-        <div className={theme} ref={ref} id='numbers'>    
+        <div className={theme} ref={ref}>    
             <div id="content" className="main">
             
           <section className="section s-hero s-hero-versions">
@@ -187,8 +185,9 @@ function Numbers() {
                 <img ref={ref} src={thirtyfive} className='thirtyfive-icon'></img>
                 </div>
                 <h2 style={transitions} className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
-                <h3 style={transitions} className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em> Contact us today and learn more about our testing services.</h3>
+                <h3 style={transitions} className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em><a> Contact us today</a> and learn more about our testing services.</h3>
             </div>
+            <Contact/>
             <div className='arrowup-icon-container' ref={ref}>
                 <a href="/#numbers">
                     <BsFillArrowUpCircleFill className='arrowup-icon'/>

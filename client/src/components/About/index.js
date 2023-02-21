@@ -272,7 +272,7 @@ function About(){
                 }} 
             > 
                 <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}}>    
-                    <Offcanvas.Header  style={{opacity: '1', backgroundColor: 'var(--body-bg-color)', padding: ''}} closeButton>
+                    <Offcanvas.Header  id='numbers' style={{opacity: '1', backgroundColor: 'var(--body-bg-color)', padding: ''}} closeButton>
                     </Offcanvas.Header>
                     <Numbers/>
                 </Offcanvas.Body>
