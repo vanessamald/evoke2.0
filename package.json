@@ -9,8 +9,8 @@
     "dev": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build",
-    "predeploy": "npm run build --prefix client",
-    "deploy": "gh-pages -d build --prefix client"
+    "predeploy": "cd client && npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
