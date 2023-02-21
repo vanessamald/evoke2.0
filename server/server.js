@@ -16,6 +16,10 @@ app.get("/api", (req, res) => {
     res.json({ message: 'Testing Express' });
   });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
+
 app.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;

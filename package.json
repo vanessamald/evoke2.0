@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
     "dev": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "predeploy": "npm run build --prefix client",
+    "deploy": "gh-pages -d build --prefix client"
   },
   "repository": {
     "type": "git",
