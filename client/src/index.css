@@ -260,6 +260,33 @@ code {
 
 
 /* Animations */
+@keyframes slideUp {
+  0%,
+  50% {
+    transform: translateY(100%);
+    /*opacity: 0;*/
+  }
+  60%,
+  100% {
+    transform: translateY(0);
+    /*opacity: 1;*/
+  
+  }
+}
+
+@keyframes slideUp2 {
+  0%,
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  
+  }
+}
 
 @keyframes draw-line {
   0% {
@@ -521,9 +548,7 @@ code {
 
 .about-content1 {
   position: relative;
-
   visibility: visible;
-  
   display: flex;
   flex-direction: column;
   border-radius: 2px;
@@ -619,14 +644,8 @@ a:active {
 }
 
 .contact-close-btn {
-  padding: 10px;
-  border-radius: 50%;
-  margin-left: 80vw;
+  border: none;
   margin-bottom: 50px;
-}
-
-.contact-close-btn:hover {
-  
 }
 
 .contact-line1 {
@@ -637,6 +656,12 @@ a:active {
 .contact-line2 {
   transform: translate(0, -6px) rotate(45deg);
   /*background-color: var(--font-color);*/
+}
+
+.contact-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* Contact Styling Ends */
 
@@ -657,6 +682,10 @@ a:active {
 
 .services-container {
   padding: 100px;
+  
+}
+
+.services-subtitle {
   
 }
 
@@ -697,7 +726,8 @@ a:active {
 }
 
 .numbers-content1 {
-  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .numbers-subheading1 {
@@ -706,6 +736,7 @@ a:active {
 
 .numbers-em {
   font-weight: 900;
+  font-size: 8vw;
 }
 
 .numbers-em1 {
@@ -713,7 +744,7 @@ a:active {
   background-color: transparent;
   color: var(--body-bg-color);
   text-transform: uppercase;
-  
+  font-size: 8vw;
 }
 
 .numbers-stack{
@@ -805,6 +836,7 @@ a:active {
   align-items: center;
   color: var(--body-bg-color);
   margin-left: 25px;
+  font-size: 24px;
 }
 
 .numbers-card {
@@ -1209,6 +1241,7 @@ textPath {
   border: none;
   width: 60px;
   height: 60px;
+  padding-top: 10px;
   /*
   width: 60px;
   height: 60px;
@@ -1259,6 +1292,12 @@ textPath {
 }
 
 /* About motion div styling */
+.motion-div-top {
+ background-color: var(--font-color);
+ border-top-left-radius: 60px ;
+ border-top-right-radius: 60px;
+}
+
 .motion-div {
   border-radius: 60px;
   background-color: var(--font-color); 
@@ -1312,9 +1351,18 @@ textPath {
   margin-top: 25px;
 }
 
+.motion-close-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* Mobile Responsiveness */
 
 @media only screen and (max-width: 600px) {
+  p {
+    font-size: 3vw;
+    font-weight: 400;
+  }
   .home-container {
     display: flex;
     flex-direction: column;
@@ -1374,6 +1422,10 @@ textPath {
     align-items: center;
     padding: 0px;
   }
+  .numbers-content1 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
   .numbers-circle1 {
     text-align: center;
     margin-top: 25px;
@@ -1388,7 +1440,7 @@ textPath {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /*width: 100%;*/
   }
   .numbers-div2-content {
     display: flex;
@@ -1433,7 +1485,7 @@ textPath {
     margin-left: 55vw;
   }
   .contact-close-btn {
-    margin-left: 60vw;
+    
   }
   .contact-show {
     padding: 50px;
@@ -1482,7 +1534,7 @@ textPath {
   }
 
   .contact-close-btn {
-    margin-left: 75vw;
+    
   }
 
   .contact-show {
@@ -1504,7 +1556,7 @@ textPath {
     padding-top: 25%;
   }
   .contact-close-btn {
-    margin-left: 75vw;
+    
   }
   .contact-show {
     padding: 100px;
@@ -1518,7 +1570,5 @@ textPath {
     display: flex;
     flex-direction: row;
   }
-  .contact-close-btn {
-    margin-left: 80vw;
-  }
+ 
 }

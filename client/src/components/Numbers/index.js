@@ -74,6 +74,14 @@ function Numbers() {
         backgroundColor: 'transparent',
         width: '75%' 
     }
+
+     // transition styling 
+     const transitions = {
+         animationName: isInView ? 'slideUp' : 'none',
+         animationDuration: '2s',
+         animationTimingFunction: 'ease-in',
+         display: 'block'
+     }
     
     return (
 
@@ -95,16 +103,11 @@ function Numbers() {
                     <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
                         <img src={people} className='people-icon'></img>
                     </div>
-                    <div style={{
-                        transform: isInView ? "none" : "translateX(-200px)",
-                        opacity: isInView ? 1 : 0,
-                        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-                    }} className='numbers-section1'>
-                        <h2 className='text-center heading-xl' style={animation}>1 in 10 Adults 45 and Older </h2>
+                    <div className='numbers-section1'>
+                        <h2 className='text-center heading-xl' style={transitions}>1 in 10 Adults 45 and Older </h2>
                         <h3 className='numbers-subheading1'>Are affected by Subjective Cognitive Decline (SCD)</h3>
                         <div className='numbers-content1'>
-                            
-                            <p>SCD is a form of cognitive impairment and an early sign of dementia*</p>
+                            <p>SCD is a form of cognitive impairment and an early sign of dementia</p>
                             <p><span className='scd-text'><em>Subjective Cognitive Decline (SCD)</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
                         </div>
                     </div>
@@ -130,7 +133,7 @@ function Numbers() {
             <div className='numbers-section3-container numbers-section3' ref={ref}>
                 <div style={drawline3} className='numbers-div2-content'>
                     <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{fontSize: '48px'}}>1 out of 3</h3></div>
-                    <h4 className='numbers-section3 numbers-p'>Adults with SCD say it has interfered with<p className='numbers-em1'>social activities</p></h4>
+                    <h4 style={transitions} className='numbers-section3 numbers-p'>Adults with SCD say it has interfered with<p className='numbers-em1'>social activities</p></h4>
                 </div>  
             </div>
                 
@@ -141,7 +144,7 @@ function Numbers() {
             <div className='numbers-section3' ref={ref}>
                     <div style={drawlineBottom} className='numbers-div2-content'>
                         <div className='numbers-circle2'><h3 className='numbers-circle2-text text-center' style={{fontSize: '48px'}}>Only 42% </h3></div>
-                            <h3 className='numbers-div2-text' style={{fontSize: '24px'}}>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
+                            <h3 style={transitions} className='numbers-div2-text'>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
                         </div>
                     </div>
                 </div>
@@ -162,11 +165,13 @@ function Numbers() {
           <div className="section s-heading background-white z-7">
             <div className="section-head-bg-extension background-white"></div>
             <div className="container-max background-white">
-            <div className='about-image-container background-white'>
+            <div className='about-image-container background-white' ref={ref}>
                 <img src={lessThanHalf} className='lessthanhalf-icon background-white'></img>
             </div>
-                <h2 className="heading-xl text-center background-white">Less Than Half of Adults</h2>
-                <h2 className="text-center background-white">With Dementia Have Been Diagnosed</h2>
+                
+                    <h2 style={transitions} className="heading-xl text-center background-white">Less Than Half of Adults</h2>
+                    <h2 style={transitions} className="text-center background-white">With Dementia Have Been Diagnosed</h2>
+                
             </div>
           </div>
           <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
@@ -178,19 +183,19 @@ function Numbers() {
             </div>
           </section>
           <div className='numbers-last-div'>
-            <div className='about-image-container'>
-                <img src={thirtyfive} className='thirtyfive-icon'></img>
+            <div className='about-image-container' >
+                <img ref={ref} src={thirtyfive} className='thirtyfive-icon'></img>
                 </div>
-                <h2 className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
-                <h3 className='numbers-last-heading'>Healthy aging starts with cognitive health. Contact us today and learn more about our testing services.</h3>
+                <h2 style={transitions} className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
+                <h3 style={transitions} className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em> Contact us today and learn more about our testing services.</h3>
             </div>
-            <div className='arrowup-icon-container'>
+            <div className='arrowup-icon-container' ref={ref}>
                 <a href="/#numbers">
                     <BsFillArrowUpCircleFill className='arrowup-icon'/>
                 </a>
             </div>
         </div>
-        <p className='numbers-source'>Source: Division of Population Health, National Center for Chronic Disease Prevention and Health Promotion. https://www.cdc.gov/aging/index.html. 2023</p>
+        <p style={transitions} className='numbers-source'>Source: Division of Population Health, National Center for Chronic Disease Prevention and Health Promotion. https://www.cdc.gov/aging/index.html. 2023</p>
       </div>
     )
 }

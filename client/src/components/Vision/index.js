@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 function Vision() {
+
+    // transition styling 
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+    const transitions = {
+        animationName: isInView ? 'slideUp' : 'none',
+        animationDuration: '2s',
+        animationTimingFunction: 'ease-in',
+        display: 'block'
+       }
+
     return (
         <div id={'ourvision'} className='vision-container'>
-            <div className='vision-text-container'>
-            <h2>Our Vision</h2>
+            <div className='vision-text-container' ref={ref}>
+            <h2 style={transitions}>Our Vision</h2>
             <h3>Early Detection</h3>
                 <p>
                 Our mission is to provide comprehensive and compassionate cognitive impairment testing for older adults, 

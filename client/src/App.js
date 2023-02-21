@@ -23,13 +23,7 @@ function App() {
   return (
     <div className={theme}>
       <main className={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home/>}></Route>
-          <Route path='/privacypolicy' element ={<Privacy/>}></Route>
-          <Route path='/numbers' element={<Numbers/>}></Route>
-        </Routes> 
-        </BrowserRouter>
+      <Home/>
       </main>
     </div>
   );

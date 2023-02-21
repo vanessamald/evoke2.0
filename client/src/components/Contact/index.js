@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useInView } from 'framer-motion';
 import useThemeStorage from '../themeStorage';
 import { BsFillTelephoneFill,BsFillEnvelopeFill } from "react-icons/bs";
 
@@ -69,10 +70,20 @@ function Contact() {
       }}
     }; 
 
+    // transition styling 
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+    const transitions = {
+        animationName: isInView ? 'slideUp' : 'none',
+        animationDuration: '2s',
+        animationTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)',
+        display: 'block'
+        }
+
     return (
         <div>
             <div className={show}>
-                <div>
+                <div className='contact-top-container'>
                     <div>Contact Form</div>
                     <button className='contact-close-btn' onClick={handleClose}>
                         <div className='contact-line1'></div>
@@ -142,8 +153,8 @@ function Contact() {
                     </Form>
                 </div>
             </div>  
-        <div className='contact-container' style={{position: 'relative'}}>
-            <h2>Contact</h2>
+        <div className='contact-container' style={{position: 'relative'}} ref={ref}>
+            <h2 style={transitions}>Contact</h2>
             <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
             <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
             <Button id={'contact'}

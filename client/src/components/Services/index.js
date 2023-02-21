@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FiCheckSquare } from "react-icons/fi";
-import { motion, useTransform, whileInView, useScroll } from 'framer-motion';
-import neurons from '../../assets/images/moritz-kindler-G66K_ERZRhM-unsplash.jpg';
+import { useInView } from 'framer-motion';
 
 function Services(){
 
-    const { scrollYProgress } = useScroll()
-    const scale = useTransform(scrollYProgress, [0, 2], [0.2, 2]);
+    // transition styling 
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+    const transitions = {
+        animationName: isInView ? 'slideUp' : 'none',
+        animationDuration: '2s',
+        animationTimingFunction: 'ease-in',
+        display: 'block'
+       }
 
     return (
         <div>
-        <div id={'services'} className='services-container'>
-            <h2 className='services-title'>Our Services</h2>
-            <h3 className=''>Testing for Cognitive Impairment</h3>
+        <div id={'services'} className='services-container' ref={ref}>
+            <h2 className='services-title' style={transitions}>Our Services</h2>
+            <h3 className='services-subtitle'>Testing for Cognitive Impairment</h3>
             <div className=''>
             <p className=''>   
                 Each Evoke Diagnostics test is processed into an easily understandable report that includes brain health biomarkers. 

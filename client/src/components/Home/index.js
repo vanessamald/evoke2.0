@@ -14,7 +14,8 @@ function Home() {
     // set theme
     const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
     
-    console.log(theme);
+    //console.log(theme);
+    
     // set scrolling 
     const [scroll, setScroll] = useState(0);
     const [ arrow, setArrow] = useState('arrowup-icon-hide');
