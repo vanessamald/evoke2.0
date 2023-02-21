@@ -8,17 +8,19 @@ dotenv.config();
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const buildPath = path.join(__dirname, '..', 'build');
+//const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
-app.use(express.static(buildPath));
 
 app.get("/api", (req, res) => {
     res.json({ message: 'Testing Express' });
   });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.post("/contact", (req, res) => {
   const name = req.body.name;

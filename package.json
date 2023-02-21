@@ -2,11 +2,13 @@
   "name": "evoke",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
-    "dev": "concurrently \"cd server && npm start\" \"cd client && npm start\""
+    "dev": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "install": "npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
