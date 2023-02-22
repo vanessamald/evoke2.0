@@ -49,8 +49,9 @@ function Contact() {
     } else {
     
     //console.log(emailMessage);
+    //let URI = process.env.NODE_ENV === 'development' ? process.env.DEV_URI : process.env.PROD_URI;
     
-    let response = await fetch("http://localhost:3001/contact", {
+    let response = await fetch("/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

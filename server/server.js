@@ -12,10 +12,6 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get("/api", (req, res) => {
-    res.json({ message: 'Testing Express' });
-  });
-
 app.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;

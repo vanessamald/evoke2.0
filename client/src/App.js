@@ -11,12 +11,6 @@ function App() {
   const [data, setData] = React.useState(null);
   const [theme, toggleTheme, componentMounted] = useThemeStorage();
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
   if (!componentMounted) {
     return <div/>
   }
