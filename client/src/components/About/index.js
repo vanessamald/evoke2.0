@@ -153,7 +153,14 @@ function About(){
                     >
                         <p>To promote healthy lifestyle choices and habits that support brain health.</p>
                     </motion.div>
-                    
+                    <motion.div className='motion-div-p' 
+                        initial= 'hidden'
+                        whileInView={item}
+                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
+                        viewport={{ once: true }}
+                        >
+                        <p>To determine appropriate medical or support interventions.</p>
+                    </motion.div>
                 </div> 
             </motion.div>
             <button disabled={false} onClick={() => setIsOpen1(isOpen1 => !isOpen1)} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
@@ -246,14 +253,6 @@ function About(){
                         viewport={{ once: true }}
                         >
                         <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>To determine appropriate medical or support interventions.</p>
                     </motion.div>
                     <p className='motion-div-source'>Source: Alzheimer's Disease and Healthy Aging. https://www.cdc.gov/aging/dementia/index.html. 2023  </p>
                 </div>
