@@ -34,7 +34,8 @@ useEffect(() => {
     } else {
         setTheme('dark')
         setIsOn('purple');
-        window.localStorage.setItem('theme', 'dark')
+        window.localStorage.setItem('theme', 'dark');
+        window.localStorage.setItem('toggler', 'purple');
     } 
     setComponentMounted(true);
 },
