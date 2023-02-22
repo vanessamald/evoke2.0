@@ -50,7 +50,7 @@ function Contact() {
     
     //console.log(emailMessage);
     
-    let response = await fetch("http://localhost:3000/contact", {
+    let response = await fetch("http://localhost:3001/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

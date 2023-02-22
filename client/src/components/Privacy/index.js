@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
-
 function Privacy() {
     // onclick navigate back to homepage
     const navigate = useNavigate();
@@ -11,7 +10,7 @@ function Privacy() {
     }
 
     return (
-        <div className='privacy-policy-container'> 
+        <div className='privacy-policy-container' id="privacypolicy"> 
             <BsFillArrowLeftCircleFill className='back-arrow-icon'style={{ marginBottom: '25px'}} onClick={navigateBack}/>
             <h3 className='privacy-policy-title'> Privacy Policy for Evoke Neurodiagnostics</h3>
             <div className='privacy-policy-content'>
