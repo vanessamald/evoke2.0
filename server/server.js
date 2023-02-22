@@ -15,13 +15,6 @@ app.get("/api", (req, res) => {
     res.json({ message: 'Testing Express' });
   });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
-
 app.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -42,6 +35,13 @@ app.post("/contact", (req, res) => {
     }
   });
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
