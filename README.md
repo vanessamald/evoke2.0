@@ -53,3 +53,12 @@ White Theme Preview:
 <br/>
 ![White theme Screenshot](https://user-images.githubusercontent.com/100331647/220981756-d7ad3571-4328-4241-b435-8d70c5440fa6.png)
 ![White theme navigation](https://user-images.githubusercontent.com/100331647/220982893-75c0780f-c824-45e9-963f-93084492fee7.png)
+
+<br/>  
+<div style="text-align:center">
+    <a href="https://www.buymeacoffee.com/vnessamaldB" target="_blank" style="display: inline-block;">
+        <img 
+            src="https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-orange.svg?style=flat-square&logo=buymeacoffee" 
+            />
+        </a></div>
+<br />
