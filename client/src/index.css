@@ -541,6 +541,14 @@ code {
   background-color: var(--body-bg-color);
   font-size: 24px;
 }
+
+.about-emphasize {
+  font-size: 3vw;
+}
+
+.about-learn-more {
+  padding-top: 200px;
+}
 /* About Styling Ends */ 
 
 /* Link Styling */
