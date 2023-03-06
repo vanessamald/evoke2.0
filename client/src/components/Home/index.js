@@ -8,6 +8,7 @@ import logoTransparent from '../../assets/images/EVOKE Official Logo Transparent
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import Footer from '../Footer';
 import Services from '../Services';
+import Providers from '../Providers';
 import useThemeStorage from '../themeStorage';
 
 function Home() {
@@ -40,7 +41,7 @@ function Home() {
                             className={isOn}
                         >
                             <motion.div layout className='handle'>
-                                <AnimatePresence exitBeforeEnter initial={false}>
+                                <AnimatePresence initial={false}>
                                     <motion.i
                                         className={`icon far fa-${isOn ? 'moon' : 'sun' }`}
                                         key={isOn? 'moon' : 'sun'}
@@ -62,6 +63,7 @@ function Home() {
             <About/>
             <Services/>
             <Vision/>
+            <Providers/>
             <Contact/>
             <div className='arrowup-icon-container'>
                 <a href="/#">

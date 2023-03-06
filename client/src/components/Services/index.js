@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { FiCheckSquare } from "react-icons/fi";
 import { useInView } from 'framer-motion';
 
 function Services(){
-
+    const [show, setShow] = useState(false);
+    const [fullscreen, setFullscreen] = useState(true);
     // transition styling 
     const ref = useRef(null)
     const isInView = useInView(ref)
@@ -50,7 +51,9 @@ function Services(){
                     </li>
                 </ul>
                 </div>
+                
             </div>
+
         </div>
     )
 }

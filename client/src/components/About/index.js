@@ -75,15 +75,13 @@ function About(){
         <div id={'about'} className='about-container' ref={ref}>
             <h2 className='about-container-title' style={transitions}>About</h2>
             <p>
-                Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of cognitive decline. 
+                Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of <a href='#learn-more'> cognitive decline </a>. 
+                <em> Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain. </em>
                 With a focus on preventative care and early detection, our testing services aim to provide individuals with the information and support they need to maintain their cognitive health and independence. 
                 Our testing process is non-invasive, confidential, and tailored to the unique needs of each individual. 
                 We believe that everyone deserves access to the information that can help maintain their cognitive health throughout the lifespan.
             </p>
             <h3>What We Do?</h3>
-            <p> 
-                Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain.
-            </p>
             <p>
                 At the primary care level, current testing lacks the sensitivity and specificity to make accurate patient assessments. Until recently, it has been difficult to objectively assess patients for cognitive impairment due to the lack of specificity.
                 Evoke Neurodiagnostics partners with providers to offer neurologic assessment summaries for their patients with our BrainView system.
@@ -94,7 +92,7 @@ function About(){
                 BrainView captures the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds, also known as: <em className='about-emphasize'>evoked potentials</em>, and a subjective neuropsychological survey. 
                 The BrainView system aids in making an accurate diagnosis sooner, differentiating between diseases such as Dementia and Depression and avoiding misdiagnosis, delayed diagnosis, or under-diagnosis. BrainView can also be used in certain disease states to ensure patients receive the right dose for their medication.
             </p>
-            <h2 className='about-learn-more' style={transitions}>Learn More About Cognitive Decline Below</h2>
+            <h2 id='learn-more' className='about-learn-more' style={transitions}>Learn More About Cognitive Decline Below</h2>
             <div style={{marginTop: '50px'}}>
             <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>

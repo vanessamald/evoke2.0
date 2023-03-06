@@ -543,7 +543,7 @@ code {
 }
 
 .about-emphasize {
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
 .about-learn-more {
@@ -627,7 +627,7 @@ a:active {
 /* Vision Styling Ends */
 
 /* Services Styling */
-.services-container {
+.services-container, .providers-container {
   padding: 100px; 
 }
 
@@ -1208,6 +1208,13 @@ a:active {
   justify-content: flex-end;
 }
 
+/* Providers Styling */
+.providers-button {
+  
+}
+
+/* Providers Styling Ends */
+
 /* Mobile Responsiveness */
 @media only screen and (max-width: 600px) {
   p {
@@ -1304,6 +1311,9 @@ a:active {
   .about-text-title {
     font-size: 20px;
   }
+  .about-emphasize {
+    font-size: 6vw;
+  }
   .change {
     background-color: transparent; 
   }
@@ -1311,7 +1321,7 @@ a:active {
     width: 225px;
     height: auto;
   }
-  .about-container, .contact-container, .services-container, .vision-container {
+  .about-container, .contact-container, .services-container, .vision-container, .providers-container {
     padding: 50px;
     overflow: hidden;
     padding-bottom: 100px;
