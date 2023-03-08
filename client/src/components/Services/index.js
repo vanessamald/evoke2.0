@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { FiCheckSquare } from "react-icons/fi";
 import { useInView } from 'framer-motion';
+import servicesImage from '../../assets/images/brainview-test.jpg'
 
 function Services(){
     const [show, setShow] = useState(false);
@@ -14,7 +15,35 @@ function Services(){
         animationTimingFunction: 'ease-in',
         display: 'block'
        }
+/*
+    
+    cursor.addEventListener("mousemove", (e) => {
+    const image = document.querySelector('services-preview')
+    e.target.style.zIndex = 99
+    image.setAttribute('src', servicesImage)
+    }) */
+/*
+    var textLink = document.querySelector(".services-preview-link");
+    const image = document.querySelector('services-preview')  
+    document.addEventListener("mousemove", (e) => { 
+       
+        const x = e.clientX;
+        const y = e.clientY;
+        */
+        /*
+        image.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        textLink.style.setProperty('--x',(x)+'px');
+        textLink.style.setProperty('--y',(y)+'px');
+        */
+/*
+        textLink.style.left = `${x}px`;
+        textLink.style.top = `${y}px`;
+    })
+    */
+    
 
+      
+      
     return (
         <div>
         <div id={'services'} className='services-container' ref={ref}>
@@ -26,6 +55,9 @@ function Services(){
                 Along with the biomarkers and relevant medical history, a better informed decision can be made
                 regarding a patient's health and an individualized treatment plan can be reached.
             </p>
+            
+            <br/>
+            <br/>
             <p className=''>Our Services can help identify:</p>
                  <ul className='services-list'>
                     <li>
@@ -51,6 +83,7 @@ function Services(){
                     </li>
                 </ul>
                 </div>
+                <button className='services-preview-link'>BrainView Report Preview</button>
                 
             </div>
 

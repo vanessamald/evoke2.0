@@ -92,7 +92,7 @@ function About(){
                 BrainView captures the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds, also known as: <em className='about-emphasize'>evoked potentials</em>, and a subjective neuropsychological survey. 
                 The BrainView system aids in making an accurate diagnosis sooner, differentiating between diseases such as Dementia and Depression and avoiding misdiagnosis, delayed diagnosis, or under-diagnosis. BrainView can also be used in certain disease states to ensure patients receive the right dose for their medication.
             </p>
-            <h2 id='learn-more' className='about-learn-more' style={transitions}>Learn More About Cognitive Decline Below</h2>
+            <h2 id='learn-more' className='about-learn-more' style={transitions} ref={ref}>Learn More About Cognitive Decline Below</h2>
             <div style={{marginTop: '50px'}}>
             <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
@@ -277,15 +277,15 @@ function About(){
             </button>   
             </div>
             </div>
-            <Offcanvas  show={show} onHide={handleClose}  placement={'bottom'}
+            <Offcanvas  show={show} onHide={handleClose}  placement={'bottom'} className={theme}
                 style={{
                     height: '100%', 
                     //backgroundColor: 'var(--body-bg-color)',
                     opacity: '1'
                 }} 
             > 
-                <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}}>    
-                    <Offcanvas.Header  id='numbers' style={{opacity: '1', backgroundColor: 'var(--body-bg-color)', padding: ''}} closeButton>
+                <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}} >    
+                    <Offcanvas.Header  id='numbers' style={{opacity: '1', padding: ''}} closeButton>
                     </Offcanvas.Header>
                     <Numbers/>
                 </Offcanvas.Body>
