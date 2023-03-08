@@ -277,7 +277,7 @@ function About(){
             </button>   
             </div>
             </div>
-            <Offcanvas  show={show} onHide={handleClose}  placement={'bottom'} className={theme}
+            <Offcanvas  show={show} onHide={handleClose}  placement={'bottom'}
                 style={{
                     height: '100%', 
                     //backgroundColor: 'var(--body-bg-color)',
@@ -285,7 +285,7 @@ function About(){
                 }} 
             > 
                 <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}} >    
-                    <Offcanvas.Header  id='numbers' style={{opacity: '1', padding: ''}} closeButton>
+                    <Offcanvas.Header  id='numbers' style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', padding: ''}} closeButton>
                     </Offcanvas.Header>
                     <Numbers/>
                 </Offcanvas.Body>
