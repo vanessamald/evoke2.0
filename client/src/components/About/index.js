@@ -64,7 +64,7 @@ function About(){
     const isInView = useInView(ref)
     const transitions = {
         animationName: isInView ? 'slideUp' : 'none',
-        animationDuration: '2s',
+        animationDuration: '4s',
         animationTimingFunction: 'ease-in',
         display: 'block'
     }

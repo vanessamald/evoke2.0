@@ -373,10 +373,12 @@ code {
   from {
     margin-left: 100%;
     width: 300%;
+    opacity: 0;
   }
   to {
     margin-left: 0%;
     width: 100%;
+    opacity: 1;
   }
 }
 
@@ -452,6 +454,25 @@ code {
       transform: translateY(auto);
     } 
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-text {
+  0% { bottom: -0.2em; opacity: 1; }
+  50% { bottom: 0.2em; }
+  100% { bottom: 0; opacity: 1; }
+}
+
 
 /* Animations End */
 
@@ -1262,7 +1283,60 @@ a:active {
   background-color: transparent;
 }
 
+h1 span span {
+  position: relative;
+  opacity: 0;
+  animation: move-text 1s forwards;
+  animation-iteration-count: 1;
+}
 
+.providers-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 400px;
+}
+
+.providers-content1-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.providers-content1 {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.providers-content1 p {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.brainview-demo {
+  height: 700px;
+  width: auto;
+}
+
+.brainview-demo-container {
+  padding: 50px;
+  width: 50%;
+}
+
+.cursor-text {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*
+.brainview-demo:hover {
+  cursor: -moz-zoom-in; 
+    cursor: -webkit-zoom-in; 
+    cursor: zoom-in;
+}
+*/
 
 /* Providers Styling Ends */
 
