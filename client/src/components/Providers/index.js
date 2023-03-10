@@ -20,117 +20,144 @@ function Providers(){
     const isInView = useInView(ref)
     const transitions = {
         animationName: isInView ? 'slideUp' : 'none',
-        animationDuration: '3s',
+        animationDuration: '4s',
         animationTimingFunction: 'ease-in',
         display: 'block'
        }
 
     const transitions2 = {
         animationName: isInView ? 'fadeIn' : 'none',
-        animationDuration: '6s',
+        animationDuration: '3s',
         animationTimingFunction: 'ease-in',
         display: 'block'
        }
 
-       // title animation
-        const text = 'Why BrainView?';
-        const SplitText = () => {
-           return (
+    // title animation
+    const text = 'Why BrainView?';
+    const SplitText = () => {
+        return (
            <span >
            {text.split("").map(function(char, index){
    
                const style = {"animationDelay": (0.5 + index / 10) + "s", "fontSize": "8vw"};
               
-               return <span key={index} id={index} className='scrolling-letters' style={style}>{char}</span>
+               return <span key={index} id={index} className='' style={style}>{char}</span>
                ;
            })}
            </span>
            );
-       }
+        }
 
-       // cursor settings
-       const [cursorText, setCursorText] = useState("");
-       const [cursorVariant, setCursorVariant] = useState("default");
-       const { clientX, clientY, pageX, pageY } = useCursorPosition();
+    // subtitle animation
+    const subText = "Rapidly, Inexpensively, and Reliably measure the brain's functional health"
+    
+    const SplitSubText = () => {
+        return (
+            <span>
+               {subText.split(" ").map(function(char, index) {
+                
+                const style = { "animationDelay": (0.5 + index / 10) + "s", "animation": "slideUp 3s forwards"}
+                return <span key={index} id={index} className='' style={style}>{char}</span>
+               })}    
+            </span>
+        )
+    }
+
+    // cursor settings
+    const [cursorText, setCursorText] = useState("");
+    const [cursorVariant, setCursorVariant] = useState("default");
+    const [ imageSize, setImageSize ] = useState("imageDefault");
+    const { clientX, clientY, pageX, pageY } = useCursorPosition();
        
-      //console.log(clientX, clientY);
+    //console.log(clientX, clientY);
+    const zoomX = clientX * 2;
+    const zoomY = clientY * 2;
 
-
-        const variants = {
+    const variants = {
             default: {
-              opacity: 1,
-              height: 30,
-              width: 30,
-              borderRadius: '50px',
-              fontSize: "16px",
-              backgroundColor: "var(--font-color)",
-              x: clientX,
-             y: clientY,
-              transition: {
+            opacity: 1,
+            height: 30,
+            width: 30,
+            borderRadius: '50px',
+            fontSize: "16px",
+            backgroundColor: "transparent",
+            border: '2px solid white',
+            x: clientX,
+            y: clientY,
+            transition: {
                 type: "spring",
                 mass: 0.6
-              }
+            }
             },
             hover: {
                 zIndex: 9999,
                 //position: 'fixed',
                 borderRadius: '50px',
-              opacity: 1,
-              backgroundColor: "blue",
-              
-              height: 60,
-              width: 60,
-              fontSize: "16px",
-              x: clientX,
-              y: clientY,
-              //transform: "translate(-50%, -50%)",
+                opacity: 1,
+                
+                backgroundColor: "var(--font-color)",
+                height: 60,
+                width: 60,
+                fontSize: "14px",
+                x: clientX,
+                y: clientY,
+                //transform: "translate(-50%, -50%)",
+            },
+            imageDefault: {
+                height: '700px',
+                width: 'auto'
+            },
+            imageHover: {
+                backgroundPositionX: `${zoomX}px`,
+                backgroundPositionY: `${zoomY}px`
             }
           };
 
-          const spring = {
-            type: "spring",
-            stiffness: 500,
-            damping: 28
-          };
+    const spring = {
+        type: "spring",
+        stiffness: 500,
+        damping: 28
+        };
 
-        function contactEnter(event) {
+        function hoverEnter(event) {
             setCursorText("View");
             setCursorVariant("hover");
             console.log('CURSOR WORKS')
+            
           }
         
-          function contactLeave(event) {
+          function hoverLeave(event) {
             setCursorText("");
             setCursorVariant("default");
             console.log('CURSOR OUT')
           }
-          
 
-       /*
-        const ZoomImage = () => {
-            const state = {
-                backgroundImage: `url(${brainViewImage})`,
-                backgroundPosition: '0% 0%'
-              }
+          function zoomImage(event) {
+            setImageSize("imageHover");
+            console.log('IMAGE IN')
+          }
 
-            const handleMouseMove = e => {
-                const { left, top, width, height } = e.target.getBoundingClientRect()
-                const x = (e.pageX - left) / width * 100
-                const y = (e.pageY - top) / height * 100
-                this.setState({ backgroundPosition: `${x}% ${y}%` })
-              }
-            return (
-                <figure onMouseMove={this.handleMouseMove} style={this.state}>
-                <img src={brainViewImage} />
-                </figure>
-            )
-       }
-       */
+          function zoomOut(event) {
+            setImageSize("imageDefault");
+            console.log('IMAGE OUT');
+          }
+    
+    const [isHoveringText, setIsHoveringText] = useState(false);
+
+    const hoverText = () => {
+        hoverEnter();
+        setIsHoveringText(true);
+    }
+
+    const hoverTextOut = () => {
+        hoverLeave();
+        setIsHoveringText(false);
+    }
 
     return (
         <div>
-            <div id={'providers'} ref={ref} className='providers-container'>
-                <h2 className='services-title' style={transitions}>Providers</h2>
+            <div id={'providers'} className='providers-container' ref={ref} >
+                <h2 className='' style={transitions}>Providers</h2>
                 <p>
                 At the primary care level, current testing lacks the sensitivity and specificity to make accurate patient assessments. 
                 Until recently, it has been difficult to objectively assess patients for cognitive impairment due to the lack of specificity.
@@ -144,116 +171,40 @@ function Providers(){
                 show={show}
                 onHide={() => setShow(false)}
                 fullscreen={fullscreen}
-                style={{backgroundColor: 'var(--body-bg-color)'}}
+                //style={{backgroundColor: 'var(--body-bg-color)'}}
             >
-                <Modal.Header className='providers-modal' style={{backgroundColor: 'var(--body-bg-color)'}} closeButton>
+                <Modal.Header  className='providers-modal' 
+                //style={{backgroundColor: 'var(--body-bg-color)'}} 
+                closeButton>
                 <Modal.Title></Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='providers-modal' style={{}}>
-                    <div className='providers-span'>
+                    <div className='providers-span' id={'providers-info'}>
                         <h1><SplitText/></h1>
                     </div>
-                    <div ref={ref} className='providers-content-container'>
-                        <div className='providers-content1-container'>
-                            <div className='providers-content1'>
-                                <p style={transitions2}>
-                                    BrainView technology is a scientific breakthrough in brain health management and diagnostics.
-                                    BrainView allows medical professionals, to see more and know more than ever before.
-                                </p>
-                                <p style={transitions2}>
-                                    BrainView helps clinicians with objective data on a patient’s core brain functions like: memory, attention, information processing, and executive function. 
-                                    BrainView can identify symptoms of cognitive dysfunction such as fatigue, memory loss or brain fog, in some cases several years before they manifest.
-                                </p>
-                                <p style={transitions2}>
-                                    The BrainView system is the cutting-edge hardware and software that allows for objective cognitive functional assessment. 
-                                    BrainView is designed to aid physicians in diagnosis by effectively measuring biomarkers related to seizures, to memory loss, concussion, cognitive impairment, and other stress-related neurological conditions.
-                                </p>
-                                <p style={transitions2}>
-                                    BrainView captures the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds (evoked potentials), and a subjective neuropsychological survey.
-                                    In addition, the system provides a comprehensive neuro-functional physiology report of the results, data summary, raw data, and images.
-                                </p>
-                                <motion.div
-                                 style={{ 
-                                    position: "fixed",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    zIndex: 9999,
-                                    pointerEvents: "none"
-                                  }}
-                                variants={variants}
-                                className="circle"
-                                animate={cursorVariant}
-                                transition={spring}
-                                >
-                                <span className="cursor-text">{cursorText}</span>
-                                
-                            </motion.div>
-                            <div
-                                className="brainview-demo-container"
-                                onMouseEnter={contactEnter}
-                                onMouseLeave={contactLeave}
+                    <div  className='providers-content-container'>
+                    <div className='providers-content2'>
+                    <div>
+
+                        <div 
+                            onMouseEnter={hoverText} 
+                            onMouseLeave={hoverTextOut} 
+                            className='providers-subtext'
                             >
-                                
-                                <img className='brainview-demo' src={brainViewImage} alt='BrainView test preview'></img>
-                            </div>
-
-                            
-                            
-                            
-                    </div>
-
-                    </div>
-                            
-
-                    <div className=''>
-                    <p style={transitions2}>
-                    The BrainView system enables physicians to obtain specific neurophysiological biomarkers, which profile the patient’s neurological function. 
-                    Biomarkers allow the treating physician to gain additional clinical information vital to making a well-informed patient-care decision.
-                    </p>
-                    <p style={transitions2}>
-                    BrainView is designed for accessibility across specialties, including primary care and internal medicine physicians. Data provided by the system facilitates the understanding of cognitive changes. 
-                    In addition, results help direct nutritional, medicinal, and biofeedback treatment courses. 
-                    </p>
-                    </div>
-                    <h3 style={transitions}>BrainView focuses on multiple core cognitive functions to support:</h3>
-                    <ul>
-                        <li>proactive brain health</li>
-                        <li>informed clinical decision-making</li>
-                        <li>customized patient care</li>
-                    </ul>
-                    </div>
-
-                    <p>
-                    Healthy cognitive function is essential to your patient’s overall quality of life. 
-                    BrainView promotes brain health by analyzing the electrical activity of the brain, and scoring the brain’s cognitive performance in information processing, memory, attention and concentration.
-                    </p>
-                    <p>
-                    The BrainView System quantifies and qualifies electrical impulses and patterns in the brain. We identify how the brain performs. Scored areas include processing abilities, memory, concentration, and attention span. 
-                    It is vital to understand how your brain performs so that you can live your best life. Prompt treatment is available to ensure that you have a healthy brain for years to come.
-                    </p>
-                    <p>
-                    When assessing a head injury, physician must be sure to accurately assess brain function to avoid legal repercussions. Without proper diagnosis, a head injury can have a severe negative impact on patient outcomes. 
-                    Patients that are cognitively impaired can present with symptoms of confusion, forgetfulness, “brain fog,” and functional impairment.
-                    </p>
-                    <h3>BrainView focuses on multiple core cognitive functions to support:</h3>
-                    <ul>
-                        <li>proactive brain health</li>
-                        <li>informed clinical decision-making</li>
-                        <li>customized patient care</li>
-                    </ul>
-                    <p>
-                    Healthy cognitive function is essential to your patient’s overall quality of life. BrainView promotes brain health by analyzing the electrical activity of the brain, and scoring the brain’s cognitive performance in information processing, memory, attention and concentration.
-                    The BrainView System quantifies and qualifies electrical impulses and patterns in the brain. We identify how the brain performs. Scored areas include processing abilities, memory, concentration, and attention span. It is vital to understand how your brain performs so that you can live your best life. 
-                    Prompt treatment is available to ensure that you have a healthy brain for years to come.
-                    </p>
-                    <h3 style={transitions}>Benefits of BrainView</h3>
-                    <p>
-                    The ability to rapidly, inexpensively, and reliably measure the brain’s functional health is vital in identifying numerous medical conditions. Before the BrainView system, the only brain assessment technology available that used EEG was not portable, used complicated accompanying software and was not practical to use in a busy medical practice.
-                    BrainView was developed from necessity to create a wireless, automated, rapidly deploying brain function measurement and treatment system that was also non-intrusive and low-cost.
-                    </p>
-                    <p>
+                            <h3><SplitSubText/></h3><br/>
+                            {/*<h3 className='providers-largetext'>The ability to rapidly, inexpensively, and reliably measure the brain’s functional health</h3>*/}
+                        </div>
+                    
+                        {isHoveringText && (
+                        <div className='providers-hidden-text'>
+                            <motion.p style={transitions2}>
+                                Before the BrainView system, the only brain assessment technology available that used EEG was not portable, used complicated accompanying software and was not practical to use in a busy medical practice.
+                                <em className='providers-em'> BrainView was developed from necessity to create a wireless, automated, rapidly deploying brain function measurement and treatment system that was also non-intrusive and low-cost.</em>
+                            </motion.p>
+                        </div>
+                        )}
+                   <div style={{paddingTop: '400px'}}>
+                    <p >
                     Due to the test length of 25-45 minutes, the BrainView is ideal for primary care and specialty physicians caring for patients within their offices.
                     </p>
                     <p>
@@ -293,6 +244,30 @@ function Providers(){
                         <li>Changes in Hearing</li>
                         <li>Fatigue</li>
                     </ul>
+        </div>
+        </div>
+
+        <h3 style={transitions}>BrainView focuses on multiple core cognitive functions to support:</h3>
+                    <ul>
+                        <li>proactive brain health</li>
+                        <li>informed clinical decision-making</li>
+                        <li>customized patient care</li>
+                    </ul>
+                    </div>
+
+                    <p>
+                    Healthy cognitive function is essential to your patient’s overall quality of life. 
+                    BrainView promotes brain health by analyzing the electrical activity of the brain, and scoring the brain’s cognitive performance in information processing, memory, attention and concentration.
+                    </p>
+                    <p>
+                    The BrainView System quantifies and qualifies electrical impulses and patterns in the brain. We identify how the brain performs. Scored areas include processing abilities, memory, concentration, and attention span. 
+                    It is vital to understand how your brain performs so that you can live your best life. Prompt treatment is available to ensure that you have a healthy brain for years to come.
+                    </p>
+                    <p>
+                    When assessing a head injury, physician must be sure to accurately assess brain function to avoid legal repercussions. Without proper diagnosis, a head injury can have a severe negative impact on patient outcomes. 
+                    Patients that are cognitively impaired can present with symptoms of confusion, forgetfulness, “brain fog,” and functional impairment.
+                    </p>
+
                     <h3>BrainView helps clinicians to Identify:</h3>
                     <ul>
                         <li>Cognitive function and impairment</li>
@@ -324,13 +299,72 @@ function Providers(){
                         <li>Diet and exercise</li>
                         <li>Neurotherapy</li>
                     </ul>
+
+                    
+                        <div className='providers-content1-container'>
+                        
+                            <div className='providers-content1'>
+                            <h3>More About BrainView</h3>
+                                <p style={transitions2}>
+                                    BrainView technology is a scientific breakthrough in brain health management and diagnostics.
+                                    BrainView allows medical professionals, to see more and know more than ever before.
+                                </p>
+                                <p style={transitions2}>
+                                    BrainView helps clinicians with objective data on a patient’s core brain functions like: memory, attention, information processing, and executive function. 
+                                    BrainView can identify symptoms of cognitive dysfunction such as fatigue, memory loss or brain fog, in some cases several years before they manifest.
+                                </p>
+                                <p style={transitions2}>
+                                    The BrainView system is the cutting-edge hardware and software that allows for objective cognitive functional assessment. 
+                                    BrainView is designed to aid physicians in diagnosis by effectively measuring biomarkers related to seizures, to memory loss, concussion, cognitive impairment, and other stress-related neurological conditions.
+                                </p>
+                                <p style={transitions2}>
+                                    BrainView captures the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds (evoked potentials), and a subjective neuropsychological survey.
+                                    In addition, the system provides a comprehensive neuro-functional physiology report of the results, data summary, raw data, and images.
+                                </p>
+                                <p style={transitions2}>
+                                    The BrainView system enables physicians to obtain specific neurophysiological biomarkers, which profile the patient’s neurological function. 
+                                    Biomarkers allow the treating physician to gain additional clinical information vital to making a well-informed patient-care decision.
+                                </p>
+                                <p style={transitions2}>
+                                    BrainView is designed for accessibility across specialties, including primary care and internal medicine physicians. Data provided by the system facilitates the understanding of cognitive changes. 
+                                    In addition, results help direct nutritional, medicinal, and biofeedback treatment courses. 
+                                </p>
+                                <motion.div
+                                    style={{ 
+                                        position: "fixed",
+                                        top: 0,
+                                        ottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        zIndex: 9999,
+                                        pointerEvents: "none"
+                                    }}
+                                    variants={variants}
+                                    className="circle"
+                                    animate={cursorVariant}
+                                    transition={spring}
+                                >
+                                    <span className="cursor-text">{cursorText}</span>
+                                </motion.div>
+                            </div>
+                            <div
+                                className="brainview-demo-container"
+                                onMouseEnter={hoverEnter}
+                                onMouseLeave={hoverLeave}
+                            >
+                                <img onMouseEnter={zoomImage} onMouseLeave={zoomOut}
+                                    className='brainview-demo' src={brainViewImage} alt='BrainView test preview'></img>
+                            </div>
+                        </div>
+                            
+                   
                     <div className='arrowup-icon-container'>
-                        <a href='/'>
+                        <a href='/#providers-info'>
                         <BsFillArrowUpCircleFill className='arrowup-icon'/>
                         </a>
                     </div>
 
-                            
+                   </div>         
                 </Modal.Body>  
             </Modal>
         </div>

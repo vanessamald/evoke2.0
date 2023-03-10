@@ -243,33 +243,9 @@ code {
 
 
 /* Animations */
-@keyframes slideUp {
-  0%,
-  50% {
-    transform: translateY(100%);
-    /*opacity: 0;*/
-  }
-  60%,
-  100% {
-    transform: translateY(0);
-    /*opacity: 1;*/
-  
-  }
-}
 
-@keyframes slideUp2 {
-  0%,
-  50% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  60%,
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  
-  }
-}
+
+
 
 @keyframes draw-line {
   0% {
@@ -408,6 +384,22 @@ code {
 @keyframes slideUp {
   0% {
       opacity: 0;
+      transform: translateY(100%);
+    }
+    50% {
+      transform: translateY(50%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    
+    }
+}
+
+@keyframes slideUp2 {
+  0% {
+      opacity: 1;
       transform: translateY(100%);
     }
     50% {
@@ -1265,6 +1257,27 @@ a:active {
 }
 
 /* Providers Styling */
+.providers-subtext {
+  font-size: 8vw;
+  font-weight: 700;
+  font-style: italic;
+  
+}
+
+.providers-hidden-text {
+  padding-top: 100px;
+}
+
+.providers-subtext h3 span span {
+  /*animation: slideUp 5s forwards;*/
+  position: relative;
+  animation-iteration-count: 1;
+}
+
+.providers-em {
+  font-size: 3vw;
+}
+
 .providers-preview {
   text-decoration: none;
 }
@@ -1279,11 +1292,15 @@ a:active {
   color: var(--body-bg-color);
 }
 
+.providers-modal {
+  
+}
+
 .providers-icon {
   background-color: transparent;
 }
 
-h1 span span {
+.providers-span h1 span span {
   position: relative;
   opacity: 0;
   animation: move-text 1s forwards;
@@ -1309,6 +1326,8 @@ h1 span span {
   padding: 50px;
 }
 
+
+
 .providers-content1 p {
   opacity: 0;
   animation: fadeIn 1s forwards;
@@ -1329,6 +1348,17 @@ h1 span span {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--body-bg-color);
+  margin-top: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.providers-content2 {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+
 }
 /*
 .brainview-demo:hover {
