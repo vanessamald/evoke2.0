@@ -2,7 +2,6 @@ import React, {useRef, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import {  motion, useInView } from 'framer-motion';
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
-import { BsArrowRight } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
 import useCursorPosition from '../useCursorPosition';
 import brainViewImage from '../../assets/images/brainview-test.jpg'
@@ -38,9 +37,7 @@ function Providers(){
         return (
            <span >
            {text.split("").map(function(char, index){
-   
                const style = {"animationDelay": (0.5 + index / 10) + "s", "fontSize": "8vw"};
-              
                return <span key={index} id={index} className='' style={style}>{char}</span>
                ;
            })}
@@ -50,107 +47,27 @@ function Providers(){
 
     // subtitle animation
     const subText = "Rapidly, Inexpensively, and Reliably measure the brain's functional health"
-    
     const SplitSubText = () => {
         return (
             <span>
                {subText.split(" ").map(function(char, index) {
-                
-                const style = { "animationDelay": (0.5 + index / 10) + "s", "animation": "slideUp 3s forwards"}
+                const style = { "animationDelay": (0.5 + index / 10) + "s"}
                 return <span key={index} id={index} className='' style={style}>{char}</span>
                })}    
             </span>
         )
     }
 
-    // cursor settings
-    const [cursorText, setCursorText] = useState("");
-    const [cursorVariant, setCursorVariant] = useState("default");
-    const [ imageSize, setImageSize ] = useState("imageDefault");
-    const { clientX, clientY, pageX, pageY } = useCursorPosition();
-       
-    //console.log(clientX, clientY);
-    const zoomX = clientX * 2;
-    const zoomY = clientY * 2;
-
-    const variants = {
-            default: {
-            opacity: 1,
-            height: 30,
-            width: 30,
-            borderRadius: '50px',
-            fontSize: "16px",
-            backgroundColor: "transparent",
-            border: '2px solid white',
-            x: clientX,
-            y: clientY,
-            transition: {
-                type: "spring",
-                mass: 0.6
-            }
-            },
-            hover: {
-                zIndex: 9999,
-                //position: 'fixed',
-                borderRadius: '50px',
-                opacity: 1,
-                
-                backgroundColor: "var(--font-color)",
-                height: 60,
-                width: 60,
-                fontSize: "14px",
-                x: clientX,
-                y: clientY,
-                //transform: "translate(-50%, -50%)",
-            },
-            imageDefault: {
-                height: '700px',
-                width: 'auto'
-            },
-            imageHover: {
-                backgroundPositionX: `${zoomX}px`,
-                backgroundPositionY: `${zoomY}px`
-            }
-          };
-
-    const spring = {
-        type: "spring",
-        stiffness: 500,
-        damping: 28
-        };
-
-        function hoverEnter(event) {
-            setCursorText("View");
-            setCursorVariant("hover");
-            console.log('CURSOR WORKS')
-            
-          }
-        
-          function hoverLeave(event) {
-            setCursorText("");
-            setCursorVariant("default");
-            console.log('CURSOR OUT')
-          }
-
-          function zoomImage(event) {
-            setImageSize("imageHover");
-            console.log('IMAGE IN')
-          }
-
-          function zoomOut(event) {
-            setImageSize("imageDefault");
-            console.log('IMAGE OUT');
-          }
-    
+    // hover text 
     const [isHoveringText, setIsHoveringText] = useState(false);
 
     const hoverText = () => {
-        hoverEnter();
+        //hoverEnter();
         setIsHoveringText(true);
     }
 
     const hoverTextOut = () => {
-        hoverLeave();
+        //hoverLeave();
         setIsHoveringText(false);
     }
 
@@ -191,16 +108,16 @@ function Providers(){
                             onMouseLeave={hoverTextOut} 
                             className='providers-subtext'
                             >
-                            <h3><SplitSubText/></h3><br/>
-                            {/*<h3 className='providers-largetext'>The ability to rapidly, inexpensively, and reliably measure the brain’s functional health</h3>*/}
+                            {/*<h3><SplitSubText/></h3><br/>*/}
+                            <h3 className='providers-subtext'>The ability to rapidly, inexpensively, and reliably measure the brain’s functional health</h3>
                         </div>
                     
                         {isHoveringText && (
                         <div className='providers-hidden-text'>
-                            <motion.p style={transitions2}>
+                            <p style={transitions2}>
                                 Before the BrainView system, the only brain assessment technology available that used EEG was not portable, used complicated accompanying software and was not practical to use in a busy medical practice.
                                 <em className='providers-em'> BrainView was developed from necessity to create a wireless, automated, rapidly deploying brain function measurement and treatment system that was also non-intrusive and low-cost.</em>
-                            </motion.p>
+                            </p>
                         </div>
                         )}
                    <div style={{paddingTop: '400px'}}>
@@ -329,30 +246,14 @@ function Providers(){
                                     BrainView is designed for accessibility across specialties, including primary care and internal medicine physicians. Data provided by the system facilitates the understanding of cognitive changes. 
                                     In addition, results help direct nutritional, medicinal, and biofeedback treatment courses. 
                                 </p>
-                                <motion.div
-                                    style={{ 
-                                        position: "fixed",
-                                        top: 0,
-                                        ottom: 0,
-                                        left: 0,
-                                        right: 0,
-                                        zIndex: 9999,
-                                        pointerEvents: "none"
-                                    }}
-                                    variants={variants}
-                                    className="circle"
-                                    animate={cursorVariant}
-                                    transition={spring}
-                                >
-                                    <span className="cursor-text">{cursorText}</span>
-                                </motion.div>
+                                
                             </div>
                             <div
                                 className="brainview-demo-container"
-                                onMouseEnter={hoverEnter}
-                                onMouseLeave={hoverLeave}
+                                //onMouseEnter={hoverEnter}
+                                //onMouseLeave={hoverLeave}
                             >
-                                <img onMouseEnter={zoomImage} onMouseLeave={zoomOut}
+                                <img 
                                     className='brainview-demo' src={brainViewImage} alt='BrainView test preview'></img>
                             </div>
                         </div>

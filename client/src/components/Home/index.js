@@ -10,7 +10,6 @@ import Footer from '../Footer';
 import Services from '../Services';
 import Providers from '../Providers';
 import useThemeStorage from '../themeStorage';
-import Cursor from '../Cursor';
 
 function Home() {
     // set theme
@@ -30,6 +29,7 @@ function Home() {
     return (
        
         <div className={theme} onScroll={scrollingArrow}>
+            
             <div>
                 <div className='home-nav'>
                     

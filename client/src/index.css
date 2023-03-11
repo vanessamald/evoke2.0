@@ -1,7 +1,7 @@
 * {
   background-color: var(--body-bg-color);
   color: var(--font-color);
-  
+  cursor: none !important;
 }
 
 body {
@@ -17,6 +17,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 16px;
+  /*border: 2px solid var(--font-color);*/
+  background-color: var(--font-color);
+  mix-blend-mode: difference;
+  z-index: 99999999999;
+  pointer-events: none;
 }
 
 /* Home Styling */
@@ -1258,7 +1272,7 @@ a:active {
 
 /* Providers Styling */
 .providers-subtext {
-  font-size: 8vw;
+  font-size: 5vw;
   font-weight: 700;
   font-style: italic;
   
