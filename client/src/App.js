@@ -9,14 +9,14 @@ import { motion, useMotionValue, useSpring } from "framer-motion"
 
 function App() {
   //const [data, setData] = React.useState(null);
-  const [theme, toggleTheme, componentMounted] = useThemeStorage();
+  const [theme, toggleTheme, cursor, componentMounted] = useThemeStorage();
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 28, stiffness: 500 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  //const springConfig = { damping: 28, stiffness: 500 };
+  //const cursorXSpring = useSpring(cursorX, springConfig);
+  //const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     const moveCursor = (e) => {
@@ -37,8 +37,9 @@ function App() {
   
   return (
     <div className={theme}>
-      <motion.div className='cursor' style={{translateX: cursorXSpring, translateY: cursorYSpring}}/>
+      <motion.div className='cursor-dark' style={{translateX: cursorX, translateY: cursorY}}/>
       <main className={theme}>
+      
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}></Route>

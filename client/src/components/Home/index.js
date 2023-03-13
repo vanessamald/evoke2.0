@@ -29,13 +29,9 @@ function Home() {
     return (
        
         <div className={theme} onScroll={scrollingArrow}>
-            
             <div>
                 <div className='home-nav'>
-                    
                         <Navigation className={theme}/>
-                    
-                 
                     <div className="theme-togg-container">
                         <div 
                             data-darkmode={isOn}
@@ -57,7 +53,6 @@ function Home() {
                             </div>
                         </div>
                     </div>
-
                 <div className='logo-container' >
                     <img className='logo' src={logoTransparent} alt='evoke neurodiagnostics logo'></img>
                 </div>
@@ -73,8 +68,7 @@ function Home() {
                 </a>
             </div>
             <Footer/> 
-        </div>
-       
+        </div> 
     )
 }
 

@@ -39,11 +39,7 @@ function Services(){
         textLink.style.left = `${x}px`;
         textLink.style.top = `${y}px`;
     })
-    */
-    
-
-      
-      
+    */ 
     return (
         <div>
         <div id={'services'} className='services-container' ref={ref}>
@@ -83,10 +79,7 @@ function Services(){
                     </li>
                 </ul>
                 </div>
-                <button className='services-preview-link'>BrainView Report Preview</button>
-                
             </div>
-
         </div>
     )
 }
