@@ -33,20 +33,6 @@ code {
   pointer-events: none;
 }
 
-.cursor-light {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 25px;
-  height: 25px;
-  border-radius: 16px;
-  /*border: 2px solid var(--font-color);*/
-  background-color: #0D3046;
-  mix-blend-mode: difference;
-  z-index: 99999999999;
-  pointer-events: none;
-}
-
 /* Home Styling */
 .home-nav {
   display: flex;
@@ -120,7 +106,7 @@ code {
   --font-color: #0D3046;
   --body-bg-color: white;
   --alt-bg-color: rgba(33, 129, 193, 1);
-  font-weight: bolder; 
+  font-weight: bold; 
 }
 
 .blue {
@@ -1320,6 +1306,7 @@ a:active {
   background-color: transparent;
   bottom: 0;
   animation: fadeIn 8s linear;
+  margin-bottom: 25px;
 }
 
 .btn-close {
@@ -1358,6 +1345,7 @@ a:active {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 25px;
 }
 
 .providers-hidden-text-container {
@@ -1375,7 +1363,7 @@ a:active {
 }
 
 .providers-span1 {
-  font-size: 5rem;
+  font-size: 8rem;
 }
 
 
@@ -1475,7 +1463,7 @@ a:active {
   line-height: 0.95;
   letter-spacing: -0.05em;
   font-weight: 600;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 .providers-content1-container {
@@ -1495,13 +1483,23 @@ a:active {
 }
 
 .brainview-demo {
+  z-index: 999999;
   height: 700px;
   width: auto;
+  transition: transform 1.5s; 
+  
+}
+
+.brainview-demo:hover {
+  transform: scale(1.5);
 }
 
 .brainview-demo-container {
   padding: 50px;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cursor-text {
@@ -1681,9 +1679,10 @@ a:active {
     padding: 10px;
   }
   .providers-span {
-    margin-bottom: 800px;
+    margin-bottom: 600px;
     padding: 50px;
     text-align: center;
+    margin-top: 200px;
   }
   .providers-span1 {
     font-size: 14vw;
@@ -1704,6 +1703,13 @@ a:active {
   }
   .providers-span2 {
     font-size: 10vw;
+  }
+  .brainview-demo {
+    height: 300px;
+    width: auto;
+  }
+  .brainview-demo:hover {
+    transform: scale(1.5);
   }
   .privacy-policy-container {
     padding: 50px;

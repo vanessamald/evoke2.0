@@ -72,6 +72,10 @@ function ProvidersInfo() {
     const showDiv = () => {
         setDiv(true);
     }
+
+    const closeDiv = () => {
+        setDiv(false)
+    }
     
         if (!componentMounted) {
             return <div/>
@@ -79,7 +83,7 @@ function ProvidersInfo() {
 
     return (
         <div className={theme}>
-            <div className='providers-span' id={'providers-info'}>
+            <div className='providers-span'>
                 <h1><SplitText/></h1>
             </div>
             <div className='providers-content-container'>
@@ -233,7 +237,7 @@ function ProvidersInfo() {
                             </Accordion>
                         </div> 
                         <div className='arrowup-icon-container' style={{paddingTop: '100px'}}>
-                            <a href='/#providers-info'>
+                            <a href='/#providers-info' onClick={closeDiv}>
                                 <BsFillArrowUpCircleFill className='arrowup-icon2'/>
                             </a>
                         </div>
@@ -244,7 +248,7 @@ function ProvidersInfo() {
                         <h3><SplitSubText/></h3>
                             {/*<h3 className='providers-subtext'>The ability to rapidly, inexpensively, and reliably measure the brain’s functional health</h3>*/}
                     </div>
-                    <button onClick={showDiv} style={{border: 'none'}}>
+                    <button onClick={showDiv} style={{border: 'none', zIndex: '8'}}>
                         <div className="providers-hover" style={{}}>Learn More</div>
                     </button>
                 </div>

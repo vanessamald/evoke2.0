@@ -13,10 +13,8 @@ const themeToggler = () => {
     if (theme === 'dark') {
         window.localStorage.setItem('theme', 'light');
         window.localStorage.setItem('toggler', 'blue');
-        window.localStorage.setItem('cursor', 'light');
         setTheme('light');
         setIsOn('blue');
-        //setCursor('cursor-light');
         //console.log('THEME IS LIGHT');
     } 
     else { 
@@ -25,7 +23,6 @@ const themeToggler = () => {
         window.localStorage.setItem('cursor', 'dark');
         setTheme('dark');
         setIsOn('purple');
-        //setCursor('cursor-dark');
     } 
 }
 
@@ -33,23 +30,20 @@ const themeToggler = () => {
 useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
     const localToggler = window.localStorage.getItem('toggler');
-    //const localCursor = window.localStorage.getItem('cursor')
     if (localTheme) {
         setTheme(localTheme);
         setIsOn(localToggler);
-        //setCursor(localCursor);
     } else {
         setTheme('dark')
         setIsOn('purple');
-        //setCursor('cursor-dark');
+        setCursor('cursor-dark');
         window.localStorage.setItem('theme', 'dark');
         window.localStorage.setItem('toggler', 'purple');
-        //window.localStorage.setItem('cursor', 'dark');
     } 
     setComponentMounted(true);
 },
 [])
-return [ theme, themeToggler, componentMounted, isOn, cursor ]
+return [ theme, themeToggler, componentMounted, isOn  ]
 };
 
 export default useThemeStorage;
