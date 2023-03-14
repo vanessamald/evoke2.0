@@ -158,7 +158,7 @@ function Contact() {
             <h2 style={transitions}>Contact</h2>
             <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
             <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
-            <Button id={'contact'}
+            <Button id={'contact'} className='contact-button'
                 style={{
                     backgroundColor: 'var(--font-color)',
                     color: 'var(--body-bg-color)',

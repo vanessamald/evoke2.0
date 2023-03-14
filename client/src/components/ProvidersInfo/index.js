@@ -94,7 +94,7 @@ function ProvidersInfo() {
                             </div>
                         </div>
                         <div className='providers-accordion-container'>
-                            <Accordion defaultActiveKey="0" flush>
+                            <Accordion defaultActiveKey="" flush>
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>About</Accordion.Header>
                                     <Accordion.Body>

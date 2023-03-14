@@ -1,6 +1,7 @@
 import React, {useRef, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import {  motion, useInView } from 'framer-motion';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import useThemeStorage from '../themeStorage';
 import ProvidersInfo from '../ProvidersInfo';
 
@@ -35,7 +36,11 @@ function Providers(){
                 <button className='providers-button' onClick={() => setShow(true)}>More Information</button>
             </div>
             <Modal show={show} onHide={() => setShow(false)} fullscreen={fullscreen}>
-                <Modal.Header  closeButton><Modal.Title></Modal.Title></Modal.Header>
+
+            <Offcanvas.Header  id='numbers' style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', display: 'flex',
+                 alignItems: 'center', justifyContent: 'space-between', padding: '1rem'}} closeButton >
+                    </Offcanvas.Header>
+                {/*<Modal.Header closeButton><Modal.Title></Modal.Title></Modal.Header>*/}
                 <ProvidersInfo/>      
             </Modal>
         </div>

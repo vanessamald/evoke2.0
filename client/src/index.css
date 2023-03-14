@@ -1322,9 +1322,15 @@ a:active {
   animation: fadeIn 8s linear;
 }
 
+.btn-close {
+  width: 2em;
+  height: 2em;
+}
+
 .providers-modal {
  
 }
+
 
 .providers-hover {
   /*-webkit-mask-image: -webkit-radial-gradient(#fff,#000);*/
@@ -1334,7 +1340,6 @@ a:active {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 500;
-
   width: 100px;
   height: 100px;
   border-radius: 50px; 
@@ -1435,13 +1440,14 @@ a:active {
 }
 
 .providers-button, .services-preview-link {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 10px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 7px;
   background-color: var(--font-color);
   color: var(--body-bg-color);
+  border: 1px solid var(--font-color);
 }
 
 
@@ -1465,12 +1471,11 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
   padding-bottom: 500px;
   line-height: 0.95;
   letter-spacing: -0.05em;
   font-weight: 600;
-  margin-top: 200px;
+  margin-top: 300px;
 }
 
 .providers-content1-container {
