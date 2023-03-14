@@ -32,8 +32,8 @@ function ProvidersInfo() {
         return (
             <span >
                 {text.split("").map(function(char, index){
-                const style = {"animationDelay": (0.5 + index / 10) + "s", "backgroundColor": 'transparent', "fontSize": "5rem"};
-                return <span key={index} id={index} className='' style={style}>{char}</span>
+                const style = {"animationDelay": (0.5 + index / 10) + "s", "backgroundColor": 'transparent'};
+                return <span key={index} id={index} className='providers-span1' style={style}>{char}</span>
                 ;
                })}
                </span>
@@ -46,7 +46,7 @@ function ProvidersInfo() {
         return (
             <div style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
                 {subText.split(" ").map(function(char, index) {
-                    const style = { "animationDelay": (0.5 + index / 2) + "s"}
+                    const style = { "animationDelay": (0.5 + index / 2) + "s", "backgroundColor": 'transparent'}
                     return <span key={index} id={index} className='providers-span2' style={style}>{char}</span>
                     })}    
                 </div>
@@ -59,7 +59,7 @@ function ProvidersInfo() {
         return (
             <div>
                 {newText.split(" ").map(function(char, index) {
-                    const style = { "animationDelay": (0.5 + index / 5) + "s", "fontSize": "4rem"}
+                    const style = { "animationDelay": (0.5 + index / 5) + "s"}
                     return <span key={index} id={index} className='providers-span-text' style={style}>{char}</span>
                     })}    
                 </div>
@@ -93,7 +93,7 @@ function ProvidersInfo() {
                                 <h3><SplitNewText/></h3> 
                             </div>
                         </div>
-                        <div style={{paddingTop: '400px'}}>
+                        <div className='providers-accordion-container'>
                             <Accordion defaultActiveKey="0" flush>
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>About</Accordion.Header>
@@ -234,7 +234,7 @@ function ProvidersInfo() {
                         </div> 
                         <div className='arrowup-icon-container' style={{paddingTop: '100px'}}>
                             <a href='/#providers-info'>
-                                <BsFillArrowUpCircleFill className='arrowup-icon'/>
+                                <BsFillArrowUpCircleFill className='arrowup-icon2'/>
                             </a>
                         </div>
                     </div>
