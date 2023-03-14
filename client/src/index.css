@@ -1652,7 +1652,7 @@ a:active {
   }
   .about-container, .contact-container, .services-container, .vision-container, .providers-container {
     padding: 50px;
-    overflow: hidden;
+   /* overflow: hidden;*/
     padding-bottom: 100px;
   }
   .close-offcanvas {
