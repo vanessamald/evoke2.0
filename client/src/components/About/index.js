@@ -99,7 +99,7 @@ function About(){
             </button>
             
 
-            <div className='motion-div1'>
+            
 
             <motion.div style={{ height: '0px'}}
                 animate={isOpen ? 'open' : 'closed'}
@@ -183,7 +183,7 @@ function About(){
                 </div> 
             </motion.div>
 
-            </div>
+           
 
             <button disabled={false} onClick={() => setIsOpen1(isOpen1 => !isOpen1)} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                 <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>

@@ -1376,8 +1376,6 @@ a:active {
   padding-bottom: 0px;
   position: absolute;
   z-index: 9;
-  
-  
 }
 
 .providers-hidden-text {
@@ -1660,6 +1658,9 @@ a:active {
   .section.s-hero {
     padding: 25px;
   }
+  .about-links-container {
+    font-size: 4vw;
+  }
   .about-text-title {
     font-size: 20px;
   }
@@ -1717,6 +1718,7 @@ a:active {
   .providers-hidden-text-container {
     width: 100%;
     padding: 50px;
+    top: 700px;
   }
   .providers-hidden-text {
     font-size: 4vw;
