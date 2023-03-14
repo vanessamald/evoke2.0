@@ -70,13 +70,12 @@ function About(){
     }
  
     return (
-        
         <div style={{position:'relative',}}>
         <div id={'about'} className='about-container' ref={ref}>
             <h2 className='about-container-title' style={transitions}>About</h2>
             <p>
-                Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of <a href='#learn-more'> cognitive decline </a>. 
-                <em> Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain. </em>
+                Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of <a href='#learn-more'> cognitive decline</a>. 
+                <em className='about-em'> Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain. </em>
                 With a focus on preventative care and early detection, our testing services aim to provide individuals with the information and support they need to maintain their cognitive health and independence. 
                 Our testing process is non-invasive, confidential, and tailored to the unique needs of each individual. 
                 We believe that everyone deserves access to the information that can help maintain their cognitive health throughout the lifespan.
@@ -99,11 +98,14 @@ function About(){
                     Why test early?
             </button>
             
+
+            <div className='motion-div1'>
+
             <motion.div style={{ height: '0px'}}
                 animate={isOpen ? 'open' : 'closed'}
                 variants = {variants}
             >
-                <div className='motion-div' variants={variants} style={{}}>
+                <div className='motion-div-container' variants={variants} style={{}}>
                     <div className='motion-div-top motion-close-container'>
                         <button onClick={closeMotion} style={{}} className='close-offcanvas'>
                             <div className='close-line1'></div>
@@ -111,6 +113,8 @@ function About(){
                         </button>
                     </div>
                     <h3 className='motion-div-title'>Reasons To Test Early</h3>
+
+                    <div className='motion-div-content'>
                     <motion.div className='motion-div-p' 
                         initial= 'hidden'
                         style={item}
@@ -175,8 +179,12 @@ function About(){
                         >
                         <p>To determine appropriate medical or support interventions.</p>
                     </motion.div>
+                    </div>
                 </div> 
             </motion.div>
+
+            </div>
+
             <button disabled={false} onClick={() => setIsOpen1(isOpen1 => !isOpen1)} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                 <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                 Warning Signs
@@ -186,7 +194,7 @@ function About(){
                 variants = {variants}
             >
                   
-                <div className='motion-div' variants={variants}>
+                <div className='motion-div-container' variants={variants}>
                     <div className='motion-div-top motion-close-container'>
                     <button onClick={closeMotion1} style={{}} className='close-offcanvas'>
                             
@@ -196,6 +204,7 @@ function About(){
                     </button>
                     </div>
                     <h3 className='motion-div-title'>Cognitive Decline Warning Signs</h3>
+                    <div className='motion-div-content'>
                     <motion.div className='motion-div-p' 
                         initial= 'hidden'
                         whileInView={item}
@@ -270,7 +279,9 @@ function About(){
                     </motion.div>
                     <p className='motion-div-source'>Source: Alzheimer's Disease and Healthy Aging. https://www.cdc.gov/aging/dementia/index.html. 2023  </p>
                 </div>
+            </div>
             </motion.div>
+            
             <button onClick={handleShow} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     By the Numbers

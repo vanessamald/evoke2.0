@@ -521,6 +521,10 @@ code {
   text-align:center;
 }
 
+.about-em, .about-emphasize {
+  font-weight: 800;
+}
+
 .scd-text {
   color: #6CE5E8;
   font-weight: bold;
@@ -553,6 +557,7 @@ code {
 .about-links-icon {
   background-color: transparent;
   float: left;
+  rotate: 90deg;
 }
 
 .about-icon-reverse {
@@ -600,6 +605,7 @@ code {
 
 .about-emphasize {
   font-size: 2vw;
+  line-height: 1.5vw;
 }
 
 .about-learn-more {
@@ -1184,7 +1190,7 @@ a:active {
   border: none;
   width: 60px;
   height: 60px;
-  padding-top: 10px;
+  padding-top: 25px;
   /*
   width: 60px;
   height: 60px;
@@ -1226,7 +1232,7 @@ a:active {
 }
 
 .close-line1 {
-  transform: translate(0, 5px) rotate(-45deg);
+  transform: translate(0, 4px) rotate(-45deg);
 }
 
 .numbers-title {
@@ -1235,18 +1241,34 @@ a:active {
 }
 
 /* About motion div styling */
+.motion-div1 {
+  margin-right: 100px;
+}
+
 .motion-div-top {
  background-color: var(--font-color);
  border-top-left-radius: 60px ;
  border-top-right-radius: 60px;
 }
 
-.motion-div {
+.motion-div-container {
   border-radius: 60px;
   background-color: var(--font-color); 
-  width: 85vw;
+  margin-right: 100px;
+}
+
+
+.motion-div-content {
+  border-radius: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--font-color);
   padding-bottom: 25px;
 }
+
 
 .motion-div-p > p {
   background-color: transparent;
@@ -1290,13 +1312,14 @@ a:active {
   background-color: transparent;
   color: var(--body-bg-color);
   font-size: 36px;
-  margin-bottom: 50px;
   margin-top: 25px;
+  padding: 40px;
 }
 
 .motion-close-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  margin-left: 40px;
 }
 
 /* Providers Styling */
@@ -1655,14 +1678,18 @@ a:active {
    /* overflow: hidden;*/
     padding-bottom: 100px;
   }
+
   .close-offcanvas {
-    margin-left: 55vw;
+    /*margin-left: 55vw;*/
   }
   .contact-show {
     padding: 50px;
   }
   .section.s-heading-first {
     padding-top: 150rem;
+  }
+  .motion-div-container {
+    margin-right: 50px;
   }
   .motion-div {
     padding: 10px;
