@@ -1,4 +1,4 @@
-# Evoke Neurgodiagnostics 2.0
+# Evoke Neurodiagnostics 2.0
 
 ## Description
 A website for a company that offers cognitive impairment testing services. 
