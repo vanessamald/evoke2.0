@@ -26,7 +26,10 @@ function Providers(){
     return (
         <div>
             <div id={'providers'} className='providers-container' ref={ref} >
-                <h2 className='' style={transitions}>Providers</h2>
+                <div className='title-container'> 
+                    <h2 className='titles' style={transitions}>Providers</h2>
+                    <div className='title-borders'></div>
+                </div>
                 <p>
                 At the primary care level, current testing lacks the sensitivity and specificity to make accurate patient assessments. 
                 Until recently, it has been difficult to objectively assess patients for cognitive impairment due to the lack of specificity.

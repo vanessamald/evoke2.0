@@ -16,7 +16,10 @@ function Vision() {
     return (
         <div id={'ourvision'} className='vision-container'>
             <div className='vision-text-container' ref={ref}>
-            <h2 style={transitions}>Our Vision</h2>
+                <div className='title-container'> 
+                    <h2 className='titles' style={transitions}>Our Vision</h2>
+                    <div className='title-borders'></div>
+                </div>
             <h3>Early Detection</h3>
                 <p>
                 Our mission is to provide comprehensive and compassionate cognitive impairment testing for older adults, 

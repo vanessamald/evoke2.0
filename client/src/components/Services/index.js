@@ -43,7 +43,10 @@ function Services(){
     return (
         <div>
         <div id={'services'} className='services-container' ref={ref}>
-            <h2 className='services-title' style={transitions}>Our Services</h2>
+            <div className='title-container'> 
+                <h2 className='titles' style={transitions}>Our Services</h2>
+                <div className='title-borders'></div>
+            </div>
             <h3 className='services-subtitle'>Testing for Cognitive Impairment</h3>
             <div className=''>
             <p className=''>   

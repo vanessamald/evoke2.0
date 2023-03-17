@@ -72,7 +72,12 @@ function About(){
     return (
         <div style={{position:'relative',}}>
         <div id={'about'} className='about-container' ref={ref}>
-            <h2 className='about-container-title' style={transitions}>About</h2>
+            <div className='title-container'> 
+                <h2 className='titles' style={transitions}>About</h2>
+                <div className='title-borders'></div>
+            </div>
+            {/*<h2 className='about-container-title' style={transitions}>About</h2>*/}
+            <div className='about-content'>
             <p>
                 Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of <a href='#learn-more'> cognitive decline</a>. 
                 <em className='about-em'> Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain. </em>
@@ -91,7 +96,11 @@ function About(){
                 BrainView captures the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds, also known as: <em className='about-emphasize'>evoked potentials</em>, and a subjective neuropsychological survey. 
                 The BrainView system aids in making an accurate diagnosis sooner, differentiating between diseases such as Dementia and Depression and avoiding misdiagnosis, delayed diagnosis, or under-diagnosis. BrainView can also be used in certain disease states to ensure patients receive the right dose for their medication.
             </p>
-            <h2 id='learn-more' className='about-learn-more' style={transitions} ref={ref}>Learn More About Cognitive Decline Below</h2>
+            </div>
+            <div className='title-container'> 
+                <h2 className='titles' style={transitions}>Learn More About Cognitive Decline Below</h2>
+                <div className='title-borders'></div>
+            </div>
             <div style={{marginTop: '50px'}}>
             <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>

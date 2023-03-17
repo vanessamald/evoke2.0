@@ -155,7 +155,10 @@ function Contact() {
                 </div>
             </div>  
         <div className='contact-container' style={{position: 'relative'}} ref={ref}>
-            <h2 style={transitions}>Contact</h2>
+            <div className='title-container'> 
+                <h2 className='titles' style={transitions}>Contact</h2>
+                <div className='title-borders'></div>
+            </div>
             <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
             <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
             <Button id={'contact'} className='contact-button'

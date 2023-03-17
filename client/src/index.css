@@ -2,6 +2,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+  
 }
 
 body {
@@ -100,6 +101,7 @@ code {
   --body-bg-color: black;
   --font-color: white;
   --alt-bg-color: purple;
+  --border-color: blueviolet;
 }
 
 .light {
@@ -107,6 +109,7 @@ code {
   --body-bg-color: white;
   --alt-bg-color: rgba(33, 129, 193, 1);
   font-weight: bold; 
+  --border-color: rgba(33, 129, 193, 1);
 }
 
 .blue {
@@ -557,7 +560,6 @@ code {
 .about-links-icon {
   background-color: transparent;
   float: left;
-  rotate: 90deg;
 }
 
 .about-icon-reverse {
@@ -606,6 +608,7 @@ code {
 .about-emphasize {
   font-size: 2vw;
   line-height: 1.5vw;
+  background-color: transparent;
 }
 
 .about-learn-more {
@@ -1556,8 +1559,42 @@ a:active {
 .providers-accordion-container {
   margin-top: 500px;
 }
-
 /* Providers Styling Ends */
+
+/* TESTING NEW STYLING HERE */
+
+.title-container {
+  background-color: var(--border-color);
+  color: white;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.titles {
+  background-color: transparent;
+  margin-left: 25px;
+  color: white;
+}
+
+.title-borders {
+  border-bottom: 3px solid white;
+  width: 25%;
+  margin-left: 25px;
+}
+
+.em-content {
+  padding: 50px;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  padding:25px;
+}
 
 /* Mobile Responsiveness */
 @media only screen and (max-width: 600px) {
