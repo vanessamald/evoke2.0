@@ -49,9 +49,8 @@ code {
 .logo-container {
   display: flex;
   justify-content: center;
+  background-color: transparent;
   
-  align-items: center;
-
 }
 
 .logo {
@@ -59,7 +58,8 @@ code {
   height: auto;
   opacity: 1;
   animation: fade 4s linear;
-  margin-bottom: 100px;
+  background-color: transparent;
+  margin-top: -150px;
 }
 /* Home Styling Ends */
 
@@ -101,7 +101,7 @@ code {
   --body-bg-color: black;
   --font-color: white;
   --alt-bg-color: purple;
-  --border-color: blueviolet;
+  --border-color: blue;
 }
 
 .light {
@@ -130,7 +130,6 @@ code {
 .purple {
   justify-content: flex-start;
   background-image: linear-gradient(109.8deg, rgba(62,5,116,1) -5.2%, rgba(41,14,151,1) -5.2%, rgba(216,68,148,1) 103.3%);
-
   height: 40px;
   width: 80px;
   border-radius: 25px;
@@ -336,6 +335,22 @@ code {
   100% {
     width: 75%;
     border-bottom: 2px solid var(--body-bg-color);
+    opacity: 1;
+  }
+}
+
+@keyframes draw-line-bottom2 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    border-bottom: 2px solid blue;
+    opacity: 0.75;
+  }
+  100% {
+    width: 75%;
+    border-bottom: 2px solid blue;
     opacity: 1;
   }
 }
@@ -547,7 +562,7 @@ code {
   display: block;
   border-style: solid;
   border-color: var(--font-color);
-  border-radius: 100px;
+  border-radius: 50px;
   padding: 50px;
   margin-bottom: 10px;
   color: var(--font-color);
@@ -1370,12 +1385,16 @@ a:active {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-bottom: 25px;
 }
 
+.providers-subtext {
+  background-color: transparent;
+}
+
 .providers-hidden-text-container {
-  padding: 100px;
+  width: 100%;
   padding-bottom: 0px;
   position: absolute;
   z-index: 9;
@@ -1383,7 +1402,7 @@ a:active {
 
 .providers-hidden-text {
   font-size: 2vw;
-  
+  padding: 100px;
 }
 
 .providers-span1 {
@@ -1410,6 +1429,7 @@ a:active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: transparent;
 }
 
 .providers-subtext h3 div span {
@@ -1431,6 +1451,7 @@ a:active {
   line-height: 0.95;
   letter-spacing: -0.05em;
   font-weight: 600;
+  
 }
 
 .providers-span3 h3 div span {
@@ -1485,7 +1506,7 @@ a:active {
   align-items: center;
   padding-bottom: 500px;
   line-height: 0.95;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.20em;
   font-weight: 600;
   margin-top: 200px;
 }
@@ -1559,6 +1580,20 @@ a:active {
 .providers-accordion-container {
   margin-top: 500px;
 }
+
+.providers-image1-container {
+ background-image: url('../src/assets/images/neurons.png');
+}
+
+.providers-image1 {
+  position: absolute;
+  z-index: 0;
+}
+
+.providers-image2 {
+  width: 80vw;
+  height: auto;
+}
 /* Providers Styling Ends */
 
 /* TESTING NEW STYLING HERE */
@@ -1592,9 +1627,11 @@ a:active {
   align-items: center;
 }
 
-.about-content {
+.content-padding {
   padding:25px;
 }
+
+
 
 /* Mobile Responsiveness */
 @media only screen and (max-width: 600px) {
@@ -1622,6 +1659,7 @@ a:active {
   }
 
   .logo {
+    top: 10%;
     height: auto;
     width: 100%;
     margin-left: 0;
@@ -1696,7 +1734,7 @@ a:active {
     padding: 25px;
   }
   .about-links-container {
-    font-size: 4vw;
+    padding: 25px;
   }
   .about-text-title {
     font-size: 20px;
@@ -1712,10 +1750,11 @@ a:active {
     height: auto;
   }
   .about-container, .contact-container, .services-container, .vision-container, .providers-container {
-    padding: 50px;
+    padding: 0px;
    /* overflow: hidden;*/
     padding-bottom: 100px;
   }
+
 
   .close-offcanvas {
     /*margin-left: 55vw;*/

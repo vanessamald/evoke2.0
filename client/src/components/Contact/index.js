@@ -159,19 +159,20 @@ function Contact() {
                 <h2 className='titles' style={transitions}>Contact</h2>
                 <div className='title-borders'></div>
             </div>
-            <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
-            <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
-            <Button id={'contact'} className='contact-button'
-                style={{
-                    backgroundColor: 'var(--font-color)',
-                    color: 'var(--body-bg-color)',
-                    borderColor: 'white'
-                }}
-                onClick={handleClick}>Send a Message
-            </Button>
-            </div>    
-        </div>
-    )
-}
+            <div className='content-padding'>
+                <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
+                <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
+                <Button id={'contact'} className='contact-button'
+                    style={{
+                        backgroundColor: 'var(--font-color)',
+                        color: 'var(--body-bg-color)',
+                        borderColor: 'white'
+                    }}
+                    onClick={handleClick}>Send a Message
+                </Button>
+            </div>
+        </div>    
+    </div>
+)}
 
 export default Contact;

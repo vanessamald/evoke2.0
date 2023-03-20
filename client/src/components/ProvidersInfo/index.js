@@ -4,6 +4,8 @@ import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
 import brainViewImage from '../../assets/images/brainview-test.jpg'
 import Accordion from 'react-bootstrap/Accordion';
+import neurons from '../../assets/images/neurons.png';
+import brainviewCaptures from '../../assets/images/BrainView Captures.png';
 
 function ProvidersInfo() {
     // import theme
@@ -25,6 +27,15 @@ function ProvidersInfo() {
         animationTimingFunction: 'ease-in',
         display: 'block'
         }
+        
+    const drawlineBottom = {
+        opacity: isInView ? 1 : 0,
+        animation: isInView ? 'draw-line-bottom2 4s' : 'none',
+        animationFillMode: isInView ? 'forwards' : 'backwards',  
+        animationDelay: isInView ? '2s' : '0',
+        backgroundColor: 'transparent',
+        width: '100%' 
+        }
     
     // title animation
     const text = 'Why BrainView?';
@@ -44,7 +55,7 @@ function ProvidersInfo() {
     const subText = "Rapidly Inexpensively and Reliably measure the brain's functional health"
     const SplitSubText = () => {
         return (
-            <div style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
+            <div style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap', backgroundColor: 'transparent'}}>
                 {subText.split(" ").map(function(char, index) {
                     const style = { "animationDelay": (0.5 + index / 2) + "s", "backgroundColor": 'transparent'}
                     return <span key={index} id={index} className='providers-span2' style={style}>{char}</span>
@@ -89,15 +100,103 @@ function ProvidersInfo() {
             <div className='providers-content-container'>
                 <div className=''>   
                     {isDiv && (
-                        <div className='providers-hidden-text-container'>
+                        <div className='providers-hidden-text-container' ref={ref}>
                             <div style={transitions2} className='providers-hidden-text'>
                                 Before the BrainView system, the only brain assessment technology available that used EEG was not portable, used complicated accompanying software and was not practical to use in a busy medical practice.
                                 BrainView was developed from necessity to create a wireless, automated, rapidly deploying brain function measurement and treatment system that was also:
-                            <div className='providers-span3'>
+                            <div className='providers-span3' >
                                 <h3><SplitNewText/></h3> 
+                                <div style={drawlineBottom} className=''/>
                             </div>
                         </div>
                         <div className='providers-accordion-container'>
+                            <div className={theme} ref={ref}>    
+                                <div id="content" className="main">
+                                    <section className="section s-hero s-hero-versions">
+                                        <div className="section-radius"></div>
+                                            <h2 className="heading-xl text-center numbers-title">How BrainView Works</h2>
+                                            <h3 className='numbers-subheading1'>BrainView Captures</h3>
+                                            <img className='providers-image2' src={brainviewCaptures}></img>
+                                            <p>the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds (evoked potentials), and a subjective neuropsychological survey.</p>
+                                            <p><span className='scd-text'></span>In addition, <em>the system provides a comprehensive neuro-functional physiology report of the results</em>, data summary, raw data, and images.</p>
+                                            
+                                <div className="container-max">
+                            <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
+                                <img  className='people-icon'></img>
+                            </div>
+                            <div className='numbers-section1'>
+                                <h2 className='text-center heading-xl' >Title</h2>
+                                <h3 className='numbers-subheading1'>Title 2</h3>
+                                <div className='numbers-content1'>
+                                    
+                                    <p>the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds (evoked potentials), and a subjective neuropsychological survey.</p>
+                                    <p><span className='scd-text'></span>In addition, <em>the system provides a comprehensive neuro-functional physiology report of the results</em>, data summary, raw data, and images.</p>
+                                </div>
+                            </div>
+                        <div>
+                            <div  className='numbers-div1'>
+                                <div className='numbers-div1'>
+                                    <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{marginRight: '', fontSize: '48px'}}>41% </h3></div>
+                                    <h3 className='numbers-text' style={{fontSize: '24px'}}>of Adults with SCD Have Given Up <p className='numbers-em'>Daily Activities</p></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div className="section s-heading-first background-blurple z-9"> 
+                    <div className='numbers-section3'>
+                        <div className='numbers-section3-container numbers-section3' >
+                            <div className='numbers-div2-content'>
+                                <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{fontSize: '48px'}}>1 out of 3</h3></div>
+                                    <h4  className='numbers-section3 numbers-p'>Adults with SCD say it has interfered with<p className='numbers-em1'>social activities</p></h4>
+                                </div>  
+                            </div>
+                        <div className='numbers-section3-div numbers-section3'>   
+                            <div className='numbers-section3' ref={ref}>
+                                <div  className='numbers-div2-content'>
+                                    <div className='numbers-circle2'><h3 className='numbers-circle2-text text-center' style={{fontSize: '48px'}}>Only 42% </h3></div>
+                                        <h3  className='numbers-div2-text'>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section className="section s-radius sr-large background-blurple z-9">
+                        <div className="container-max">
+                            <div className="card-content2 numbers-section3 r"></div>
+                        </div>
+                    </section>
+                    <div className="section s-heading background-white z-7">
+                        <div className="section-head-bg-extension background-white"></div>
+                            <div className="container-max background-white">
+                                <div className='about-image-container background-white' ref={ref}>
+                                    <img  className='lessthanhalf-icon background-white'></img>
+                                </div>
+                                <h2 style={transitions} className="heading-xl text-center background-white">Less Than Half of Adults</h2>
+                                <h2 style={transitions} className="text-center background-white">With Dementia Have Been Diagnosed</h2>
+                            </div>
+                        </div>
+                        <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
+                            <div className="container-max">
+                                <div className="card-content2">
+                                    <div className='about-image-container'></div>
+                                </div>
+                            </div>
+                        </section>
+                        <div className='numbers-last-div'>
+                            <div className='about-image-container' >
+                                <img  className='thirtyfive-icon'></img>
+                            </div>
+                            <h2  className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
+                            <h3  className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em><a> Contact us today</a> and learn more about our testing services.</h3>
+                        </div>
+                        
+                       
+                </div>
+                <p style={transitions} className=''></p>
+        </div>
+
+
                             <Accordion defaultActiveKey="" flush>
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>About</Accordion.Header>
@@ -243,12 +342,13 @@ function ProvidersInfo() {
                         </div>
                     </div>
                 )}
-                <div className='providers-subtext-container'>
+                <div className='providers-subtext-container providers-image1-container'>
                     <div style={{position: 'relative'}} className='providers-subtext'>
                         <h3><SplitSubText/></h3>
+                        
                             {/*<h3 className='providers-subtext'>The ability to rapidly, inexpensively, and reliably measure the brain’s functional health</h3>*/}
                     </div>
-                    <button onClick={showDiv} style={{border: 'none', zIndex: '8'}}>
+                    <button onClick={showDiv} style={{border: 'none', zIndex: '8', backgroundColor: 'transparent'}}>
                         <div className="providers-hover" style={{}}>Learn More</div>
                     </button>
                 </div>

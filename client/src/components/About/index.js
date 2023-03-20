@@ -77,7 +77,7 @@ function About(){
                 <div className='title-borders'></div>
             </div>
             {/*<h2 className='about-container-title' style={transitions}>About</h2>*/}
-            <div className='about-content'>
+            <div className='content-padding'>
             <p>
                 Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of <a href='#learn-more'> cognitive decline</a>. 
                 <em className='about-em'> Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain. </em>
@@ -98,18 +98,14 @@ function About(){
             </p>
             </div>
             <div className='title-container'> 
-                <h2 className='titles' style={transitions}>Learn More About Cognitive Decline Below</h2>
+                <h2 className='titles' id='learn-more' style={transitions}>Learn More About Cognitive Decline</h2>
                 <div className='title-borders'></div>
             </div>
-            <div style={{marginTop: '50px'}}>
+            <div style={{}} className='content-padding'>
             <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     Why test early?
             </button>
-            
-
-            
-
             <motion.div style={{ height: '0px'}}
                 animate={isOpen ? 'open' : 'closed'}
                 variants = {variants}

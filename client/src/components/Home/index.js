@@ -10,6 +10,9 @@ import Footer from '../Footer';
 import Services from '../Services';
 import Providers from '../Providers';
 import useThemeStorage from '../themeStorage';
+import { BsFillSunFill } from "react-icons/bs";
+import { BsMoon } from "react-icons/bs";
+
 
 function Home() {
     // set theme
@@ -40,14 +43,16 @@ function Home() {
                         >
                             <motion.div layout className='handle'>
                                 <AnimatePresence initial={false}>
-                                    <motion.i
-                                        className={`icon far fa-${isOn ? 'moon' : 'sun' }`}
+                                    <div
+                                        className={`fa-regular fa-${isOn ? 'moon' : 'sun-bright' }`}
                                         key={isOn? 'moon' : 'sun'}
-                                        initial={{y: -30, opacity: 0}}
-                                        animate={{y:0, opacity:1}}
-                                        exit={{y: 30, opacity: 0}}
-                                        transition={{duration: 2}}
-                                    ></motion.i>
+                                        //initial={{y: -30, opacity: 0}}
+                                        //animate={{y:0, opacity:1}}
+                                        //exit={{y: 30, opacity: 0}}
+                                        //transition={{duration: 2}}
+                                        style={{width: '20px', height: '20px'}}
+
+                                    ></div>
                                 </AnimatePresence>
                             </motion.div>
                             </div>

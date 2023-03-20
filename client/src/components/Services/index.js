@@ -47,8 +47,8 @@ function Services(){
                 <h2 className='titles' style={transitions}>Our Services</h2>
                 <div className='title-borders'></div>
             </div>
+            <div className='content-padding'>
             <h3 className='services-subtitle'>Testing for Cognitive Impairment</h3>
-            <div className=''>
             <p className=''>   
                 Each Evoke Diagnostics test is processed into an easily understandable report that includes brain health biomarkers. 
                 Along with the biomarkers and relevant medical history, a better informed decision can be made

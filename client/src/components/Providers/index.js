@@ -30,19 +30,22 @@ function Providers(){
                     <h2 className='titles' style={transitions}>Providers</h2>
                     <div className='title-borders'></div>
                 </div>
-                <p>
-                At the primary care level, current testing lacks the sensitivity and specificity to make accurate patient assessments. 
-                Until recently, it has been difficult to objectively assess patients for cognitive impairment due to the lack of specificity.
-                There is an increased need for physician to test neuro-function due to the aging population, the prevalence of stress and pain, and increased awareness of the impact of head injuries on cognition.
-                Memory loss and cognitive symptoms can occur outside of normal age-associated memory loss. 
-                </p>
-                <button className='providers-button' onClick={() => setShow(true)}>More Information</button>
+                <div className='content-padding'>
+                    <p>
+                        At the primary care level, current testing lacks the sensitivity and specificity to make accurate patient assessments. 
+                        Until recently, it has been difficult to objectively assess patients for cognitive impairment due to the lack of specificity.
+                        There is an increased need for physician to test neuro-function due to the aging population, the prevalence of stress and pain, and increased awareness of the impact of head injuries on cognition.
+                        Memory loss and cognitive symptoms can occur outside of normal age-associated memory loss. 
+                    </p>
+                    <button className='providers-button' onClick={() => setShow(true)}>More Information</button>
+                </div>
             </div>
             <Modal show={show} onHide={() => setShow(false)} fullscreen={fullscreen}>
-
-            <Offcanvas.Header  id='providers-info' style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', display: 'flex',
-                 alignItems: 'center', justifyContent: 'space-between', padding: '1rem'}} closeButton >
-                    </Offcanvas.Header>
+            <Modal.Header closeButton id='providers-info'></Modal.Header>
+            {/*<Offcanvas.Header  id='providers-info' style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', display: 'flex',
+                 alignItems: 'center', justifyContent: 'space-between', padding: '1rem', paddingLeft: '0px'}} closeButton >
+    </Offcanvas.Header>*/}
+    
                 {/*<Modal.Header closeButton><Modal.Title></Modal.Title></Modal.Header>*/}
                 <ProvidersInfo/>      
             </Modal>
