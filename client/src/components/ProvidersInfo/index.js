@@ -6,14 +6,17 @@ import brainViewImage from '../../assets/images/brainview-test.jpg'
 import Accordion from 'react-bootstrap/Accordion';
 import neurons from '../../assets/images/neurons.png';
 import brainviewCaptures from '../../assets/images/BrainView Captures.png';
+import brainviewCaptures2 from '../../assets/images/BrainView Captures2.png';
+import brainviewCaptures3 from '../../assets/images/BrainView Captures3.png';
+import brainviewCaptures5 from '../../assets/images/BrainView Captures5.png';
 
 function ProvidersInfo() {
     // import theme
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
     
     // page transitions
-    const ref = useRef(null)
-    const isInView = useInView(ref)
+    const ref = useRef(null);
+    const isInView = useInView(ref);
     const transitions = {
         animationName: isInView ? 'slideUp' : 'none',
         animationDuration: '4s',
@@ -104,9 +107,9 @@ function ProvidersInfo() {
                             <div style={transitions2} className='providers-hidden-text'>
                                 Before the BrainView system, the only brain assessment technology available that used EEG was not portable, used complicated accompanying software and was not practical to use in a busy medical practice.
                                 BrainView was developed from necessity to create a wireless, automated, rapidly deploying brain function measurement and treatment system that was also:
-                            <div className='providers-span3' >
+                            <div className='providers-span3' ref={ref}>
                                 <h3><SplitNewText/></h3> 
-                                <div style={drawlineBottom} className=''/>
+                                
                             </div>
                         </div>
                         <div className='providers-accordion-container'>
@@ -115,50 +118,62 @@ function ProvidersInfo() {
                                     <section className="section s-hero s-hero-versions">
                                         <div className="section-radius"></div>
                                             <h2 className="heading-xl text-center numbers-title">How BrainView Works</h2>
-                                            <h3 className='numbers-subheading1'>BrainView Captures</h3>
+                                            <h3 className='numbers-subheading1 providers-title4'>BrainView Captures</h3>
                                             <img className='providers-image2' src={brainviewCaptures}></img>
-                                            <p>the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds (evoked potentials), and a subjective neuropsychological survey.</p>
-                                            <p><span className='scd-text'></span>In addition, <em>the system provides a comprehensive neuro-functional physiology report of the results</em>, data summary, raw data, and images.</p>
-                                            
-                                <div className="container-max">
-                            <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
-                                <img  className='people-icon'></img>
-                            </div>
-                            <div className='numbers-section1'>
-                                <h2 className='text-center heading-xl' >Title</h2>
-                                <h3 className='numbers-subheading1'>Title 2</h3>
-                                <div className='numbers-content1'>
+                                            <h3 className='providers-title3 heading-xl'>FDA-approved, Pain-free and can be completed in about 25-45 minutes</h3>
+                                            <div style={drawlineBottom} className='providers-drawline'/>
+                                            {/*<p>
+                                                The BrainView system is the cutting-edge hardware and software that allows for objective cognitive functional assessment. 
+                                                BrainView is designed to aid physicians in diagnosis by effectively measuring biomarkers related to seizures, to memory loss, concussion, cognitive impairment, and other stress-related neurological conditions.
+                    </p>*/}
+                                            <p className='providers-content'>
                                     
-                                    <p>the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds (evoked potentials), and a subjective neuropsychological survey.</p>
-                                    <p><span className='scd-text'></span>In addition, <em>the system provides a comprehensive neuro-functional physiology report of the results</em>, data summary, raw data, and images.</p>
-                                </div>
-                            </div>
-                        <div>
-                            <div  className='numbers-div1'>
-                                <div className='numbers-div1'>
-                                    <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{marginRight: '', fontSize: '48px'}}>41% </h3></div>
-                                    <h3 className='numbers-text' style={{fontSize: '24px'}}>of Adults with SCD Have Given Up <p className='numbers-em'>Daily Activities</p></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                                    BrainView promotes brain health by analyzing the electrical activity of the brain, and scoring the brain’s cognitive performance in information processing, memory, attention and concentration.
+                                    The BrainView System quantifies and qualifies electrical impulses and patterns in the brain. 
+                                    We identify how the brain performs. Scored areas include processing abilities, memory, concentration, and attention span. 
+                                    It is vital to understand how your brain performs so that you can live your best life. 
+                                    Prompt treatment is available to ensure that you have a healthy brain for years to come.
+                                    When assessing a head injury, physician must be sure to accurately assess brain function to avoid legal repercussions.
+                                    Without proper diagnosis, a head injury can have a severe negative impact on patient outcomes. Patients that are cognitively impaired can present with symptoms of confusion, forgetfulness, “brain fog,” and functional impairment.
+                                </p>
+                                            <div className="container-max">
+                                                <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
+                                                    <img  className='people-icon'></img>
+                                                </div>
+                                                
+                                        <div>
+                                            
+                                            
+                                            </div>
+                                        </div>
+                                    </section>
                 <div className="section s-heading-first background-blurple z-9"> 
-                    <div className='numbers-section3'>
-                        <div className='numbers-section3-container numbers-section3' >
-                            <div className='numbers-div2-content'>
-                                <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{fontSize: '48px'}}>1 out of 3</h3></div>
-                                    <h4  className='numbers-section3 numbers-p'>Adults with SCD say it has interfered with<p className='numbers-em1'>social activities</p></h4>
-                                </div>  
+                    <h2 className='providers-title heading-xl'>In Practice</h2>
+                    <div className=''>
+                    <div style={drawlineBottom} className=''/>
+                        <div className='' >
+                            
+                           
+                               
+                                    
+                               
                             </div>
-                        <div className='numbers-section3-div numbers-section3'>   
-                            <div className='numbers-section3' ref={ref}>
-                                <div  className='numbers-div2-content'>
-                                    <div className='numbers-circle2'><h3 className='numbers-circle2-text text-center' style={{fontSize: '48px'}}>Only 42% </h3></div>
-                                        <h3  className='numbers-div2-text'>of Adults with SCD Have Discussed Symptoms With a Doctor</h3>
-                                    </div>
-                                </div>
+                      
+                            <div className='providers-in-practice' ref={ref}>
+                               
+                                <img className='providers-image3 ' src={brainviewCaptures3}></img>
+                                <p className='transparent-bkg'>
+                                    BrainView provides physicians with highly-sensitive, objective data on brain function. 
+                                    This feature makes BrainView an excellent complimentary assessment tool to traditional subjective clinical questionnaires for long-term patient management. In essence, BrainView can detect subtle variations in brain function that other tests may miss.
+                                    The system may be especially adept at illuminating patients’ responses to therapy in the beginning stages of the disease. 
+                                </p>
+                                <h2 className='providers-title3 heading-xl'>Early Detection Leads to Early Intervention</h2>
+                                <img className='providers-image2' src={brainviewCaptures2}></img>
+                                
+                            
+                                <h2 className='providers-title2'>The BrainView system can help assess patients’ biomarkers to aid in diagnosis up to 15 years prior to the onset of symptoms.</h2> 
                             </div>
+                           
                         </div>
                     </div>
                     <section className="section s-radius sr-large background-blurple z-9">
@@ -167,13 +182,13 @@ function ProvidersInfo() {
                         </div>
                     </section>
                     <div className="section s-heading background-white z-7">
-                        <div className="section-head-bg-extension background-white"></div>
-                            <div className="container-max background-white">
-                                <div className='about-image-container background-white' ref={ref}>
-                                    <img  className='lessthanhalf-icon background-white'></img>
-                                </div>
-                                <h2 style={transitions} className="heading-xl text-center background-white">Less Than Half of Adults</h2>
-                                <h2 style={transitions} className="text-center background-white">With Dementia Have Been Diagnosed</h2>
+                        <div className="section-head-bg-extension background-white padding-top"></div>
+                        <h2 className='heading-xl transparent-bkg title-large-white'>Technology Benefits</h2>
+                        <h3 className='transparent-bkg title-sub-white center-content'>qEEG testing is useful for improving care for cognitive conditions and mental health in patients who may be experiencing:</h3>
+                            <div className="background-white center-content">
+                               
+                                
+                                <img className='transparent-bkg img-size img-center' src={brainviewCaptures5}></img>
                             </div>
                         </div>
                         <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
@@ -293,8 +308,8 @@ function ProvidersInfo() {
                                             BrainView promotes brain health by analyzing the electrical activity of the brain, and scoring the brain’s cognitive performance in information processing, memory, attention and concentration.
                                         </p>
                                         <p>
-                                            The BrainView System quantifies and qualifies electrical impulses and patterns in the brain. We identify how the brain performs. Scored areas include processing abilities, memory, concentration, and attention span. 
-                                            It is vital to understand how your brain performs so that you can live your best life. Prompt treatment is available to ensure that you have a healthy brain for years to come.
+                                            The BrainView System quantifies and qualifies electrical impulses and patterns in the brain. 
+                                            We identify how the brain performs. Scored areas include processing abilities, memory, concentration, and attention span.  
                                         </p>
                                         <p>
                                             When assessing a head injury, physician must be sure to accurately assess brain function to avoid legal repercussions. Without proper diagnosis, a head injury can have a severe negative impact on patient outcomes. 

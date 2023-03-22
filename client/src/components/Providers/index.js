@@ -32,10 +32,8 @@ function Providers(){
                 </div>
                 <div className='content-padding'>
                     <p>
-                        At the primary care level, current testing lacks the sensitivity and specificity to make accurate patient assessments. 
-                        Until recently, it has been difficult to objectively assess patients for cognitive impairment due to the lack of specificity.
-                        There is an increased need for physician to test neuro-function due to the aging population, the prevalence of stress and pain, and increased awareness of the impact of head injuries on cognition.
-                        Memory loss and cognitive symptoms can occur outside of normal age-associated memory loss. 
+                    Evoke Neurodiagnostics is committed to serving providers by providing convenient access to early detection technology for their cognitively impaired patients while improving revenue for their practice. 
+                    Our goal is to improve the way providers can quickly and conveniently test patients and receive immediate, actionable reporting thereby improving their patient outcomes.
                     </p>
                     <button className='providers-button' onClick={() => setShow(true)}>More Information</button>
                 </div>

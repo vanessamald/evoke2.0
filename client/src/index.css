@@ -1073,7 +1073,7 @@ a:active {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 175rem;
+  padding-top: 125rem;
   padding-bottom: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1593,7 +1593,99 @@ a:active {
 .providers-image2 {
   width: 80vw;
   height: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.providers-image3{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
+
+.providers-title {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.providers-title3 {
+  background-color: transparent;
+  font-weight: 900;
+  font-size: 8vw;
+}
+
+.providers-content {
+  color: black;
+  background-color: transparent;
+  padding-top: 50px;
+  font-weight: 600;
+}
+
+.providers-in-practice {
+  background-color: #A4B4C5;
+}
+
+.providers-drawline {
+  padding: 25px;
+}
+
+.providers-title2 {
+  padding-top: 50px;
+  background-color: transparent;
+  font-size: 6vw;
+  font-weight: 600;
+
+}
+
+.providers-title4 {
+  font-size: 6vw;
+  font-weight: 600;
+}
+
+.transparent-bkg {
+  background-color: transparent;
+}
+
+.img-size {
+  width: 70vw;
+  height: auto;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-large-white {
+  font-size: 8vw;
+  color: white;
+  text-align: center;
+}
+
+.title-sub-white {
+  font-size: 3vw;
+  color: white;
+}
+
+.padding-top {
+  padding-top: 200px;
+}
+
 /* Providers Styling Ends */
 
 /* TESTING NEW STYLING HERE */
