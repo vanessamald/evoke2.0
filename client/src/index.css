@@ -562,7 +562,7 @@ code {
   display: block;
   border-style: solid;
   border-color: var(--font-color);
-  border-radius: 50px;
+  border-radius: 100px;
   padding: 50px;
   margin-bottom: 10px;
   color: var(--font-color);
@@ -1594,19 +1594,22 @@ a:active {
   width: 80vw;
   height: auto;
   background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 .providers-image3{
-  width: 100%;
+  width: 80vw;
   height: auto;
   background-color: transparent;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-top: -50px;
+ 
+  
   margin-bottom: -50px;
+}
+
+.providers-image4 {
+  width: 80vw;
+  height: auto;
+  background-color: transparent;
 }
 
 .providers-title {
@@ -1623,7 +1626,6 @@ a:active {
 }
 
 .providers-content {
-  color: black;
   background-color: transparent;
   padding-top: 50px;
   font-weight: 600;
@@ -1631,6 +1633,10 @@ a:active {
 
 .providers-in-practice {
   background-color: #A4B4C5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .providers-drawline {
@@ -1686,6 +1692,13 @@ a:active {
   padding-top: 200px;
 }
 
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Providers Styling Ends */
 
 /* TESTING NEW STYLING HERE */
@@ -1695,6 +1708,7 @@ a:active {
   color: white;
   padding-bottom: 25px;
   padding-top: 25px;
+  
 }
 
 .titles {
@@ -1736,6 +1750,12 @@ a:active {
   p {
     font-size: 4vw;
     font-weight: 400;
+  }
+  .titles {
+    margin-left: 25px;
+  }
+  .title-borders {
+    margin-left: 25px;
   }
   .home-container {
     display: flex;
@@ -1885,11 +1905,11 @@ a:active {
   }
   .providers-hidden-text-container {
     width: 100%;
-    padding: 50px;
     top: 700px;
   }
   .providers-hidden-text {
     font-size: 4vw;
+    padding: 50px;
   }
   .providers-span-text {
     display: flex;
@@ -1900,6 +1920,14 @@ a:active {
   }
   .providers-span2 {
     font-size: 10vw;
+  }
+  .providers-image3, .providers-image2 {
+    width: 100vw;
+    height: auto;
+  }
+  .icon-container {
+    display: flex;
+    flex-direction: column;
   }
   .brainview-demo {
     height: 300px;

@@ -71,11 +71,13 @@ function About(){
  
     return (
         <div style={{position:'relative',}}>
+             
         <div id={'about'} className='about-container' ref={ref}>
-            <div className='title-container'> 
+        <div className='title-container'> 
                 <h2 className='titles' style={transitions}>About</h2>
                 <div className='title-borders'></div>
             </div>
+           
             {/*<h2 className='about-container-title' style={transitions}>About</h2>*/}
             <div className='content-padding'>
             <p>
