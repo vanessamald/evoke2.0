@@ -34,6 +34,7 @@ function About(){
     const variants = {
         open: {
             opacity: 1, 
+            
             y: 0,
             position:'absolute', 
             zIndex: '1',
@@ -79,7 +80,7 @@ function About(){
             </div>
            
             {/*<h2 className='about-container-title' style={transitions}>About</h2>*/}
-            <div className='content-padding'>
+            <div className='about-content'>
             <p>
                 Evoke Neurodiagnostics offers cognitive impairment testing services designed to assess the biomarkers of <a href='#learn-more'> cognitive decline</a>. 
                 <em className='about-em'> Memory loss and other cognitive disorders can occur at any age for a variety of reasons, including: stress, dementia, head injury, sleep disorders, and pain. </em>

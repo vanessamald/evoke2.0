@@ -9,6 +9,7 @@ import brainviewCaptures from '../../assets/images/BrainView Captures.png';
 import brainviewCaptures3 from '../../assets/images/BrainView Captures3.png';
 import brainviewCaptures9 from '../../assets/images/BrainView Captures9.png';
 import brainviewCaptures11 from '../../assets/images/BrainView Captures11.png';
+import brainviewCaptures12 from '../../assets/images/BrainView Captures12.png';
 import Contact from '../Contact';
 
 function ProvidersInfo() {
@@ -99,7 +100,10 @@ function ProvidersInfo() {
     return (
         <div className={theme}>
             <div className='providers-span'>
-                <h1><SplitText/></h1>
+                <h1 style={{backgroundColor: 'transparent'}}><SplitText/></h1>
+            </div>
+            <div className='providers-image12'>
+                <img src={brainviewCaptures12}></img>
             </div>
             <div className='providers-content-container'>
                 <div className=''>   
@@ -127,7 +131,7 @@ function ProvidersInfo() {
                                             <p>
                                                 In addition, the system provides a comprehensive neuro-functional physiology report of the results, data summary, raw data, and images.
                                             </p>  
-                                            <p>
+                                            <p >
                                                 The BrainView system enables physicians to obtain specific neurophysiological biomarkers, which profile the patient’s neurological function. 
                                                 Biomarkers allow the treating physician to gain additional clinical information vital to making a well-informed patient-care decision.
                                             </p>   
@@ -156,13 +160,13 @@ function ProvidersInfo() {
                                                 <div className="card-content2 numbers-section3 r"></div>
                                                     </div>
                                         </section>
-                                        <div className="section s-heading background-white z-7" style={{flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center'}}>
+                                        <div className="section s-heading z-7" style={{flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: '#0D3046', color: 'white'}}>
                                             <div className="section-head-bg-extension background-white padding-top"></div>
                                                 <img className='providers-image4' src={brainviewCaptures11}></img>
                                             </div>
-                                            <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: 'var(--font-color)'}}>
+                                            <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: '#0D3046'}}>
                                                 <div className="container-max"></div>
-                                                <h2 className="heading-xl text-center" style={{backgroundColor: 'transparent', color: 'var(--body-bg-color)'}}>Preview the Test Below</h2>
+                                                <h2 className="heading-xl text-center" style={{backgroundColor: 'transparent', color: 'white'}}>Preview the Test Below</h2>
                                                 <Accordion>
                                                     <Accordion.Item eventKey="3">
                                                         <Accordion.Header>Test Preview</Accordion.Header>
@@ -181,7 +185,7 @@ function ProvidersInfo() {
                                         </div>
                                     </div>
                                 </div> 
-                                <div className='arrowup-icon-container' style={{paddingTop: '100px', marginRight: '25px'}}>
+                                <div className='arrowup-icon-container' style={{marginRight: '25px'}}>
                                     <a href='/#providers-info' onClick={closeDiv}>
                                         <BsFillArrowUpCircleFill className='arrowup-icon2'/>
                                     </a>

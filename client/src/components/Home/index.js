@@ -42,18 +42,19 @@ function Home() {
                             className={isOn}
                         >
                             <motion.div layout className='handle'>
-                                <AnimatePresence initial={false}>
-                                    <div
-                                        className={`fa-regular fa-${isOn ? 'moon' : 'sun-bright' }`}
+                               
+                                    <i
+                                        className={`fa-regular fa-${isOn ? 'moon' : 'sun-bright'}`}
                                         key={isOn? 'moon' : 'sun'}
+                                       
                                         //initial={{y: -30, opacity: 0}}
                                         //animate={{y:0, opacity:1}}
                                         //exit={{y: 30, opacity: 0}}
                                         //transition={{duration: 2}}
-                                        style={{width: '20px', height: '20px'}}
-
-                                    ></div>
-                                </AnimatePresence>
+                                        //style={{width: '20px', height: '20px'}}
+                                        style={{color: 'red', width: '20px', height: '20px'}}
+                                    ></i>
+                                
                             </motion.div>
                             </div>
                         </div>

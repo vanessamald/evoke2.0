@@ -50,7 +50,6 @@ code {
   display: flex;
   justify-content: center;
   background-color: transparent;
-  
 }
 
 .logo {
@@ -101,7 +100,7 @@ code {
   --body-bg-color: black;
   --font-color: white;
   --alt-bg-color: purple;
-  --border-color: blue;
+  --border-color: #0D3046;
 }
 
 .light {
@@ -156,6 +155,7 @@ code {
   color: var(--font-color);
   opacity: 1;
   animation: fadeIn 8s linear;
+  z-index: 7;
 }
 
 .menu-btn:hover {
@@ -202,6 +202,7 @@ code {
   left: 0;
   overflow: hidden;
   transition: 3s;
+  z-index: 5;
 }
 
 .navigation-links-container {
@@ -549,7 +550,12 @@ code {
 }
 
 .about-container {
-  padding: 100px;
+  /*padding: 100px;*/
+  padding-bottom: 100px;
+}
+
+.about-content {
+  padding: 25px 25px 100px 25px;
 }
 
 .about-image-container {
@@ -668,7 +674,7 @@ a:active {
 }
 
 .contact-container {
-  padding: 100px;
+  padding-bottom: 100px;
   color: var(--body-bg-color);
 
 }
@@ -698,7 +704,8 @@ a:active {
 /* Our Vision Styling */
 
 .vision-container {
-  padding: 100px; 
+  /*padding: 100px; */
+  padding-bottom: 100px;
 }
 
 .vision-text-container {
@@ -708,7 +715,8 @@ a:active {
 
 /* Services Styling */
 .services-container, .providers-container {
-  padding: 100px; 
+ /* padding: 100px; */
+ padding-bottom: 100px;
 }
 
 /*
@@ -1387,6 +1395,7 @@ a:active {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 25px;
+  margin-top: 100vw;
 }
 
 .providers-subtext {
@@ -1397,7 +1406,8 @@ a:active {
   width: 100%;
   padding-bottom: 0px;
   position: absolute;
-  z-index: 9;
+  
+  z-index: 90;
 }
 
 .providers-hidden-text {
@@ -1504,11 +1514,13 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 500px;
+  background-color: transparent;
   line-height: 0.95;
   letter-spacing: -0.20em;
   font-weight: 600;
   margin-top: 200px;
+  position: absolute;
+  z-index: 999;
 }
 
 .providers-content1-container {
@@ -1582,7 +1594,7 @@ a:active {
 }
 
 .providers-image1-container {
- background-image: url('../src/assets/images/neurons.png');
+ /*background-image: url('../src/assets/images/neurons.png');*/
 }
 
 .providers-image1 {
@@ -1612,6 +1624,16 @@ a:active {
   background-color: transparent;
 }
 
+.providers-image12 {
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  z-index: 99;
+  top: 20;
+  margin-bottom: 400px;
+}
+
+
 .providers-title {
   background-color: transparent;
   display: flex;
@@ -1629,6 +1651,7 @@ a:active {
   background-color: transparent;
   padding-top: 50px;
   font-weight: 600;
+  text-align: left;
 }
 
 .providers-in-practice {
@@ -1646,9 +1669,9 @@ a:active {
 .providers-title2 {
   padding-top: 50px;
   background-color: transparent;
-  font-size: 6vw;
+  font-size: 4vw;
   font-weight: 600;
-
+  color: #0D3046;
 }
 
 .providers-title4 {
@@ -1718,7 +1741,7 @@ a:active {
 }
 
 .title-borders {
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid white;
   width: 25%;
   margin-left: 25px;
 }
@@ -1905,7 +1928,7 @@ a:active {
   }
   .providers-hidden-text-container {
     width: 100%;
-    top: 700px;
+    
   }
   .providers-hidden-text {
     font-size: 4vw;
@@ -1917,6 +1940,7 @@ a:active {
   }
   .providers-subtext-container {
     justify-content: space-around;
+    margin-top: 800px;
   }
   .providers-span2 {
     font-size: 10vw;
