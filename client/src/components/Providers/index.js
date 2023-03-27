@@ -39,12 +39,7 @@ function Providers(){
                 </div>
             </div>
             <Modal show={show} onHide={() => setShow(false)} fullscreen={fullscreen}>
-            <Modal.Header closeButton id='providers-info'></Modal.Header>
-            {/*<Offcanvas.Header  id='providers-info' style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', display: 'flex',
-                 alignItems: 'center', justifyContent: 'space-between', padding: '1rem', paddingLeft: '0px'}} closeButton >
-    </Offcanvas.Header>*/}
-    
-                {/*<Modal.Header closeButton><Modal.Title></Modal.Title></Modal.Header>*/}
+                <Modal.Header closeButton id='providers-info'></Modal.Header>
                 <ProvidersInfo/>      
             </Modal>
         </div>

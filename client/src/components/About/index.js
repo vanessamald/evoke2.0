@@ -3,7 +3,9 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {  motion, useInView } from 'framer-motion';
 import Numbers from '../Numbers/index';
+import TestEarly from '../TestEarly/index';
 import useThemeStorage from '../themeStorage';
+import WarningSigns from '../WarningSigns';
 
 function About(){
     // theme style
@@ -11,9 +13,15 @@ function About(){
 
     // offcanvas 
     const [show, setShow] = useState(false);
+    const [show1, setShow1] = useState(false);
+    const [show2, setShow2] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
 
     // set button and icon styling
     const [ button, setButton ] = useState('about-links-container')
@@ -105,211 +113,61 @@ function About(){
                 <div className='title-borders'></div>
             </div>
             <div style={{}} className='content-padding'>
-            <button disabled={false} className={button} onClick={() => setIsOpen(isOpen => !isOpen)} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
+                <button onClick={handleShow1} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     Why test early?
-            </button>
-            <motion.div style={{ height: '0px'}}
-                animate={isOpen ? 'open' : 'closed'}
-                variants = {variants}
-            >
-                <div className='motion-div-container' variants={variants} style={{}}>
-                    <div className='motion-div-top motion-close-container'>
-                        <button onClick={closeMotion} style={{}} className='close-offcanvas'>
-                            <div className='close-line1'></div>
-                            <div className='close-line2'></div>
-                        </button>
-                    </div>
-                    <h3 className='motion-div-title'>Reasons To Test Early</h3>
-
-                    <div className='motion-div-content'>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        style={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>To identify early signs of cognitive decline</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p'
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
+                </button> 
+                <Offcanvas 
+                    show={show1} 
+                    onHide={handleClose1}
+                    placement={'bottom'}
+                    style={{
+                        height: '100%',
+                        opacity: '1'
+                    }}
                     >
-                        <p>To facilitate early diagnosis and treatment of potential causes</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p'
-                        initial='hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                    >
-                        <p>To track changes over time</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p'
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                    >
-                        <p>To provide personalized interventions to maintain or improve cognitive function</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p'
-                        initial='hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                    >
-                        <p>To provide reassurance and support to patients and their families</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p'
-                        initial='hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                    >
-                        <p>To inform advanced care planning and decision-making</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p'
-                        initial='hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                    >
-                        <p>To promote healthy lifestyle choices and habits that support brain health.</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>To determine appropriate medical or support interventions.</p>
-                    </motion.div>
-                    </div>
-                </div> 
-            </motion.div>
-
-           
-
-            <button disabled={false} onClick={() => setIsOpen1(isOpen1 => !isOpen1)} className={button} style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
-                <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
-                Warning Signs
-            </button>
-            <motion.div style={{ height: '0px'}}
-                animate={isOpen1 ? 'open' : 'closed'}
-                variants = {variants}
-            >
-                  
-                <div className='motion-div-container' variants={variants}>
-                    <div className='motion-div-top motion-close-container'>
-                    <button onClick={closeMotion1} style={{}} className='close-offcanvas'>
-                            
-                                <div className='close-line1'></div>
-                                <div className='close-line2'></div>
-                            
-                    </button>
-                    </div>
-                    <h3 className='motion-div-title'>Cognitive Decline Warning Signs</h3>
-                    <div className='motion-div-content'>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Changes in memory or thinking acuity</p>    
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Difficulty performing daily tasks</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Confusion or disorientation</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Speech problems</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Mood swings or depression</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Withdrawal from social activities</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Loss of initiative or motivation</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Decreased ability to handle finances or make decisions</p>
-                    </motion.div>
-                    <motion.div className='motion-div-p' 
-                        initial= 'hidden'
-                        whileInView={item}
-                        whileHover={{ scale: 1.2, transition: { duration: 0.5 }}}
-                        viewport={{ once: true }}
-                        >
-                        <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
-                    </motion.div>
-                    <p className='motion-div-source'>Source: Alzheimer's Disease and Healthy Aging. https://www.cdc.gov/aging/dementia/index.html. 2023  </p>
-                </div>
-            </div>
-            </motion.div>
-            
-            <button onClick={handleShow} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
+                        <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}}>
+                        <Offcanvas.Header  style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', padding: ''}} closeButton></Offcanvas.Header>
+                            <TestEarly/>
+                        </Offcanvas.Body>
+                </Offcanvas>
+                <button onClick={handleShow2} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
+                    <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
+                    Warning Signs
+                </button> 
+                <Offcanvas 
+                    show={show2} 
+                    onHide={handleClose2}
+                    placement={'bottom'}
+                    style={{
+                        height: '100%',
+                        opacity: '1'
+                    }}
+                >
+                    <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}}>
+                        <Offcanvas.Header  style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', padding: ''}} closeButton></Offcanvas.Header>
+                            <WarningSigns/>
+                    </Offcanvas.Body>
+                </Offcanvas>
+                <button onClick={handleShow} disabled={false} className={button}  style={{position: 'relative', width: '100%', backgrondColor: 'transparent'}}>
                     <BsArrowUpRight className={icon} style={{backgroundColor: 'transparent', width: '40px'}}/>
                     By the Numbers
-            </button>   
+                </button>   
             </div>
-            </div>
+        </div>
             <Offcanvas  show={show} onHide={handleClose}  placement={'bottom'}
                 style={{
                     height: '100%', 
-                    //backgroundColor: 'var(--body-bg-color)',
                     opacity: '1'
                 }} 
             > 
                 <Offcanvas.Body style={{backgroundColor: 'var(--body-bg-color)', padding: '0px'}} >    
-                    <Offcanvas.Header  id='numbers' style={{backgroundColor: 'var(--body-bg-color)',opacity: '1', padding: ''}} closeButton>
+                    <Offcanvas.Header  id='numbers' style={{backgroundColor: 'var(--body-bg-color)', opacity: '1', padding: ''}} closeButton>
                     </Offcanvas.Header>
                     <Numbers/>
                 </Offcanvas.Body>
             </Offcanvas>  
         </div>
-   ) }
+   )}
 
 export default About;

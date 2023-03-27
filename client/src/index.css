@@ -2,7 +2,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  
+  border: 1px solid red;
 }
 
 body {
@@ -656,6 +656,52 @@ a:active {
 }
 /* Link Styling Ends */
 
+/* Test Early Styling */
+.test-early-container, .warning-signs-container {
+  
+  padding-bottom: 50px;
+}
+
+.test-early-title, .warning-signs-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideUp 1s linear;
+  font-weight: 0;
+  font-size: 5rem;
+  background-color: transparent;
+  padding: 50px;
+}
+/* Test Early Styling Ends */
+
+/* Warning Signs Styling */
+.warning-signs-container {
+  
+}
+
+.warning-signs-title {
+  z-index: 3;
+  
+  background-color: transparent;
+  text-align: center;
+}
+
+.warning-signs-image {
+  
+  
+  z-index: 1;
+  background-color: transparent;
+}
+
+.warning-signs-content {
+  
+  z-index: 2;
+  background-color: transparent;
+  
+}
+/* Warning Signs Ends */
+
+
 /* Contact Styling */
 .hidden-contact {
     visibility: hidden;
@@ -930,7 +976,7 @@ a:active {
 }
 
 .numbers-last-div {
-  padding-top: 200px;
+ /* padding-top: 200px;*/
 }
 
 .numbers-last-heading {
@@ -1187,7 +1233,7 @@ a:active {
 }
 
 .scroll-down-container {
-  margin-bottom: 100%;
+  margin-bottom: 200px;
   position: relative;
   /*
   width: 120px;
@@ -1249,6 +1295,8 @@ a:active {
   background-color: var(--body-bg-color);
 }
 
+
+
 .close-line1, .close-line2{
   width: 30px;
   height: 2px;
@@ -1277,11 +1325,7 @@ a:active {
  border-top-right-radius: 60px;
 }
 
-.motion-div-container {
-  border-radius: 60px;
-  background-color: var(--font-color); 
-  margin-right: 100px;
-}
+
 
 
 .motion-div-content {
@@ -1303,16 +1347,26 @@ a:active {
   display: grid;
   align-items: center;
   padding: 25px;
+  color: var(--body-bg-color);
+  font-weight: 600;
 }
 
 .motion-div-p {
   margin-top: 25px;
-  background-color: var(--body-bg-color);
+  background-color: var(--font-color);
   border-radius: 400px;
   height: 200px;
   width: 200px;
-  display: inline-block;
   margin: 10px;
+  text-align: center;
+}
+
+.motion-div-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .motion-div-source {
@@ -1394,8 +1448,10 @@ a:active {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
-  margin-top: 100vw;
+  
+  margin-top: 900px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .providers-subtext {
@@ -1413,10 +1469,12 @@ a:active {
 .providers-hidden-text {
   font-size: 2vw;
   padding: 100px;
+  margin-bottom: 300px;
+  margin-top: 800px;
 }
 
 .providers-span1 {
-  font-size: 8rem;
+ font-size: 5rem;
 }
 
 
@@ -1455,7 +1513,7 @@ a:active {
 }
 
 .providers-span3 {
-  font-size: 5vw;
+  
   line-height: 4.5vw;
   margin-top: 0px;
   line-height: 0.95;
@@ -1474,7 +1532,7 @@ a:active {
 .providers-span-text {
   padding-right: 15px;
   background-color: transparent;
-  font-size: 4rem;
+  font-size: 6vw;
 }
 
 
@@ -1516,11 +1574,12 @@ a:active {
   align-items: center;
   background-color: transparent;
   line-height: 0.95;
-  letter-spacing: -0.20em;
-  font-weight: 600;
+  padding: 100px;
+  
   margin-top: 200px;
   position: absolute;
   z-index: 999;
+  width: 100%;
 }
 
 .providers-content1-container {
@@ -1531,7 +1590,7 @@ a:active {
 .providers-content1 {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 0px 100px 0px;
 }
 
 .providers-content1 p {
@@ -1552,7 +1611,7 @@ a:active {
 }
 
 .brainview-demo-container {
-  padding: 50px;
+  
   width: 100%;
   display: flex;
   align-items: center;
@@ -1590,7 +1649,7 @@ a:active {
 }
 
 .providers-accordion-container {
-  margin-top: 500px;
+  
 }
 
 .providers-image1-container {
@@ -1625,12 +1684,14 @@ a:active {
 }
 
 .providers-image12 {
-  width: 50vw;
+  width: 100%;
   height: auto;
   position: absolute;
   z-index: 99;
-  top: 20;
   margin-bottom: 400px;
+  
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -1647,9 +1708,8 @@ a:active {
   font-size: 8vw;
 }
 
-.providers-content {
+.providers-text {
   background-color: transparent;
-  padding-top: 50px;
   font-weight: 600;
   text-align: left;
 }
@@ -1663,15 +1723,25 @@ a:active {
 }
 
 .providers-drawline {
-  padding: 25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .providers-title2 {
   padding-top: 50px;
   background-color: transparent;
-  font-size: 4vw;
+  font-size: 3rem;
   font-weight: 600;
   color: #0D3046;
+  line-height: 3rem;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.providers-title2-em {
+  background-color: transparent;
+  font-size: 4rem;
+  line-height: 3rem;
 }
 
 .providers-title4 {
@@ -1862,6 +1932,10 @@ a:active {
     padding-bottom: 25px;
     margin-left: 0px;
   }
+  .numbers-last-heading {
+    margin-top: 100px;
+    padding: 25px;
+  }
   .section {
     padding: 25px;
   }
@@ -1899,9 +1973,10 @@ a:active {
   }
   .section.s-heading-first {
     padding-top: 150rem;
+    
   }
   .motion-div-container {
-    margin-right: 50px;
+    
   }
   .motion-div {
     padding: 10px;
@@ -1928,11 +2003,11 @@ a:active {
   }
   .providers-hidden-text-container {
     width: 100%;
-    
   }
   .providers-hidden-text {
     font-size: 4vw;
     padding: 50px;
+    margin-top: 900px;
   }
   .providers-span-text {
     display: flex;
@@ -1940,7 +2015,8 @@ a:active {
   }
   .providers-subtext-container {
     justify-content: space-around;
-    margin-top: 800px;
+    margin-top: 900px;
+    margin-bottom: 200px;
   }
   .providers-span2 {
     font-size: 10vw;
@@ -1948,6 +2024,9 @@ a:active {
   .providers-image3, .providers-image2 {
     width: 100vw;
     height: auto;
+  }
+  .providers-content1 {
+    padding: 0px;
   }
   .icon-container {
     display: flex;
@@ -1971,6 +2050,9 @@ a:active {
     flex-direction: column;
     align-items: flex-start;
     padding: 25px;
+  }
+  .footer-container {
+    padding-top: 0px;
   }
 }
 
@@ -2022,15 +2104,17 @@ a:active {
   }
   .providers-subtext-container {
     justify-content: space-evenly;
+    margin-top: 1100px;
   }
   .providers-span {
     margin-bottom: 900px;
   }
   .providers-hidden-text-container {
-    padding: 50px;
+    
   }
   .providers-hidden-text {
     padding-bottom: 500px;
+    margin-top: 1100px;
   }
 
 }
@@ -2051,6 +2135,6 @@ a:active {
     margin-bottom: 900px;
   }
   .providers-span2 {
-    font-size: 7vw;
+    font-size: 5vw;
   }
 }
