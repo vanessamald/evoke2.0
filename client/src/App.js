@@ -6,9 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import useThemeStorage from './components/themeStorage';
 import Contact from './components/Contact';
 import { motion, useMotionValue, useSpring } from "framer-motion"
-import '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/react-fontawesome';
-import '@fortawesome/free-regular-svg-icons';
 
 function App() {
   //const [data, setData] = React.useState(null);

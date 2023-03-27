@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vanessamald/evoke.git"
+    "url": "git+https://github.com/vanessamald/evoke2.0.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vanessamald/evoke/issues"
+    "url": "https://github.com/vanessamald/evoke2.0/issues"
   },
-  "homepage": "https://github.com/vanessamald/evoke#readme",
+  "homepage": "https://github.com/vanessamald/evoke2.0#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

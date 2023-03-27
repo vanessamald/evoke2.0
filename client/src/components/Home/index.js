@@ -10,8 +10,9 @@ import Footer from '../Footer';
 import Services from '../Services';
 import Providers from '../Providers';
 import useThemeStorage from '../themeStorage';
-import { BsFillSunFill } from "react-icons/bs";
-import { BsMoon } from "react-icons/bs";
+import { BsSun } from "react-icons/bs";
+import { BsMoonStarsFill } from "react-icons/bs";
+
 
 
 function Home() {
@@ -42,8 +43,11 @@ function Home() {
                             className={isOn}
                         >
                             <motion.div layout className='handle'>
-                               
-                                    <i
+                                {theme === 'dark' ? <BsMoonStarsFill/> : <BsSun/> }
+                                    
+                                  
+                                
+                                    {/* <i
                                         className={`fa-regular fa-${isOn ? 'moon' : 'sun-bright'}`}
                                         key={isOn? 'moon' : 'sun'}
                                        
@@ -53,10 +57,12 @@ function Home() {
                                         //transition={{duration: 2}}
                                         //style={{width: '20px', height: '20px'}}
                                         style={{color: 'red', width: '20px', height: '20px'}}
-                                    ></i>
-                                
+                                ></i>*/} 
+                                    
                             </motion.div>
+                        
                             </div>
+                            
                         </div>
                     </div>
                 <div className='logo-container' >

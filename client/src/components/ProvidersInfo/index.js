@@ -1,4 +1,4 @@
-import React, {useRef, useState } from 'react';
+import React, {useRef, useState, useEffect } from 'react';
 import {  motion, useInView } from 'framer-motion';
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
@@ -19,6 +19,10 @@ function ProvidersInfo() {
     // transitions
     const ref = useRef(null);
     const isInView = useInView(ref);
+    useEffect(() => {
+        console.log("Element is in view: ", isInView)
+    }, [isInView])
+
     const transitions = {
         animationName: isInView ? 'slideUp' : 'none',
         animationDuration: '4s',
@@ -37,9 +41,9 @@ function ProvidersInfo() {
         
     const drawlineBottom = {
         opacity: isInView ? 1 : 0,
-        animation: isInView ? 'draw-line-bottom2 4s' : 'none',
+        animation: isInView ? 'draw-line-bottom 5s' : 'none',
         animationFillMode: isInView ? 'forwards' : 'backwards',  
-        animationDelay: isInView ? '2s' : '0',
+        animationDelay: isInView ? '3s' : '0',
         backgroundColor: 'transparent',
         width: '100%' 
         }
@@ -108,21 +112,21 @@ function ProvidersInfo() {
                 <img src={neurons}></img>
             </div>
             <div className='providers-content-container'>
-                <div className=''>   
+                <div className='' ref={ref}>   
                     {isDiv && (
                         <div className='providers-hidden-text-container' ref={ref}>
                             <div style={transitions2} className='providers-hidden-text'>
                                 Before the BrainView system, the only brain assessment technology available that used EEG was not portable, used complicated accompanying software and was not practical to use in a busy medical practice.
                                 BrainView was developed from necessity to create a wireless, automated, rapidly deploying brain function measurement and treatment system that was also:
-                            <div className='providers-span3' ref={ref}>
+                            <div className='providers-span3'>
                                 <h3><SplitNewText/></h3>   
                             </div>
                         </div>
                         <div>
-                            <div className={theme} ref={ref}>    
+                            <div className={theme}>    
                                 <div id="content" className="main">
                                     <section className="section s-hero s-hero-versions">
-                                        <div className="section-radius"></div>
+                                        <div className="section-radius"ref={ref}></div>
                                             <h3 className='numbers-subheading1 heading-xl' style={transitions}>BrainView Captures</h3>
                                             <img className='providers-image2' src={brainviewCaptures}></img>
                                             <div style={drawlineBottom} className='providers-drawline'/>
@@ -146,16 +150,16 @@ function ProvidersInfo() {
                                                 BrainView is designed to aid physicians in diagnosis by effectively measuring biomarkers related to seizures, to memory loss, concussion, cognitive impairment, and other stress-related neurological conditions.
                                             </p>*/}     
                                     </section>
-                                    <div className="section s-heading-first background-blurple z-9" ref={ref}> 
+                                    <div className="section s-heading-first background-blurple z-9" ref={ref} style={{paddingTop: '100rem'}}> 
                                         <h2 className='providers-title heading-xl'style={transitions} >In Practice</h2>
-                                        <div className='providers-in-practice' >
+                                        <div className='providers-in-practice'ref={ref} >
                                             <img className='providers-image2' src={brainviewCaptures9}></img>
                                             {/*<p className='transparent-bkg'>
                                                 BrainView provides physicians with highly-sensitive, objective data on brain function. 
                                                 This feature makes BrainView an excellent complimentary assessment tool to traditional subjective clinical questionnaires for long-term patient management. In essence, BrainView can detect subtle variations in brain function that other tests may miss.
                                                 The system may be especially adept at illuminating patients’ responses to therapy in the beginning stages of the disease. 
                                             </p>*/}
-                                            <h2 className='providers-title2'>The BrainView system can help assess patients’ biomarkers to aid in diagnosis <em className='providers-title2-em'>up to 15 years prior to the onset of symptoms.</em></h2> 
+                                            <h2  className='providers-title2'>The BrainView system can help assess patients’ biomarkers to aid in diagnosis <em className='providers-title2-em'>up to 15 years prior to the onset of symptoms.</em></h2> 
                                             <div style={drawlineBottom} className='providers-drawline'/>
                                                 <img className='providers-image3 ' src={brainviewCaptures3}></img>
                                             </div>
@@ -165,13 +169,13 @@ function ProvidersInfo() {
                                                 <div className="card-content2 numbers-section3 r"></div>
                                                     </div>
                                         </section>
-                                        <div className="section s-heading z-7" style={{ backgroundColor: '#0D3046', color: 'white', paddingTop: '5rem'}}>
+                                        <div className="section s-heading z-7" style={{ backgroundColor: '#0D3046', color: 'white', paddingTop: '0rem'}}>
                                             <div className="section-head-bg-extension padding-top" style={{backgroundColor: '#0D3046'}}></div>
                                                 
                                             </div>
-                                            <section className="section s-radius sr-large background-white z-9" style={{backgroundColor: '#0D3046', display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center',}}>
+                                            <section ref={ref} className="section s-radius sr-large background-white z-9" style={{backgroundColor: '#0D3046', display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center',}}>
                                             <img className='providers-image4' src={brainviewCaptures11}></img>
-                                                <h2 className='numbers-em text-center' style={{backgroundColor: 'transparent', color: 'white'}}>BrainView is FDA-approved, pain-free and non-invasive </h2>
+                                                <h2 className='numbers-em text-center' style={{backgroundColor: 'transparent', color: 'white', fontSize: '6vw'}}>BrainView is FDA-approved, pain-free and non-invasive </h2>
                                                 <div style={drawlineBottom} className='providers-drawline'/>
                                                 <div className='providers-accordion-container'>
                                                 <Accordion defaultActiveKey={['0']} flush>

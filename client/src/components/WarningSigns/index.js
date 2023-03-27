@@ -12,39 +12,39 @@ function WarningSigns() {
             
             <h3 className='warning-signs-title heading-xl text-center'>Cognitive Decline Warning Signs</h3>
            
-            <div className='warning-signs-content'>
-            <div>
+            <div className='motion-div-container'>
+            <div className='motion-div-p'>
                 <p>Changes in memory or thinking acuity</p>    
             </div>
             
-            <div>
+            <div className='motion-div-p'>
                 <p>Difficulty performing daily tasks</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Confusion or disorientation</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Speech problems</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Mood swings or depression</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Withdrawal from social activities</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Loss of initiative or motivation</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Decreased ability to handle finances or make decisions</p>
             </div>
-            <div>
+            <div className='motion-div-p'>
                 <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
             </div>
 </div>
         </div>
-        <div>
-            <p className=''>Source: Alzheimer's Disease and Healthy Aging. https://www.cdc.gov/aging/dementia/index.html. 2023  </p>
+        <div className='motion-div-source'>
+            <p className='motion-div-source-link'>Source: Alzheimer's Disease and Healthy Aging. <a className='motion-div-source-link' href='https://www.cdc.gov/aging/dementia/index.html' style={{backgroundColor: 'transparent'}}>https://www.cdc.gov/aging/dementia/index.html</a>. 2023  </p>
         </div>
     </div>
 )}

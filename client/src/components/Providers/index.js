@@ -38,8 +38,9 @@ function Providers(){
                     <button className='providers-button' onClick={() => setShow(true)}>More Information</button>
                 </div>
             </div>
-            <Modal show={show} onHide={() => setShow(false)} fullscreen={fullscreen}>
-                <Modal.Header closeButton id='providers-info'></Modal.Header>
+            <Modal show={show} onHide={() => setShow(false)} fullscreen={fullscreen} style={{paddingLeft: '0px'}}>
+                <Modal.Header  id='providers-info' closeButton></Modal.Header>
+                
                 <ProvidersInfo/>      
             </Modal>
         </div>
