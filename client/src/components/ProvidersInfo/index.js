@@ -1,31 +1,22 @@
-import React, {useRef, useState, useEffect } from 'react';
-import {  motion, useInView } from 'framer-motion';
+import React, {useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import useThemeStorage from '../themeStorage';
-import brainViewImage from '../../assets/images/brainview-test.jpg'
-import Accordion from 'react-bootstrap/Accordion';
-import neurons from '../../assets/images/neurons.png';
 import brainviewCaptures from '../../assets/images/BrainView Captures.png';
 import brainviewCaptures3 from '../../assets/images/BrainView Captures3.png';
 import brainviewCaptures9 from '../../assets/images/BrainView Captures9.png';
 import brainviewCaptures11 from '../../assets/images/BrainView Captures11.png';
-import brainviewCaptures12 from '../../assets/images/BrainView Captures12.png';
 import Contact from '../Contact';
-import ZoomImage from '../ZoomImage';
-import brainViewTest from '../../assets/images/brainview-test.jpg';
 import brainviewdemo from '../../assets/images/brainviewdemo.png';
 import backgroundneurons from '../../assets/images/backgroundneurons.png'
 
 function ProvidersInfo() {
     // import theme
-    const [theme, toggleTheme, componentMounted] = useThemeStorage();
+    const [theme, componentMounted] = useThemeStorage();
     
     // transitions
     const ref = useRef(null);
     const isInView = useInView(ref);
-    useEffect(() => {
-        console.log("Element is in view: ", isInView)
-    }, [isInView])
 
     const transitions = {
         animationName: isInView ? 'slideUp' : 'none',
@@ -42,28 +33,16 @@ function ProvidersInfo() {
         animationTimingFunction: 'ease-in',
         display: 'block'
         }
-        
-    const drawlineBottom = {
-        opacity: isInView ? 1 : 0,
-        animation: isInView ? 'draw-line2 5s' : 'draw-line2 5s',
-        animationFillMode: isInView ? 'forwards' : 'forwards',  
-        animationDelay: isInView ? '3s' : '3s',
-        backgroundColor: 'transparent',
-        width: '100%' 
-        }
 
-        const drawline = { 
-            opacity: isInView ? 1 : 0,
-            animation: isInView ? 'none' : 'draw-line-bottom2 5s',
-            animationFillMode: isInView ? 'backwards' : 'forwards', 
-            //animationDelay: isInView ? '3s' : '0s',
-            //borderBottom: '1px solid white',
-            //animationDelay: isInView ? '0' : '1s', 
-            width: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-         };
+    const drawline = { 
+        opacity: isInView ? 1 : 0,
+        animation: isInView ? 'none' : 'draw-line-bottom2 5s',
+        animationFillMode: isInView ? 'backwards' : 'forwards', 
+        width: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+        };
     
     // title animation
     const text = 'Why BrainView?';
@@ -125,10 +104,6 @@ function ProvidersInfo() {
             <div className='providers-span'>
                 <h1 style={{backgroundColor: 'transparent'}}><SplitText/></h1>
             </div>
-            {/*
-            <div className='providers-image12'>
-                <img src={neurons}></img>
-    </div>*/}
             <div className='providers-content-container'>
                 <div className=''>   
                     {isDiv && (
@@ -147,7 +122,7 @@ function ProvidersInfo() {
                                     <section className="section s-hero s-hero-versions">
                                         <div className="section-radius"ref={ref}></div>
                                             <h3 className='numbers-subheading1 heading-xl' style={transitions}>BrainView Captures</h3>
-                                            <img className='providers-image2' src={brainviewCaptures}></img>
+                                            <img className='providers-image2' src={brainviewCaptures} alt='BrainView captures the electroencephalogram activity of the brain (EEG), electrocardiogram activity of the heart (ECG), visual and auditory processing speeds, and a subjective neuropsychological survey'></img>
                                             <div style={drawline} className='providers-drawline'/>
 
                                
@@ -175,18 +150,15 @@ function ProvidersInfo() {
                                     <div className="section s-heading-first background-blurple z-9" ref={ref} style={{paddingTop: '100rem'}}> 
                                         <h2 className='providers-title heading-xl'style={transitions} >In Practice</h2>
                                         <div className='providers-in-practice'ref={ref} >
-                                            <img className='providers-image2' src={brainviewCaptures9}></img>
-                                            {/*<p className='transparent-bkg'>
-                                                BrainView provides physicians with highly-sensitive, objective data on brain function. 
-                                                This feature makes BrainView an excellent complimentary assessment tool to traditional subjective clinical questionnaires for long-term patient management. In essence, BrainView can detect subtle variations in brain function that other tests may miss.
-                                                The system may be especially adept at illuminating patients’ responses to therapy in the beginning stages of the disease. 
-                                            </p>*/}
+                                            <img className='providers-image2' src={brainviewCaptures9} alt='BrainView focuses on multiple core cognitive functions to support: proactive brain health, informed clinical decision-making, and customized patient care'></img>
                                             <div style={drawline} className='providers-drawline'/>
                                             <div className='providers-title2-container'>
                                                 <h2  className='providers-title2'>The BrainView system can help assess patients’ biomarkers to aid in diagnosis <em className='providers-title2-em'>up to 15 years prior to the onset of symptoms.</em></h2> 
                                             </div>
                                             <div style={drawline} className='providers-drawline'/>
-                                                <img className='providers-image3 ' src={brainviewCaptures3}></img>
+                                                <img className='providers-image3 ' src={brainviewCaptures3} alt='BrainView helps clinicians to Identify: Cognitive function and impairment, Biomarkers associated with cognitive impairment and memory loss, Autonomic nervous system function, Physiologic functions associated with sleep disorders, memory loss, anxiety disorders and attention difficulties. 
+                                                BrainView helps clinicians to Assess: The degree of cognitive impairment, Physiologic changes in cognitive function over time, Cognitive function response to clinical therapies, Objectively Manage Cognitive Function and Memory Loss Over Time'>
+                                                </img>
                                             </div>
                                         </div>
                                         <section className="section s-radius sr-large background-blurple z-9" style={{}}>
@@ -208,7 +180,7 @@ function ProvidersInfo() {
                                                 </div>
                                                 
                                                 <div style={drawline} className='providers-drawline'/>
-                                                <img className='providers-image4' src={brainviewCaptures11}></img>
+                                                <img className='providers-image4' src={brainviewCaptures11} alt='BrainView is backed by over 30 years scientific research, is 25-45 minutes long, and is based on 600 plus scientific publications'></img>
                                                 
                                                 
                                                 
@@ -221,7 +193,7 @@ function ProvidersInfo() {
                                                 
                                             </section>
                                             <div className='numbers-last-div'>
-                                                <h3  className='numbers-last-heading'>Early Detection Leads to <em style={{fontSize: '8vw'}}>Early Intervention</em><a> Contact us today</a> and learn more about our testing services.</h3>
+                                                <h3  className='numbers-last-heading'>Early Detection Leads to <em style={{fontSize: '8vw'}}>Early Intervention</em> Contact us today and learn more about our testing services.</h3>
                                             </div>
                                             <Contact/>
                                         </div>
@@ -240,7 +212,7 @@ function ProvidersInfo() {
                         
                             {/*<h3 className='providers-subtext'>The ability to rapidly, inexpensively, and reliably measure the brain’s functional health</h3>*/}
                         </div>
-                        <img className='providers-back-image' src={backgroundneurons}></img>
+                        <img className='providers-back-image' src={backgroundneurons} alt=''></img>
                         <button onClick={showDiv} style={{border: 'none', zIndex: '8', backgroundColor: 'transparent'}}>
                             <div className="providers-hover" style={{}}>Learn More</div>
                         </button>

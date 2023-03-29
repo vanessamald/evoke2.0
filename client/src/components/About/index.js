@@ -108,8 +108,8 @@ function About(){
                 The BrainView system aids in making an accurate diagnosis sooner, differentiating between diseases such as Dementia and Depression and avoiding misdiagnosis, delayed diagnosis, or under-diagnosis. BrainView can also be used in certain disease states to ensure patients receive the right dose for their medication.
             </p>
             </div>
-            <div className='title-container'> 
-                <h2 className='titles' id='learn-more' style={transitions}>Learn More About Cognitive Decline</h2>
+            <div className='title-container' id='learn-more'> 
+                <h2 className='titles' style={transitions}>Learn More About Cognitive Decline</h2>
                 <div className='title-borders'></div>
             </div>
             <div style={{}} className='content-padding'>

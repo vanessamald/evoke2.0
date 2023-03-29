@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useRef } from 'react';
 import people from '../../assets/images/people.png';
 import lessThanHalf from '../../assets/images/lessthanhalf.png';
 import thirtyfive from '../../assets/images/thirtyfive.png';
@@ -10,8 +9,7 @@ import { useInView } from "framer-motion";
 import Contact from '../Contact';
 
 function Numbers() {
-    const [theme, toggleTheme, componentMounted] = useThemeStorage();
-    const [ animation, setAnimation ] = useState();
+    const [ theme ] = useThemeStorage();
 
     // scrolling text span
     const text = 'scrolldown';
@@ -19,13 +17,10 @@ function Numbers() {
         return (
         <span >
         {text.split("").map(function(char, index){
-
-            const style = {"animation-delay": (0.5 + index / 10) + "s"};
-            //const rotateText = {"transform": "rotate(5deg)"}
             
             const rotateText = {
-                transform: 'rotate' +  `(${index * 35}deg)`,
-               // animation: 'rotateText 10s linear infinite',
+                // eslint-disable-next-line
+                transform: 'rotate' + `(${index * 35}deg)`,
             };
             return <span key={index} id={index} className='scrolling-letters' style={rotateText}>{char}</span>
             ;
@@ -36,17 +31,12 @@ function Numbers() {
 
         // inView animations
         const ref = useRef(null);
-        const isInView = useInView(ref);// useInView(ref, { once: true });
-        useEffect(() => {
-            console.log("Element is in view: ", isInView)
-        }, [isInView])
+        const isInView = useInView(ref);
 
         const drawline = { 
             opacity: isInView ? 1 : 0,
             animation: isInView ? 'draw-line2 5s' : 'none',
             animationFillMode: isInView ? 'forwards' : 'backwards', 
-            //animationDelay: isInView ? '3s' : '0s',
-            //borderBottom: '1px solid white',
             animationDelay: isInView ? '1s' : '0', 
             width: '75%' 
          };
@@ -55,8 +45,6 @@ function Numbers() {
             opacity: isInView ? 1 : 0,
             animation: isInView ? 'draw-line3 5s' : 'none',
             animationFillMode: isInView ? 'forwards' : 'backwards', 
-            //animationDelay: isInView ? '3s' : '0s',
-            //borderBottom: '1px solid white', 
             backgroundColor: 'transparent',
             animationDelay: isInView ? '2s' : '0' ,
             width: '75%' 
@@ -66,8 +54,6 @@ function Numbers() {
             opacity: isInView ? 1 : 0,
             animation: isInView ? 'draw-line-bottom 5s' : 'none',
             animationFillMode: isInView ? 'forwards' : 'backwards', 
-            //animationDelay: isInView ? '3s' : '0s',
-            //borderBottom: '1px solid white', 
             animationDelay: isInView ? '3s' : '0',
             backgroundColor: 'transparent',
             width: '75%' 
@@ -87,7 +73,7 @@ function Numbers() {
                 <section className="section s-hero s-hero-versions">
                     <div className="section-radius"></div>
                         <h1 className="heading-xl text-center numbers-title">Cognitive Decline in the U.S.</h1>
-                        <BsFillArrowDownCircleFill style={{ color:'var(--font-color)', top:'40px', display: 'flex', justifyContent: 'center', width: '60px', height: '60px', position: 'relative', alignItems: 'center', justifyContent: 'center'}}/>
+                        <BsFillArrowDownCircleFill style={{ color:'var(--font-color)', top:'40px', display: 'flex', width: '60px', height: '60px', position: 'relative', alignItems: 'center', justifyContent: 'center'}}/>
                         <div className='scroll-down-container'>
                             <div className='scroll-text'>
                                 <SplitText/> 
@@ -95,21 +81,21 @@ function Numbers() {
                         </div>
                         <div className="container-max">
                             <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
-                                <img src={people} className='people-icon'></img>
+                                <img src={people} alt='1 out of 10 Adults icon' className='people-icon'></img>
                             </div>
                             <div className='numbers-section1'>
                                 <h2 className='text-center heading-xl' style={transitions}>1 in 10 Adults 45 and Older </h2>
                                 <h3 className='numbers-subheading1'>Are affected by Subjective Cognitive Decline (SCD)</h3>
                                 <div className='numbers-content1'>
-                                    <p>SCD is a form of cognitive impairment and an early sign of dementia</p>
-                                    <p><span className='scd-text'><em>Subjective Cognitive Decline (SCD)</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
+                                    <p className='z1-transparent'>SCD is a form of cognitive impairment and an early sign of dementia</p>
+                                    <p className='z1-transparent'><span className='scd-text z1-transparent'><em>Subjective Cognitive Decline (SCD)</em></span> is characterized by self-reported memory problems that are getting worse over the past year.</p>
                                 </div>
                             </div>
                         <div>
                             <div ref={ref} className='numbers-div1'>
                                 <div style={drawline} className='numbers-div1'>
                                     <div className='numbers-circle1'><h3 className='numbers-circle1-text' style={{marginRight: '', fontSize: '48px'}}>41% </h3></div>
-                                    <h3 className='numbers-text' style={{fontSize: '24px'}}>of Adults with SCD Have Given Up <p className='numbers-em'>Daily Activities</p></h3>
+                                    <h3 className='numbers-text z1-transparent' style={{fontSize: '24px'}}>of Adults with SCD Have Given Up <p className='numbers-em z1-transparent'>Daily Activities</p></h3>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +128,7 @@ function Numbers() {
                         <div className="section-head-bg-extension background-white"></div>
                             <div className="container-max background-white">
                                 <div className='about-image-container background-white' ref={ref}>
-                                    <img src={lessThanHalf} className='lessthanhalf-icon background-white'></img>
+                                    <img src={lessThanHalf} alt='less than half icon' className='lessthanhalf-icon background-white'></img>
                                 </div>
                                 <h2 style={transitions} className="heading-xl text-center background-white">Less Than Half of Adults</h2>
                                 <h2 style={transitions} className="text-center background-white">With Dementia Have Been Diagnosed</h2>
@@ -157,14 +143,14 @@ function Numbers() {
                         </section>
                         <div className='numbers-last-div'>
                             <div className='about-image-container' >
-                                <img ref={ref} src={thirtyfive} className='thirtyfive-icon'></img>
+                                <img ref={ref} src={thirtyfive} alt='thirty-five percent icon' className='thirtyfive-icon'></img>
                             </div>
                             <h2 style={transitions} className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
-                            <h3 style={transitions} className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em><a> Contact us today</a> and learn more about our testing services.</h3>
+                            <h3 style={transitions} className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em> Contact us today and learn more about our testing services.</h3>
                         </div>
                         <Contact/>
                         <div className='arrowup-icon-container' ref={ref}>
-                        <a href="/#numbers">
+                        <a href="#numbers" style={{border: 'none'}}>
                             <BsFillArrowUpCircleFill className='arrowup-icon'/>
                         </a>
                     </div>

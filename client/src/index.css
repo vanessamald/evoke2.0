@@ -2,7 +2,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  
 }
 
 body {
@@ -27,7 +26,6 @@ code {
   width: 25px;
   height: 25px;
   border-radius: 16px;
-  /*border: 2px solid var(--font-color);*/
   background-color: white;
   mix-blend-mode: difference;
   z-index: 99999999999;
@@ -528,8 +526,6 @@ code {
   /*50% { bottom: 0.5em; }*/
   100% { bottom: 0em; opacity: 1; }
 }
-
-
 /* Animations End */
 
 /* About Styling */ 
@@ -552,7 +548,6 @@ code {
 }
 
 .about-container {
-  /*padding: 100px;*/
   padding-bottom: 100px;
 }
 
@@ -682,10 +677,6 @@ a:active {
 /* Test Early Styling Ends */
 
 /* Warning Signs Styling */
-.warning-signs-container {
-  
-}
-
 .warning-signs-title {
   z-index: 3;
   position: relative;
@@ -694,17 +685,13 @@ a:active {
 }
 
 .warning-signs-image {
-  
-  
   z-index: 1;
   background-color: transparent;
 }
 
 .warning-signs-content {
-  
   z-index: 2;
   background-color: transparent;
-  
 }
 /* Warning Signs Ends */
 
@@ -812,7 +799,6 @@ a:active {
 
 .contact-line2 {
   transform: translate(0, -6px) rotate(45deg);
-  /*background-color: var(--font-color);*/
 }
 
 .contact-top-container {
@@ -825,7 +811,6 @@ a:active {
 /* Our Vision Styling */
 
 .vision-container {
-  /*padding: 100px; */
   padding-bottom: 100px;
 }
 
@@ -836,39 +821,8 @@ a:active {
 
 /* Services Styling */
 .services-container, .providers-container {
- /* padding: 100px; */
  padding-bottom: 100px;
 }
-
-/*
-.services-preview-link {
-  text-decoration: none;
-  border-radius: 50px;
-  padding: 10px;
-  z-index: 9999;
-  position: relative;
-}
-*/
-
-.services-preview {
-  display: block;
-  max-width: 100%;
-  width: 150px;
-  height: 150px;
-  opacity: 0;
-}
-
-.services-preview-link:hover::after {
-  position: absolute;
-  content: url(../src/assets/images/brainview-test.jpg);
-  display: block;
-  left: 0px; /* change this value to one that suits you */
-  
-  
-}
-
-
-  
 
 .services-button {
   border-radius: 100px;
@@ -930,6 +884,7 @@ a:active {
   justify-content: center;
   align-items: center;
   padding: 50px;
+  background-color: transparent;
 }
 
 .numbers-section1 {
@@ -1050,10 +1005,6 @@ a:active {
   margin-left: 25px;
 }
 
-.numbers-last-div {
- /* padding-top: 200px;*/
-}
-
 .numbers-last-heading {
   margin-top: 400px;
   padding: 50px;
@@ -1115,8 +1066,6 @@ a:active {
   color: var(--font-color);
 }
 /* Privacy Styling Ends*/
-
-
 
 /* Numbers Cards */
 .section {
@@ -1310,9 +1259,6 @@ a:active {
 .scroll-down-container {
   margin-bottom: 200px;
   position: relative;
-  /*
-  width: 120px;
-  */
   height: 120px;
   border-radius: 50%;
   display: flex;
@@ -1320,12 +1266,6 @@ a:active {
   align-items: center;
   animation: rotateText 7s linear infinite;
   margin-top: -50px;
-}
-
-.scrolling-letters {
-  
-  
-  
 }
 
 .hidden-offcanvas {
@@ -1338,20 +1278,6 @@ a:active {
   width: 60px;
   height: 60px;
   padding-top: 25px;
-  /*
-  width: 60px;
-  height: 60px;
-  margin-top: 10px;
-  padding-top: 0px;
-  z-index: 1;
-  border-radius: 50%;
-  border-color: var(--font-color);
-  transition: transform .7s ease-in-out;
-  margin-left: 75%;
-  color: var(--body-bg-color);
-  opacity: 1;
-  margin-bottom: 50px;
-  */
 }
 
 .offcanvas {
@@ -1402,9 +1328,6 @@ a:active {
  border-top-right-radius: 60px;
 }
 
-
-
-
 .motion-div-content {
   border-radius: 60px;
   display: flex;
@@ -1415,8 +1338,6 @@ a:active {
   background-color: var(--font-color);
   padding-bottom: 25px;
 }
-
-
 
 .motion-div-title {
   background-color: transparent;
@@ -1447,13 +1368,7 @@ a:active {
   height: 2em;
 }
 
-.providers-modal {
- 
-}
-
-
 .providers-hover {
-  /*-webkit-mask-image: -webkit-radial-gradient(#fff,#000);*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1501,28 +1416,15 @@ a:active {
   font-size: 2vw;
   padding: 100px;
   margin-bottom: 300px;
-  
 }
 
 .providers-span1 {
  font-size: 5rem;
 }
 
-
-
 .providers-em {
-  /*font-size: 3vw;
-  line-height: 4.5vw;*/
   animation: slideUp 3s forwards;
 }
-/*
-.providers-subtext h3 span span {
-  opacity: 0;
-  animation: slideUp 3s forwards;
-  position: relative;
-  animation-iteration-count: 1;
-}
-*/
 
 .providers-subtext h3 {
   display: flex;
@@ -1817,7 +1719,6 @@ a:active {
   justify-content: center;
   align-items: center;
 }
-
 /* Providers Styling Ends */
 
 /* TESTING NEW STYLING HERE */
@@ -1856,7 +1757,10 @@ a:active {
   padding:25px;
 }
 
-
+.z1-transparent {
+  z-index: 1;
+  background-color: transparent;
+}
 
 /* Mobile Responsiveness */
 @media only screen and (max-width: 600px) {
@@ -1941,7 +1845,6 @@ a:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*width: 100%;*/
   }
   .numbers-div2-content {
     display: flex;
@@ -1986,22 +1889,13 @@ a:active {
   }
   .about-container, .contact-container, .services-container, .vision-container, .providers-container {
     padding: 0px;
-   /* overflow: hidden;*/
     padding-bottom: 100px;
-  }
-
-
-  .close-offcanvas {
-    /*margin-left: 55vw;*/
   }
   .contact-show {
     padding: 50px;
   }
   .section.s-heading-first {
     padding-top: 150rem;
-    
-  }
-  .motion-div-container {
     
   }
   .motion-div {
@@ -2162,9 +2056,6 @@ a:active {
   }
   .providers-span {
     margin-bottom: 900px;
-  }
-  .providers-hidden-text-container {
-   /* margin-top: 1100px;*/
   }
   .providers-hidden-text {
     padding-bottom: 500px;

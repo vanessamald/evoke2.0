@@ -1,15 +1,14 @@
 import React from "react";
-import {  motion, useInView } from 'framer-motion';
 import useThemeStorage from '../themeStorage';
 
 function TestEarly() {
-    const [theme, toggleTheme, componentMounted] = useThemeStorage();
+    const [ theme ] = useThemeStorage();
     
     return (
         <div className={theme} style={{width: '100%', height: '100%'}}>
             <div className='test-early-container'>
                 <div className='warning-signs-title-container'>
-                    <h3 className='warning-signs-title heading-xl text-center' style={{color: 'blue'}}>Reason to Test Early</h3>
+                    <h3 className='warning-signs-title heading-xl text-center' style={{color: 'blue'}}>Reasons to Test Early</h3>
                     <h3 className='warning-signs-title heading-xl text-center' >for Cognitive Decline</h3>
                 </div>
                 <div className='motion-div-container'>
@@ -39,9 +38,7 @@ function TestEarly() {
                     </div>
                     </div>
                 </div>
-            </div>
-         
-    )
-}
+            </div>   
+        )}
 
 export default TestEarly;
