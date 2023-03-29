@@ -2,6 +2,7 @@ import React from "react";
 import {  motion, useInView } from 'framer-motion';
 import useThemeStorage from '../themeStorage';
 import patient1 from '../../assets/images/patient1.png';
+import neurons from '../../assets/images/neurons.png';
 
 function WarningSigns() {
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
@@ -12,8 +13,11 @@ function WarningSigns() {
         <div className='warning-signs-container'>
             <div className='warning-signs-title-container'>
                 <h3 className='warning-signs-title heading-xl text-center'>Cognitive Decline</h3>
-                <h3 className='warning-signs-title heading-xl text-center' style={{color: 'blue'}}>Warning Signs</h3>
+                <h3 className='warning-signs-title heading-xl text-center' style={{}}>Warning Signs</h3>
                 {/*<img src={patient1}></img>*/}
+                <div className='providers-image12'>
+                <img src={neurons}></img>
+    </div>
             </div>
             <div className='motion-div-container'>
             <div className='motion-div-p'>

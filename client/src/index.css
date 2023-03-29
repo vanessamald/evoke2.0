@@ -666,6 +666,7 @@ a:active {
 .warning-signs-title-container {
   padding-bottom: 50px;
   padding-top: 50px;
+  position: relative;
 }
 
 .test-early-title, .warning-signs-title {
@@ -687,7 +688,7 @@ a:active {
 
 .warning-signs-title {
   z-index: 3;
-  
+  position: relative;
   background-color: transparent;
   text-align: center;
 }
@@ -1696,7 +1697,7 @@ a:active {
   width: 100%;
   height: auto;
   position: absolute;
-  z-index: 99;
+  top: 0;
   margin-bottom: 400px;
   display: flex;
   justify-content: center;
@@ -2052,7 +2053,7 @@ a:active {
     height: auto;
   }
   .providers-back-image {
-    margin-top: 800px;
+    margin-top: 600px;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 800px;
