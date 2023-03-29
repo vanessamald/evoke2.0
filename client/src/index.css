@@ -2,6 +2,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+  
 }
 
 body {
@@ -326,16 +327,16 @@ code {
 @keyframes draw-line-bottom {
   0% {
     width: 0;
-    opacity: 0;
+    
   }
   50% {
     border-bottom: 2px solid blue;
-    opacity: 0.75;
+    
   }
   100% {
     width: 75%;
     border-bottom: 2px solid var(--body-bg-color);
-    opacity: 1;
+    
   }
 }
 
@@ -494,10 +495,12 @@ code {
     }
   70% 
     {
+      opacity: 1;
       transform: translateY(50px)
     }
   100% 
     {
+      opacity: 1;
       transform: translateY(auto);
     } 
 }
@@ -657,8 +660,12 @@ a:active {
 
 /* Test Early Styling */
 .test-early-container, .warning-signs-container {
-  
   padding-bottom: 50px;
+}
+
+.warning-signs-title-container {
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .test-early-title, .warning-signs-title {
@@ -669,7 +676,7 @@ a:active {
   font-weight: 0;
   font-size: 5rem;
   background-color: transparent;
-  padding: 50px;
+  
 }
 /* Test Early Styling Ends */
 
@@ -713,6 +720,7 @@ a:active {
 }
 
 .motion-div-p {
+  opacity: 0;
   margin-top: 25px;
   background-color: var(--font-color);
   border-radius: 400px;
@@ -720,6 +728,29 @@ a:active {
   width: 200px;
   margin: 10px;
   text-align: center;
+  animation: slideDown 2s forwards;
+}
+
+.motion-div-p:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.motion-div-p:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.motion-div-p:nth-child(6) {
+  animation-delay: 2s;
+}
+
+.motion-div-p:nth-child(8) {
+  animation-delay: 2.5s;
+}
+
+.motion-div-p:hover {
+  scale: 1.5;
+  transition: 1s;
+  
 }
 
 .motion-div-container {
@@ -731,16 +762,13 @@ a:active {
 }
 
 .motion-div-source {
- 
-  background-color: var(--font-color);
-  font-size: 12px;
+  font-size: 8px;
   text-align: center;
 }
 
 .motion-div-source-link {
   text-decoration: none;
-  color: var(--body-bg-color);
-  background-color: var(--font-color);
+  color: var(--font-color);
 }
 
 .motion-div-source-link::after {
@@ -1457,6 +1485,7 @@ a:active {
 
 .providers-subtext {
   background-color: transparent;
+  z-index: 8;
 }
 
 .providers-hidden-text-container {
@@ -1533,13 +1562,14 @@ a:active {
 .providers-span-text {
   padding-right: 15px;
   background-color: transparent;
-  font-size: 6vw;
+  font-size: 7vw;
 }
 
 
 .providers-preview {
   text-decoration: none;
 }
+
 
 .providers-button, .services-preview-link {
   border-top-right-radius: 7px;
@@ -1599,24 +1629,31 @@ a:active {
   animation: fadeIn 1s forwards;
 }
 
+
 .brainview-demo {
-  z-index: 999999;
-  height: 700px;
+  padding-top: 50px;
+  height: 600px;
   width: auto;
+  background-color: transparent;
   transition: transform 1.5s; 
-  
 }
 
 .brainview-demo:hover {
   transform: scale(1.5);
+  cursor: -moz-zoom-in; 
+  cursor: -webkit-zoom-in; 
+  cursor: zoom-in;
 }
 
 .brainview-demo-container {
-  
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.modal {
+  padding-left: 0px !important;
 }
 
 .cursor-text {
@@ -1630,51 +1667,22 @@ a:active {
   text-transform: uppercase;
 }
 
-/*
-.providers-content2 {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-
-}
-*/
-/*
-.brainview-demo:hover {
-  cursor: -moz-zoom-in; 
-    cursor: -webkit-zoom-in; 
-    cursor: zoom-in;
-}
-*/
-.accordion-button:not(.collapsed) {
-  color: var(--body-bg-color);
-}
-
-.providers-accordion-container {
-  
-}
-
-.providers-image1-container {
- /*background-image: url('../src/assets/images/neurons.png');*/
-}
-
 .providers-image1 {
   position: absolute;
   z-index: 0;
 }
 
 .providers-image2 {
+  padding-top: 50px;
   width: 80vw;
   height: auto;
   background-color: transparent;
-  
 }
 
 .providers-image3{
   width: 80vw;
   height: auto;
   background-color: transparent;
- 
-  
   margin-bottom: -50px;
 }
 
@@ -1690,11 +1698,20 @@ a:active {
   position: absolute;
   z-index: 99;
   margin-bottom: 400px;
-  
   display: flex;
   justify-content: center;
 }
 
+.providers-back-image {
+  position: absolute;
+  z-index: 7;
+  top: 50;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  height: auto;
+  
+}
 
 .providers-title {
   background-color: transparent;
@@ -1729,7 +1746,6 @@ a:active {
 }
 
 .providers-title2 {
-  padding-top: 50px;
   background-color: transparent;
   font-size: 3rem;
   font-weight: 600;
@@ -1739,11 +1755,16 @@ a:active {
   margin-right: 100px;
 }
 
+.providers-title2-container {
+  background-color: transparent;
+}
+
 .providers-title2-em {
   background-color: transparent;
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 3rem;
-  color: var(--body-bg-color);
+  font-weight: 800;
+  color: white;
 }
 
 .providers-title4 {
@@ -1935,7 +1956,7 @@ a:active {
     margin-left: 0px;
   }
   .numbers-last-heading {
-    margin-top: 100px;
+    margin-top: 200px;
     padding: 25px;
   }
   .section {
@@ -1985,14 +2006,18 @@ a:active {
     width: 75vw;
   }
   .motion-div-p {
-    height: 100px;
-    width: 100px; 
+    height: 150px;
+    width: 150px; 
   }
   .motion-div-p > p {
-    width: 100px;
-    height: 100px;
-    font-size: 8px;
+    width: 150px;
+    height: 150px;
+    font-size: 12px;
     padding: 10px;
+    font-weight: 600;
+  }
+  .motion-div-source-link {
+    font-size: 10px;
   }
   .providers-span {
     margin-bottom: 600px;
@@ -2009,16 +2034,40 @@ a:active {
   .providers-hidden-text {
     font-size: 4vw;
     padding: 50px;
-    
+    margin-top: 200px;
   }
   .providers-span-text {
     display: flex;
     padding-right: 10px;
+    font-size: 4rem;
   }
   .providers-subtext-container {
     justify-content: space-around;
-    margin-top: 900px;
+    padding-top: 200px;
     margin-bottom: 200px;
+    
+  }
+  .providers-image12 {
+    width: 50%;
+    height: auto;
+  }
+  .providers-back-image {
+    margin-top: 800px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 800px;
+    height: auto;
+  }
+  .providers-title2-em {
+    font-size: 12vw;
+    line-height: 8vw;
+  }
+  .providers-title2-container {
+    background-color: transparent;
+  }
+  .providers-title2 {
+    margin-left: 50px;
+    margin-right: 50px;
   }
   .providers-span2 {
     font-size: 10vw;
@@ -2028,14 +2077,15 @@ a:active {
     height: auto;
   }
   .providers-content1 {
-    padding: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   .icon-container {
     display: flex;
     flex-direction: column;
   }
   .brainview-demo {
-    height: 300px;
+    height: 400px;
     width: auto;
   }
   .brainview-demo:hover {
@@ -2106,17 +2156,17 @@ a:active {
   }
   .providers-subtext-container {
     justify-content: space-evenly;
-    
+    margin-top: 1100px;
   }
   .providers-span {
     margin-bottom: 900px;
   }
   .providers-hidden-text-container {
-    
+   /* margin-top: 1100px;*/
   }
   .providers-hidden-text {
     padding-bottom: 500px;
-    
+    margin-top: 0px;
   }
 
 }

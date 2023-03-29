@@ -8,7 +8,10 @@ function TestEarly() {
     return (
         <div className={theme} style={{width: '100%', height: '100%'}}>
             <div className='test-early-container'>
-                <h3 className='test-early-title heading-xl text-center'>Reasons to Test Early for Cognitive Decline</h3>
+                <div className='warning-signs-title-container'>
+                    <h3 className='warning-signs-title heading-xl text-center' style={{color: 'blue'}}>Reason to Test Early</h3>
+                    <h3 className='warning-signs-title heading-xl text-center' >for Cognitive Decline</h3>
+                </div>
                 <div className='motion-div-container'>
                     <div className='motion-div-p'>
                         <p>To identify early signs of cognitive decline</p>

@@ -1,6 +1,7 @@
 import React from "react";
 import {  motion, useInView } from 'framer-motion';
 import useThemeStorage from '../themeStorage';
+import patient1 from '../../assets/images/patient1.png';
 
 function WarningSigns() {
     const [theme, toggleTheme, componentMounted] = useThemeStorage();
@@ -9,9 +10,11 @@ function WarningSigns() {
     <div className={theme} style={{width: '100%', height: '100%'}}>
         
         <div className='warning-signs-container'>
-            
-            <h3 className='warning-signs-title heading-xl text-center'>Cognitive Decline Warning Signs</h3>
-           
+            <div className='warning-signs-title-container'>
+                <h3 className='warning-signs-title heading-xl text-center'>Cognitive Decline</h3>
+                <h3 className='warning-signs-title heading-xl text-center' style={{color: 'blue'}}>Warning Signs</h3>
+                {/*<img src={patient1}></img>*/}
+            </div>
             <div className='motion-div-container'>
             <div className='motion-div-p'>
                 <p>Changes in memory or thinking acuity</p>    
@@ -41,7 +44,7 @@ function WarningSigns() {
             <div className='motion-div-p'>
                 <p>Suspected neurological disorders (e.g. Alzheimer's, dementia)</p>
             </div>
-</div>
+        </div>
         </div>
         <div className='motion-div-source'>
             <p className='motion-div-source-link'>Source: Alzheimer's Disease and Healthy Aging. <a className='motion-div-source-link' href='https://www.cdc.gov/aging/dementia/index.html' style={{backgroundColor: 'transparent'}}>https://www.cdc.gov/aging/dementia/index.html</a>. 2023  </p>
