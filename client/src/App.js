@@ -34,12 +34,17 @@ function App() {
   if (!componentMounted) {
     return <div/>
   }
+
+  const showPrivacyPolicy = () => {
+    if (window.location.pathname === "/privacypolicy") {
+      return <Privacy/>
+    }
+  }
   
   return (
     <div className={theme}>
       <motion.div className='cursor-dark' style={{translateX: cursorX, translateY: cursorY}}/>
       <main className={theme}>
-      
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}></Route>
