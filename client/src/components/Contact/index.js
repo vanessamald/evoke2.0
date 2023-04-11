@@ -160,7 +160,7 @@ function Contact() {
                 <div className='title-borders'></div>
             </div>
             <div className='content-padding'>
-                <div><p><BsFillTelephoneFill/> 844-463-GOEVOKE</p></div>
+                <div><p><BsFillTelephoneFill/> 844-GOEVOKE or 844-463-8643</p></div>
                 <div><p><BsFillEnvelopeFill/> hello@evokediagnostics.com</p></div>
                 <Button id={'contact'} className='contact-button'
                     style={{
