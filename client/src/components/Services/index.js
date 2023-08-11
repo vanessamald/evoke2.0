@@ -1,11 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { FiCheckSquare } from "react-icons/fi";
 import { useInView } from 'framer-motion';
-import servicesImage from '../../assets/images/brainview-test.jpg'
 
 function Services(){
-    const [show, setShow] = useState(false);
-    const [fullscreen, setFullscreen] = useState(true);
     // transition styling 
     const ref = useRef(null)
     const isInView = useInView(ref)
@@ -15,31 +12,7 @@ function Services(){
         animationTimingFunction: 'ease-in',
         display: 'block'
        }
-/*
-    
-    cursor.addEventListener("mousemove", (e) => {
-    const image = document.querySelector('services-preview')
-    e.target.style.zIndex = 99
-    image.setAttribute('src', servicesImage)
-    }) */
-/*
-    var textLink = document.querySelector(".services-preview-link");
-    const image = document.querySelector('services-preview')  
-    document.addEventListener("mousemove", (e) => { 
-       
-        const x = e.clientX;
-        const y = e.clientY;
-        */
-        /*
-        image.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-        textLink.style.setProperty('--x',(x)+'px');
-        textLink.style.setProperty('--y',(y)+'px');
-        */
-/*
-        textLink.style.left = `${x}px`;
-        textLink.style.top = `${y}px`;
-    })
-    */ 
+
     return (
         <div>
         <div id={'services'} className='services-container' ref={ref}>

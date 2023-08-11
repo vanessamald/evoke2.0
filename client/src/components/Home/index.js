@@ -15,7 +15,7 @@ import { BsMoonStarsFill } from "react-icons/bs";
 
 function Home() {
     // set theme
-    const [ theme, themeToggler, isOn ] = useThemeStorage();
+    const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
     
     // set scrolling 
     const [scroll, setScroll] = useState(0);
@@ -41,6 +41,7 @@ function Home() {
                             <motion.div layout className='handle'>
                                 {theme === 'dark' ? <BsMoonStarsFill/> : <BsSun/> }  
                             </motion.div>
+
                             </div>
                         </div>
                     </div>

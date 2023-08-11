@@ -1,22 +1,13 @@
 import React, { useRef } from 'react';
 import { useInView,motion } from 'framer-motion';
-import Privacy from '../Privacy';
 
 function Footer () {
-    const privacyOpen = () => {
-      console.log('button works')
-      return (
-        <Privacy/>
-      )
-    }
-
     // transition styling 
     const ref = useRef(null)
     const isInView = useInView(ref)
     const transitions = {
         animationName: isInView ? 'slideUp' : 'none',
         animationDuration: '2s',
-       //animationTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)',
         animationTimingFunction: 'ease-in',
         display: 'block',
         }

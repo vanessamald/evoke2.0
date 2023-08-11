@@ -48,9 +48,6 @@ function Contact() {
         })
     } else {
     
-    //console.log(emailMessage);
-    //let URI = process.env.NODE_ENV === 'development' ? process.env.DEV_URI : process.env.PROD_URI;
-    
     let response = await fetch("/contact", {
         method: "POST",
         headers: {
@@ -103,7 +100,6 @@ function Contact() {
                         <Form.Group className="mb-3" controlId="name">
                             <Form.Label>Name</Form.Label>
                             <Form.Control
-                                //value={state.name}
                                 onChange={(e) => setName(e.target.value)} 
                                 type="text"
                                 placeholder="Name"
@@ -114,7 +110,6 @@ function Contact() {
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
-                                //value={state.email}
                                 onChange={(e) => setEmail(e.target.value)} 
                                 type="text"
                                 placeholder="email@example.com"

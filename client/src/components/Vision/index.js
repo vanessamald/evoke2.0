@@ -31,7 +31,6 @@ function Vision() {
                         lives of seniors everywhere.
                     </p>
                 </div>
-            
             </div>
         </div>
     )

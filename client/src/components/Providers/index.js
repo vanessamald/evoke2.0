@@ -1,7 +1,6 @@
 import React, {useRef, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import {  motion, useInView } from 'framer-motion';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import useThemeStorage from '../themeStorage';
 import ProvidersInfo from '../ProvidersInfo';
 
@@ -40,7 +39,6 @@ function Providers(){
             </div>
             <Modal show={show} onHide={() => setShow(false)} fullscreen={fullscreen} style={{paddingLeft: '0px'}}>
                 <Modal.Header  id='providers-info' closeButton></Modal.Header>
-                
                 <ProvidersInfo/>      
             </Modal>
         </div>
