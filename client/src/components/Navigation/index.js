@@ -12,7 +12,7 @@ function Navigation() {
         setButton("change");
         }
         if (toggle) {
-            setButton("lines-container")
+            setButton("lines-container");
         }
     };
 
