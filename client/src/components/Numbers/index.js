@@ -81,7 +81,7 @@ function Numbers() {
                         </div>
                         <div className="container-max">
                             <div className='about-image-container' style={{width: '100%', height: 'auto'}}>
-                                <img src={people} alt='1 out of 10 Adults icon' className='people-icon'></img>
+                                <img src={people} alt='1 out of 10 Adults icon' className='people-icon' loading="lazy"></img>
                             </div>
                             <div className='numbers-section1'>
                                 <h2 className='text-center heading-xl' style={transitions}>1 in 10 Adults 45 and Older </h2>
@@ -128,7 +128,7 @@ function Numbers() {
                         <div className="section-head-bg-extension background-white"></div>
                             <div className="container-max background-white">
                                 <div className='about-image-container background-white' ref={ref}>
-                                    <img src={lessThanHalf} alt='less than half icon' className='lessthanhalf-icon background-white'></img>
+                                    <img src={lessThanHalf} alt='less than half icon' className='lessthanhalf-icon background-white' loading="lazy"></img>
                                 </div>
                                 <h2 style={transitions} className="heading-xl text-center background-white">Less Than Half of Adults</h2>
                                 <h2 style={transitions} className="text-center background-white">With Dementia Have Been Diagnosed</h2>
@@ -143,7 +143,7 @@ function Numbers() {
                         </section>
                         <div className='numbers-last-div'>
                             <div className='about-image-container' >
-                                <img ref={ref} src={thirtyfive} alt='thirty-five percent icon' className='thirtyfive-icon'></img>
+                                <img ref={ref} src={thirtyfive} alt='thirty-five percent icon' className='thirtyfive-icon' loading="lazy"></img>
                             </div>
                             <h2 style={transitions} className="heading-xl text-center">And Only 35% Know They Have the Disease</h2>
                             <h3 style={transitions} className='numbers-last-heading'>Healthy aging starts with <em style={{fontSize: '8vw'}}>Cognitive Health</em> Contact us today and learn more about our testing services.</h3>

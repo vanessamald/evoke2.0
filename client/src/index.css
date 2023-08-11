@@ -46,17 +46,25 @@ code {
 
 .logo-container {
   display: flex;
+  
   justify-content: center;
+  
   background-color: transparent;
 }
 
 .logo {
+  max-width: 75%;
+  height: auto;
+  background-color: transparent;
+  margin-top: -10%;
+  /*
   width: 75%;
   height: auto;
   opacity: 1;
   animation: fade 4s linear;
   background-color: transparent;
   margin-top: -150px;
+  */
 }
 /* Home Styling Ends */
 
@@ -1778,6 +1786,7 @@ a:active {
     margin-top: 10%;
     margin-bottom: 100%; 
   }
+
   .logo-container {
     text-align: center;
   }

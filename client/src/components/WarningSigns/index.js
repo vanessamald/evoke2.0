@@ -13,7 +13,7 @@ function WarningSigns() {
                 <h3 className='warning-signs-title heading-xl text-center'>Cognitive Decline</h3>
                 <h3 className='warning-signs-title heading-xl text-center' style={{}}>Warning Signs</h3>
                 <div className='providers-image12'>
-                    <img src={neurons} alt=''></img>
+                    <img src={neurons} alt='' loading="lazy"></img>
                 </div>
             </div>
             <div className='motion-div-container'>

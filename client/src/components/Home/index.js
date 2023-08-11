@@ -41,12 +41,11 @@ function Home() {
                             <motion.div layout className='handle'>
                                 {theme === 'dark' ? <BsMoonStarsFill/> : <BsSun/> }  
                             </motion.div>
-
                             </div>
                         </div>
                     </div>
                 <div className='logo-container' >
-                    <img className='logo' src={logoTransparent} alt='evoke neurodiagnostics logo'></img>
+                    <img className='logo' src={logoTransparent} alt='evoke neurodiagnostics logo' preload="true"></img>
                 </div>
             </div>
             <About/>
