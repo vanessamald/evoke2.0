@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Navigation from '../Navigation';
 import About from '../About';
 import Contact from '../Contact';
@@ -13,13 +13,9 @@ import useThemeStorage from '../themeStorage';
 import { BsSun } from "react-icons/bs";
 import { BsMoonStarsFill } from "react-icons/bs";
 
-
-
 function Home() {
     // set theme
-    const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
-    
-    //console.log(theme);
+    const [ theme, themeToggler, isOn ] = useThemeStorage();
     
     // set scrolling 
     const [scroll, setScroll] = useState(0);
@@ -43,26 +39,9 @@ function Home() {
                             className={isOn}
                         >
                             <motion.div layout className='handle'>
-                                {theme === 'dark' ? <BsMoonStarsFill/> : <BsSun/> }
-                                    
-                                  
-                                
-                                    {/* <i
-                                        className={`fa-regular fa-${isOn ? 'moon' : 'sun-bright'}`}
-                                        key={isOn? 'moon' : 'sun'}
-                                       
-                                        //initial={{y: -30, opacity: 0}}
-                                        //animate={{y:0, opacity:1}}
-                                        //exit={{y: 30, opacity: 0}}
-                                        //transition={{duration: 2}}
-                                        //style={{width: '20px', height: '20px'}}
-                                        style={{color: 'red', width: '20px', height: '20px'}}
-                                ></i>*/} 
-                                    
+                                {theme === 'dark' ? <BsMoonStarsFill/> : <BsSun/> }  
                             </motion.div>
-                        
                             </div>
-                            
                         </div>
                     </div>
                 <div className='logo-container' >
@@ -75,7 +54,7 @@ function Home() {
             <Providers/>
             <Contact/>
             <div className='arrowup-icon-container'>
-                <a href="/#">
+                <a href="/#" aria-label="Scroll back to top of page">
                     <BsFillArrowUpCircleFill className='arrowup-icon'/>
                 </a>
             </div>

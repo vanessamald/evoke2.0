@@ -24,7 +24,7 @@ function Navigation() {
     return (
     <div> 
         <div className='home-nav-btn'>    
-        <button className='menu-btn' onClick={handleClick}>
+        <button className='menu-btn' onClick={handleClick} aria-label="Menu">
         <div className={button}>
             <div className='menu-line1'></div>
             <div className='menu-line2'></div>
