@@ -82,7 +82,7 @@ code {
   padding: 0 5px;
   cursor: pointer;
   transition: all .3s;
-  animation: fadeIn 8s linear;
+  /*animation: fadeIn 8s linear;*/
 }
 
 .handle {
@@ -126,7 +126,7 @@ code {
   padding: 0 5px;
   cursor: pointer;
   transition: all .3s;
-  animation: fadeIn 8s linear;
+  /*animation: fadeIn 8s linear;*/
 }
 
 .purple {
@@ -141,7 +141,7 @@ code {
   padding: 0 5px;
   cursor: pointer;
   transition: all .3s;
-  animation: fadeIn 8s linear;
+  /*animation: fadeIn 8s linear;*/
 }
 /* Toggle & Theme Styling Ends */
 
@@ -155,7 +155,7 @@ code {
   transition: transform .7s ease-in-out;
   color: var(--font-color);
   opacity: 1;
-  animation: fadeIn 8s linear;
+  /*animation: fadeIn 8s linear;*/
   z-index: 7;
 }
 
@@ -247,7 +247,7 @@ code {
   margin-bottom: 20px;
   background-color: transparent;
   bottom: 0;
-  animation: fadeIn 8s linear;
+  /*animation: fadeIn 8s linear;*/
 }
 
 .arrowup-icon-container {

@@ -4,7 +4,7 @@ import Navigation from '../Navigation';
 import About from '../About';
 import Contact from '../Contact';
 import Vision from '../Vision';
-import logoTransparent from '../../assets/images/EVOKE Official Logo Transparent.png'
+import logoTransparent from '../../assets/images/EVOKE-Official-Logo-Transparent.webp'
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import Footer from '../Footer';
 import Services from '../Services';
