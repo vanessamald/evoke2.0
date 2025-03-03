@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import useThemeStorage from './components/themeStorage';
 import Contact from './components/Contact';
 import { motion, useMotionValue, useSpring } from "framer-motion"
+import Terms from './components/Terms';
 
 function App() {
   //const [data, setData] = React.useState(null);
@@ -40,6 +41,12 @@ function App() {
       return <Privacy/>
     }
   }
+
+  const showTermsofService = () => {
+    if (window.location.pathname === "/termsofservice") {
+      return <Terms/>
+    }
+  }
   
   return (
     <div className={theme}>
@@ -49,6 +56,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/privacypolicy' element ={<Privacy/>}></Route>
+          <Route path='/termsofservice' element ={<Terms/>}></Route>
           <Route path='/#contact-form' element={<Contact/>}></Route>
         </Routes> 
         </BrowserRouter>
