@@ -12,7 +12,7 @@ function Terms() {
         <div className='privacy-policy-container' id="privacypolicy"> 
             <BsFillArrowLeftCircleFill className='back-arrow-icon'style={{ marginBottom: '25px'}} onClick={navigateBack}/>
             <div className='privacy-policy-content'>
-                <h1 className='privacy-policy-title' style={{ textAlign: "center" }}>Evoke Neurodiagnostics LLC Terms of Service</h1>
+                <h1 className='privacy-policy-title' style={{ textAlign: "" }}>Evoke Neurodiagnostics LLC Terms of Service</h1>
                 <p><strong>Last Updated: January 1, 2025</strong></p>
                 
                 <p>
@@ -34,6 +34,7 @@ function Terms() {
                             <li>judicial, arbitral, administrative, ministerial, departmental and regulatory judgments, orders, writs, injunctions, decisions, rulings, decrees and awards of any (i) multinational or supranational body or organization, nation, government, state, province, country, territory, municipality, quasi-government, administrative, judicial or regulatory authority, agency, board, body, bureau, commission, instrumentality, court or tribunal or any political subdivision thereof, or any central bank (or similar monetary or regulatory authority) thereof, any taxing authority, any ministry or department or agency of any of the foregoing; (ii) self-regulatory organization or stock exchange; (iii) entity exercising executive, legislative, judicial, regulatory or administrative functions of or pertaining to government; and (iv) corporation or other entity owned or controlled, through stock or capital ownership or otherwise, by any of such entities or other bodies pursuant to the foregoing (“Governmental Authority”); and </li>
                             <li>policies, practices and guidelines of, or contracts with, any Governmental Authority, which, although not actually having the force of law, are considered by such Governmental Authority as requiring compliance as if having the force of law, as the same may be amended from time to time and any successor thereto (collectively, “Applicable Laws”). </li>
                         </ol>
+                        <br/>
                         <p>Any use or access to the Software or the Services by anyone under eighteen (18) years of age is strictly prohibited and in violation of this Agreement. By entering or using the Software or the Services you represent that you:</p>
                         <ol type='i'>
                             <li>have the right, authority and capacity to enter into this Agreement on behalf of yourself and the person or entity that you represent (if applicable);</li>
