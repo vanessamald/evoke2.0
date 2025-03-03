@@ -27,7 +27,7 @@ function Footer () {
                 <a  style={transitions} className='footer-links' href="/privacypolicy">Privacy Policy</a> 
                 <a  style={transitions} className='footer-links' href="/termsofservice">Terms of Service</a> 
                 <a  style={transitions} className='footer-links' href='https://www.sweetsongmarketing.com/' target='_blank'> Sweet Song Marketing </a>
-                <a  style={transitions} className='footer-links' href='https://www.revivirstudio.com' target='_blank'>Website Design by Revivir Studio</a>  
+                <a  style={transitions} className='footer-links' href='http://www.vanessamaldonado.com/' target='_blank'>Website Design by Revivir Studio</a>  
                 <p  style={transitions} className='footer-links'>Evoke LLC &copy;2023</p>
             </motion.div>
         </div>
