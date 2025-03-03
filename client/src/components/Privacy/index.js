@@ -12,7 +12,6 @@ function Privacy() {
     return (
         <div className='privacy-policy-container' id="privacypolicy"> 
             <BsFillArrowLeftCircleFill className='back-arrow-icon'style={{ marginBottom: '25px'}} onClick={navigateBack}/>
-            <h3 className='privacy-policy-title'> Privacy Policy for Evoke Neurodiagnostics</h3>
             <div className='privacy-policy-content'>
     <h1>Evoke Neurodiagnostics LLC Privacy Policy</h1>
     <p><strong>Last Updated: January 1, 2025</strong></p>
