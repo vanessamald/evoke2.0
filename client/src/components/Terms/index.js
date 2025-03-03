@@ -12,7 +12,7 @@ function Terms() {
         <div className='privacy-policy-container' id="privacypolicy"> 
             <BsFillArrowLeftCircleFill className='back-arrow-icon'style={{ marginBottom: '25px'}} onClick={navigateBack}/>
             <h3 className='privacy-policy-title'> Privacy Policy for Evoke Neurodiagnostics</h3>
-            <div className='privacy-policy-content'></div>
+            <div className='privacy-policy-content'>
                 <h1 style={{ textAlign: "center" }}>Evoke Neurodiagnostics LLC Terms of Service</h1>
                 <p><strong>Last Updated: January 1, 2025</strong></p>
                 <p>Evoke Neurodiagnostics LLC Terms of Service</p>
@@ -186,6 +186,7 @@ function Terms() {
                     <li>21.	Language The parties agree that the English language will be the language of the Agreement and all documents in connection thereto, and each party waives any right (whether statutory or otherwise) to use and rely upon any other language, or translations.</li>
                     <li>22.	Privacy Policy You acknowledge and agree that you have read our Privacy Policy made available to you through the Software and/or the Services and consent to the handling and processing of your data as described in our Privacy Policy.</li>
                 </ol>
+            </div>
     </div>
     )
 }
