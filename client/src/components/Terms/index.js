@@ -26,26 +26,26 @@ function Terms() {
                 </p>
                 <ol type='1'>
                     <li>Use of the Software and Services</li>
-                    <ol type='a'>
-                        <li><strong>Eligibility</strong>This is a contract between you and us. By installing, downloading, copying, accessing or using the <strong>Evoke Brain Training</strong> Software (App) and/or the Services, or otherwise accepting this Agreement, or clicking “accept” (if applicable), you acknowledge that you have read, understood and agree to be bound by the terms of this Agreement. If you do not understand or agree, you must not install, download, copy, access or use the Software or the Services. Use of the <strong>Evoke Brain Training</strong> App is intended solely for the purpose of providing neurofeedback sessions and completing neuropsychological assessments via remote means. You agree not to use the App for any illegal, unauthorized, or unethical purposes. You are responsible for maintaining the confidentiality of your account credentials and agree to notify us immediately of any unauthorized access to your account.</li>
+                    
+                        <p><strong>Eligibility</strong>This is a contract between you and us. By installing, downloading, copying, accessing or using the <strong>Evoke Brain Training</strong> Software (App) and/or the Services, or otherwise accepting this Agreement, or clicking “accept” (if applicable), you acknowledge that you have read, understood and agree to be bound by the terms of this Agreement. If you do not understand or agree, you must not install, download, copy, access or use the Software or the Services. Use of the <strong>Evoke Brain Training</strong> App is intended solely for the purpose of providing neurofeedback sessions and completing neuropsychological assessments via remote means. You agree not to use the App for any illegal, unauthorized, or unethical purposes. You are responsible for maintaining the confidentiality of your account credentials and agree to notify us immediately of any unauthorized access to your account.</p>
                         <p>You may use the Software and the Services only if you can form a binding contract with us, and only in compliance with this Agreement and all applicable:</p>
-                        <ol type='i'>
+                        <ul >
                             <li>laws, constitutions, treaties, statutes, codes, ordinances, principles of common and civil law and equity, orders, decrees, rules, regulations and municipal by-laws, whether domestic, foreign or international;</li>
                             <li>judicial, arbitral, administrative, ministerial, departmental and regulatory judgments, orders, writs, injunctions, decisions, rulings, decrees and awards of any (i) multinational or supranational body or organization, nation, government, state, province, country, territory, municipality, quasi-government, administrative, judicial or regulatory authority, agency, board, body, bureau, commission, instrumentality, court or tribunal or any political subdivision thereof, or any central bank (or similar monetary or regulatory authority) thereof, any taxing authority, any ministry or department or agency of any of the foregoing; (ii) self-regulatory organization or stock exchange; (iii) entity exercising executive, legislative, judicial, regulatory or administrative functions of or pertaining to government; and (iv) corporation or other entity owned or controlled, through stock or capital ownership or otherwise, by any of such entities or other bodies pursuant to the foregoing (“Governmental Authority”); and </li>
                             <li>policies, practices and guidelines of, or contracts with, any Governmental Authority, which, although not actually having the force of law, are considered by such Governmental Authority as requiring compliance as if having the force of law, as the same may be amended from time to time and any successor thereto (collectively, “Applicable Laws”). </li>
-                        </ol>
+                        </ul>
                         <br/>
                         <p>Any use or access to the Software or the Services by anyone under eighteen (18) years of age is strictly prohibited and in violation of this Agreement. By entering or using the Software or the Services you represent that you:  </p>
-                        <ol type='i'>
+                        <ul>
                             <li>have the right, authority and capacity to enter into this Agreement on behalf of yourself and the person or entity that you represent (if applicable);</li>
                             <li>are not prohibited from entering or using the Software or the Services under any Applicable Laws;</li>
                             <li>are at least eighteen (18) years of age; and</li>
                             <li>understand the risks associated with using the Software and the Services.</li>
-                        </ol>
+                        </ul>
                         <br/>
                         <p><strong>License Grant</strong>Subject to the terms and conditions of this Agreement and subject to your payment of all applicable fees (including applicable fees for all of your Authorized Users), we hereby grant you and your Authorized Users a limited, personal, non-transferable, non-sub-licensable, and non-exclusive license to install and use a single copy of the Software for your information and personal and internal business and research purposes, together with any applicable Services (the “License”). Except to the extent that you are authorized by us in writing (in which case additional and/or different terms and conditions may apply to you), you are not permitted to provide or resell the Software or the Services to anyone on a standalone basis. You agree to ensure that Authorized Users comply with the terms of this Agreement and all applicable fees for the Services are paid to us in relation to the use of the Services by all Authorized Users. We reserve all rights not expressly granted herein in the Software, the Services and our content. We may terminate this License, in whole or in part, at any time for any reason or no reason.</p>
                         <p>The rights granted to you in this Agreement are subject to the following restrictions: </p>
-                        <ol type='i'>
+                        <ul>
                             <li>you shall not license, sell, rent, lease, transfer, assign, distribute, host, use or allow the use for the benefit of any third party or otherwise commercially exploit the Software or the Services, whether in whole or in part, or any content displayed on the Software or the Services;</li>
                             <li>you shall not remove or alter any copyright notice or any other notices; </li>
 	                        <li>you shall not modify, make derivative works of, disassemble, reverse compile or reverse engineer any part of the Software or the Services; </li>
@@ -63,18 +63,18 @@ function Terms() {
                             <li>you shall not use manual or automated software, devices, or other processes to “crawl,” “scrape,” or “spider” any page of our websites;</li>
                             <li>except as expressly stated herein, no part of the Software or the Services may be copied, reproduced, distributed, republished, downloaded, displayed, posted or transmitted in any form or by any means; and </li>
                             <li>you shall not use the Software or the Services other than as permitted hereunder. </li>
-                        </ol>
+                        </ul>
                         <p>Unless otherwise indicated, any future release, update, or other addition to the functionality of the Software and Services shall be subject to this Agreement. </p>
                         <br/>
                         <p><strong>User-Generated Content</strong>For the purposes of this Agreement, <strong>“User Content”</strong> means any text, feedback, ideas, suggestions, documents, proposals, photographs, electroencephalogram (EEG) recordings or other data and information you or anyone acting on your behalf submits to us including, without limitation, through online and mobile services made available by or on behalf of us from time to time including, but not limited to, the Services. </p>
                         <p>You represent your User Content: </p>
-                        <ol type="i">
+                        <ul>
                             <li>will not infringe any third party’s copyright, patent, trademark, trade secret or other proprietary rights, or rights of privacy;</li> 
                             <li>will not violate any Applicable Laws;</li>
                             <li>will not be obscene or contain child pornography; </li>
                             <li>will not contain software viruses, worms, Trojan horses or other harmful computer code, files, scripts, agents or programs; and </li>
                             <li>will not be defamatory, unlawfully threatening or harassing, harmful to minors or others in any way, or otherwise offensive or inappropriate.</li>
-                        </ol>
+                        </ul>
                         <br/>
                         <p><strong>Personally Identifiable User Generated Data </strong>For the purposes of this Agreement, <strong>“Personally Identifiable User Generated Data”</strong> means User Content that identifies you or your Authorized Users and is considered personal information in accordance with applicable privacy and data protection laws. For clarity, Personally Identifiable User Generated Data does not include de-identified and/or aggregated information. You hereby grant us a revocable, non-exclusive, worldwide, royalty-free license, to reproduce, distribute, transmit, publicly perform, publicly display, digitally perform, modify, create derivative works of, and otherwise use Personally Identifiable User Generated Data in any manner and at any time only so far as required to deliver the Software, our products and the Services. You waive any rights of publicity, moral or other similar right with respect to Personally Identifiable User Generated Data while used in accordance with the preceding sentence.</p>
                         <br/>
@@ -220,7 +220,7 @@ function Terms() {
 
                       
                 </ol>
-                </ol>
+               
                 
             </div>
     </div>
